@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="MTDF adalah madrasah Islam modern yang memadukan ilmu, iman, adab, tahfizh, dan kesiapan masa depan.">
-    <title>MTDF - Madrasah Tahfizh Darul Furqon</title>
+    <meta name="description" content="Madrasah Darul Furqon adalah madrasah Islam modern yang memadukan ilmu, iman, adab, tahfizh, dan kesiapan masa depan.">
+    <title>Madrasah Darul Furqon</title>
     <style>
         :root {
             --green-950: #062b23;
@@ -607,7 +607,7 @@
         <nav class="container nav" aria-label="Navigasi utama">
             <a class="brand" href="#">
                 <span class="brand-mark">MT</span>
-                <span>MTDF<small>Madrasah Tahfizh Darul Furqon</small></span>
+                <span>Madrasah<small>Darul Furqon</small></span>
             </a>
             <div class="nav-links">
                 <a href="#">Utama <span>Home</span></a>
@@ -627,7 +627,7 @@
                     <span>Knowledge, faith, and character for the future.</span>
                 </h1>
                 <p>
-                    MTDF membina generasi yang kuat dalam Al-Qur'an, matang dalam ilmu,
+                    Madrasah Darul Furqon membina generasi yang kuat dalam Al-Qur'an, matang dalam ilmu,
                     santun dalam adab, dan siap memberi manfaat bagi umat.
                 </p>
                 <p>
@@ -760,7 +760,7 @@
                 <div>
                     <h2>Sertai Perjalanan Bermakna <span>Join A Meaningful Journey</span></h2>
                     <p>
-                        Bersama MTDF, anak-anak dibina bukan hanya untuk lulus ujian,
+                        Bersama Madrasah Darul Furqon, anak-anak dibina bukan hanya untuk lulus ujian,
                         tetapi untuk membawa cahaya ilmu, iman, dan akhlak ke masyarakat.
                     </p>
                     <a class="button gold" href="#kontak">Mohon Sekarang +</a>
@@ -779,7 +779,7 @@
                 <div>
                     <a class="brand" href="#">
                         <span class="brand-mark">MT</span>
-                        <span>MTDF<small>Madrasah Tahfizh Darul Furqon</small></span>
+                        <span>Madrasah<small>Darul Furqon</small></span>
                     </a>
                     <p>Membina pendidikan Islam yang melahirkan generasi berilmu, beriman, dan beradab.</p>
                 </div>
@@ -807,7 +807,7 @@
                     <p>+62 812 0000 0000<br>info@mtdf.sch.id</p>
                 </div>
             </div>
-            <div class="copyright">© {{ date('Y') }} MTDF. Hak cipta terpelihara.</div>
+            <div class="copyright">© {{ date('Y') }} Madrasah Darul Furqon. Hak cipta terpelihara.</div>
         </div>
     </footer>
 </div>
