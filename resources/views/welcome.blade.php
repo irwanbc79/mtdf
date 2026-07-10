@@ -318,6 +318,17 @@
             box-shadow: 0 14px 32px rgba(0,0,0,.16);
         }
 
+        .brand-emblem.arabic-lockup {
+            width: 92px;
+            height: 92px;
+            margin: -10px -5px -10px 0;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            background: url("{{ asset('images/darul-furqon-logo.png') }}") center 61% / 68% auto no-repeat;
+            box-shadow: none;
+        }
+
         .brand-emblem img {
             width: 100%;
             height: 100%;
@@ -464,13 +475,15 @@
             z-index: 2;
             top: 36px;
             right: 42px;
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             object-fit: contain;
-            padding: 10px;
+            padding: 4px;
             border-radius: 28px;
             border: 1px solid rgba(213,162,59,.42);
-            background: rgba(255,249,236,.76);
+            background:
+                url("{{ asset('images/darul-furqon-logo.png') }}") center 62% / 68% auto no-repeat,
+                rgba(255,249,236,.76);
             box-shadow: 0 18px 44px rgba(3,31,26,.2);
         }
 
@@ -1088,6 +1101,12 @@
                 height: 58px;
             }
 
+            .brand-emblem.arabic-lockup {
+                width: 78px;
+                height: 78px;
+                margin: -7px -5px -7px 0;
+            }
+
             .hero {
                 min-height: auto;
             }
@@ -1133,8 +1152,8 @@
             }
 
             .hero-logo-watermark {
-                width: 92px;
-                height: 92px;
+                width: 118px;
+                height: 118px;
                 top: 24px;
                 right: 24px;
             }
@@ -1169,7 +1188,7 @@
         <div class="hero-pattern-right" aria-hidden="true"></div>
         <nav class="container nav" aria-label="Navigasi utama">
             <a class="brand" href="#">
-                <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo-128.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
+                <span class="brand-emblem arabic-lockup"><img src="{{ asset('images/darul-furqon-logo-arabic.svg') }}" alt="Logo Maahad Tahfidz Darul Furqon dengan tulisan Arab"></span>
                 <span>Maahad Tahfidz<small>Darul Furqon</small></span>
             </a>
             <div class="nav-links">
@@ -1206,7 +1225,7 @@
             <div class="hero-media" aria-label="Ilustrasi kampus dan santri Maahad Tahfidz Darul Furqon">
                 <div class="arch-frame" aria-hidden="true"></div>
                 <div class="masjid"></div>
-                <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-logo-256.png') }}" alt="Logo Maahad Tahfidz Darul Furqon">
+                <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-logo-arabic.svg') }}" alt="Logo Maahad Tahfidz Darul Furqon dengan tulisan Arab">
                 <div class="student-row" aria-hidden="true">
                     <span class="student"></span>
                     <span class="student"></span>
@@ -1374,7 +1393,7 @@
             <div class="footer-grid">
                 <div>
                     <a class="brand" href="#">
-                        <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo-128.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
+                        <span class="brand-emblem arabic-lockup"><img src="{{ asset('images/darul-furqon-logo-arabic.svg') }}" alt="Logo Maahad Tahfidz Darul Furqon dengan tulisan Arab"></span>
                         <span>Maahad Tahfidz<small>Darul Furqon</small></span>
                     </a>
                     <p>Membina pendidikan Islam yang melahirkan generasi berilmu, beriman, dan beradab.</p>

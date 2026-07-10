@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="620" viewBox="0 0 620 620" fill="none">
+  <g fill="#F0C45A" stroke="#062B23" stroke-width="2" paint-order="stroke fill" font-family="Noto Naskh Arabic, Amiri, Scheherazade New, serif" font-weight="700" text-anchor="middle">
+    <text x="310" y="82" font-size="58" direction="rtl" unicode-bidi="bidi-override">تحفيظ دار</text>
+    <text x="491" y="164" font-size="54" direction="rtl" unicode-bidi="bidi-override" transform="rotate(55 491 164)">معهد</text>
+    <text x="129" y="164" font-size="54" direction="rtl" unicode-bidi="bidi-override" transform="rotate(-55 129 164)">الفرقان</text>
+  </g>
+  <path d="M119 185C164 93 249 51 310 51c61 0 146 42 191 134" stroke="#D5A23B" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+</svg>
