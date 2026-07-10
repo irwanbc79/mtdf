@@ -21,8 +21,10 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="{{ asset('media/mtdf/hero-tahfizh.jpeg') }}">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon-32.png') }}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('images/favicon-48.png') }}">
     <link rel="icon" href="{{ asset('favicon.ico') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/darul-furqon-logo-256.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     <link rel="preload" as="image" href="{{ asset('media/mtdf/hero-tahfizh.jpeg') }}">
     <title>Maahad Tahfidz Darul Furqon</title>
     <script type="application/ld+json">
@@ -363,10 +365,10 @@
             width: 70px;
             height: 70px;
             place-items: center;
-            padding: 5px;
-            border: 1px solid rgba(240, 196, 90, .46);
+            padding: 7px;
+            border: 1px solid rgba(240, 196, 90, .55);
             border-radius: 18px;
-            background: rgba(255,255,255,.08);
+            background: rgba(255, 249, 236, .96);
             box-shadow: 0 14px 32px rgba(0,0,0,.16);
         }
 
@@ -597,7 +599,7 @@
             padding: 4px;
             border-radius: 28px;
             border: 1px solid rgba(213,162,59,.42);
-            background: rgba(6,43,35,.82);
+            background: rgba(255, 249, 236, .96);
             box-shadow: 0 18px 44px rgba(3,31,26,.2);
         }
 
@@ -1267,11 +1269,10 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 34%;
-            filter: saturate(.92) contrast(1.04);
+            object-position: center 50%;
         }
 
-        /* Wash + vignette emerald supaya latar tembok foto meleleh jadi emerald */
+        /* Latar emerald-emas & framing sudah di-bake ke gambar; overlay tipis utk kedalaman + legibiliti caption */
         .founder-portrait::before {
             content: "";
             position: absolute;
@@ -1279,9 +1280,8 @@
             z-index: 2;
             pointer-events: none;
             background:
-                linear-gradient(180deg, rgba(3,31,26,.72) 0%, rgba(6,43,35,.28) 20%, rgba(6,43,35,.04) 42%, rgba(3,31,26,.30) 74%, rgba(3,31,26,.86) 100%),
-                radial-gradient(125% 78% at 50% 42%, transparent 46%, rgba(6,43,35,.62) 100%),
-                linear-gradient(0deg, rgba(15,81,66,.12), rgba(15,81,66,.12));
+                linear-gradient(180deg, transparent 68%, rgba(3,31,26,.35) 100%),
+                radial-gradient(120% 92% at 50% 40%, transparent 66%, rgba(3,31,26,.22) 100%);
         }
 
         .founder-portrait::after {
@@ -1544,7 +1544,7 @@
         <div class="hero-pattern-right" aria-hidden="true"></div>
         <nav class="container nav" aria-label="Navigasi utama">
             <a class="brand" href="#">
-                <span class="brand-emblem arabic-lockup"><img src="{{ asset('images/darul-furqon-logo-arabic.svg') }}" alt="Logo Maahad Tahfidz Darul Furqon dengan tulisan Arab"></span>
+                <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
                 <span>Maahad Tahfidz<small>Darul Furqon</small></span>
             </a>
             <input type="checkbox" id="nav-toggle" class="nav-toggle-cb" hidden>
@@ -1559,6 +1559,7 @@
                 <a href="#pengasas">Pengasas <span>Founder</span></a>
                 <a href="#program">Program <span>Programmes</span></a>
                 <a href="#kegiatan">Kegiatan <span>Activities</span></a>
+                <a href="{{ url('/galeri') }}">Galeri <span>Gallery</span></a>
                 <a href="#lokasi">Hubungi Kami <span>Contact</span></a>
                 <a class="button gold" href="{{ $wa }}" target="_blank" rel="noopener">Mohon Sekarang +</a>
             </div>
@@ -1588,7 +1589,7 @@
             <div class="hero-media" aria-label="Halaqah Al-Qur'an santri Maahad Tahfidz Darul Furqon">
                 <img class="hero-photo" src="{{ asset('media/mtdf/hero-tahfizh.jpeg') }}" alt="Santri Maahad Tahfidz Darul Furqon mengikuti halaqah Al-Qur'an" fetchpriority="high">
                 <div class="arch-frame" aria-hidden="true"></div>
-                <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-logo-arabic.svg') }}" alt="Logo Maahad Tahfidz Darul Furqon dengan tulisan Arab">
+                <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-logo.png') }}" alt="Logo Maahad Tahfidz Darul Furqon">
                 <span class="hero-label">Halaqah Al-Qur'an & Pembinaan Adab</span>
             </div>
         </div>
@@ -1704,7 +1705,7 @@
                         Setiap pengalaman dirancang untuk membina disiplin, keyakinan diri,
                         ukhuwah, dan akhlak yang hidup dalam keseharian santri.
                     </p>
-                    <a class="button dark" href="#galeri-video">Lihat Video Kegiatan +</a>
+                    <a class="button dark" href="{{ url('/galeri') }}">Lihat Galeri Penuh +</a>
                 </div>
                 <div class="campus-gallery">
                     <figure class="gallery-main">
@@ -1813,7 +1814,7 @@
             <div class="footer-grid">
                 <div>
                     <a class="brand" href="#">
-                        <span class="brand-emblem arabic-lockup"><img src="{{ asset('images/darul-furqon-logo-arabic.svg') }}" alt="Logo Maahad Tahfidz Darul Furqon dengan tulisan Arab"></span>
+                        <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
                         <span>Maahad Tahfidz<small>Darul Furqon</small></span>
                     </a>
                     <p>Membina pendidikan Islam yang melahirkan generasi berilmu, beriman, dan beradab.</p>
