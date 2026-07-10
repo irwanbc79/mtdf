@@ -39,16 +39,21 @@
     </script>
     <style>
         :root {
-            --green-950: #062b23;
-            --green-900: #083c31;
-            --green-800: #0d5142;
-            --gold-500: #d8a941;
-            --gold-400: #f3c75b;
-            --cream-100: #f8f1df;
-            --cream-50: #fff9ed;
-            --ink: #17352f;
-            --muted: #6d776e;
-            --line: rgba(13, 81, 66, .14);
+            --emerald-980: #031f1a;
+            --emerald-950: #062b23;
+            --emerald-900: #08382f;
+            --emerald-800: #0f5142;
+            --emerald-700: #17634f;
+            --gold-600: #bd8426;
+            --gold-500: #d5a23b;
+            --gold-400: #f0c45a;
+            --cream-50: #fff9ec;
+            --cream-100: #f8efd9;
+            --cream-200: #ead9af;
+            --ink: #14362f;
+            --muted: #69756f;
+            --line: rgba(14, 73, 59, .16);
+            --shadow: 0 24px 70px rgba(3, 31, 26, .2);
         }
 
         * {
@@ -62,7 +67,10 @@
         body {
             margin: 0;
             color: var(--ink);
-            background: var(--cream-50);
+            background:
+                radial-gradient(circle at 4% 18%, rgba(213, 162, 59, .12), transparent 24rem),
+                radial-gradient(circle at 94% 52%, rgba(15, 81, 66, .08), transparent 28rem),
+                var(--cream-50);
             font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         }
 
@@ -80,112 +88,8 @@
             margin: 0 auto;
         }
 
-        .hero {
-            min-height: 720px;
-            color: white;
-            background:
-                linear-gradient(100deg, rgba(6, 43, 35, .98) 0%, rgba(6, 43, 35, .88) 38%, rgba(6, 43, 35, .28) 72%, rgba(216, 169, 65, .18) 100%),
-                radial-gradient(circle at 86% 30%, rgba(243, 199, 91, .45), transparent 28%),
-                linear-gradient(135deg, #0a3b31, #0f5c49);
-            position: relative;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(30deg, rgba(255,255,255,.04) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,.04) 87.5%, rgba(255,255,255,.04)),
-                linear-gradient(150deg, rgba(255,255,255,.04) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,.04) 87.5%, rgba(255,255,255,.04));
-            background-size: 84px 148px;
-            opacity: .16;
-            pointer-events: none;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            left: -8%;
-            right: -8%;
-            bottom: -78px;
-            height: 170px;
-            background: var(--cream-50);
-            border-top: 9px solid var(--gold-500);
-            border-radius: 0 0 50% 50%;
-            transform: rotate(-2.4deg);
-            transform-origin: left top;
-        }
-
-        .nav {
-            position: relative;
-            z-index: 3;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 28px 0;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            font-weight: 800;
-            letter-spacing: .02em;
-        }
-
-        .brand-mark {
-            display: grid;
-            width: 58px;
-            height: 58px;
-            place-items: center;
-            border: 2px solid var(--gold-500);
-            border-radius: 22px 22px 18px 18px;
-            color: var(--gold-400);
-            font-family: Georgia, serif;
-            font-size: 20px;
-            font-weight: 900;
-            box-shadow: inset 0 0 0 5px rgba(216, 169, 65, .1);
-        }
-
-        .brand-emblem {
-            display: grid;
-            width: 68px;
-            height: 68px;
-            place-items: center;
-            padding: 4px;
-            border: 1px solid rgba(243, 199, 91, .34);
-            border-radius: 18px;
-            background: rgba(255,255,255,.08);
-            box-shadow: 0 12px 34px rgba(0,0,0,.18);
-        }
-
-        .brand-emblem img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,.2));
-        }
-
-        .brand small,
-        .nav a span,
-        .eyebrow,
-        .label {
-            display: block;
-            color: rgba(255,255,255,.66);
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .nav-links a {
-            line-height: 1.15;
+        .serif {
+            font-family: Georgia, "Times New Roman", serif;
         }
 
         .button {
@@ -195,65 +99,230 @@
             gap: 10px;
             min-height: 48px;
             padding: 0 20px;
-            border: 1px solid rgba(216, 169, 65, .55);
             border-radius: 10px;
-            font-weight: 800;
+            border: 1px solid rgba(213, 162, 59, .56);
+            font-size: 14px;
+            font-weight: 900;
+            line-height: 1;
+            transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
         }
 
         .button.gold {
-            color: #13352d;
-            background: linear-gradient(180deg, var(--gold-400), var(--gold-500));
-            box-shadow: 0 14px 34px rgba(216, 169, 65, .3);
+            color: #12352d;
+            background: linear-gradient(180deg, #f6cf69 0%, #d9a23b 100%);
+            box-shadow: 0 14px 32px rgba(213, 162, 59, .28);
         }
 
         .button.ghost {
             color: white;
-            background: rgba(255,255,255,.04);
+            background: rgba(255,255,255,.045);
+            border-color: rgba(255,255,255,.24);
+        }
+
+        .button.dark {
+            color: white;
+            background: var(--emerald-950);
+            border-color: rgba(213, 162, 59, .35);
+        }
+
+        .ornament {
+            position: absolute;
+            pointer-events: none;
+            opacity: .18;
+            background-image:
+                radial-gradient(circle, transparent 0 34%, currentColor 35% 36%, transparent 37%),
+                linear-gradient(30deg, transparent 44%, currentColor 45% 46%, transparent 47%),
+                linear-gradient(150deg, transparent 44%, currentColor 45% 46%, transparent 47%);
+            background-size: 86px 86px;
+            color: var(--gold-400);
+        }
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 28px;
+            margin-bottom: 32px;
+        }
+
+        .section-kicker {
+            color: var(--gold-600);
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+        }
+
+        h2 {
+            color: var(--emerald-950);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(32px, 3.3vw, 48px);
+            line-height: .98;
+            letter-spacing: .01em;
+            text-transform: uppercase;
+        }
+
+        h2 span {
+            display: block;
+            margin-top: 8px;
+            color: var(--gold-600);
+            font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+            font-size: 14px;
+            letter-spacing: .12em;
+        }
+
+        p {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 760px;
+            color: white;
+            background:
+                linear-gradient(96deg, rgba(3,31,26,.98) 0%, rgba(6,43,35,.94) 36%, rgba(6,43,35,.58) 60%, rgba(213,162,59,.18) 100%),
+                radial-gradient(circle at 85% 22%, rgba(240,196,90,.46), transparent 23rem),
+                linear-gradient(135deg, var(--emerald-980), var(--emerald-800));
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(3,31,26,.78) 0 48%, transparent 70%),
+                repeating-linear-gradient(45deg, rgba(255,255,255,.025) 0 1px, transparent 1px 18px);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            left: -10%;
+            right: -10%;
+            bottom: -90px;
+            height: 190px;
+            background: var(--cream-50);
+            border-top: 9px solid var(--gold-500);
+            border-radius: 0 0 50% 50%;
+            transform: rotate(-2.5deg);
+            transform-origin: left top;
+        }
+
+        .hero .ornament.left {
+            left: -58px;
+            top: 120px;
+            width: 260px;
+            height: 340px;
+        }
+
+        .nav {
+            position: relative;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-weight: 900;
+            letter-spacing: .02em;
+        }
+
+        .brand-emblem {
+            display: grid;
+            width: 70px;
+            height: 70px;
+            place-items: center;
+            padding: 5px;
+            border: 1px solid rgba(240, 196, 90, .46);
+            border-radius: 18px;
+            background: rgba(255,255,255,.08);
+            box-shadow: 0 14px 32px rgba(0,0,0,.16);
+        }
+
+        .brand-emblem img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,.22));
+        }
+
+        .brand small,
+        .nav a span,
+        .eyebrow {
+            display: block;
+            color: rgba(255,255,255,.68);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .nav-links a {
+            line-height: 1.15;
         }
 
         .hero-grid {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             display: grid;
-            grid-template-columns: minmax(0, .9fr) minmax(480px, 1.1fr);
-            gap: 42px;
+            grid-template-columns: minmax(0, .88fr) minmax(500px, 1.12fr);
+            gap: 44px;
             align-items: center;
-            padding: 52px 0 130px;
+            padding: 54px 0 140px;
         }
 
         .hero-copy {
-            max-width: 610px;
-        }
-
-        .hero h1,
-        h2 {
-            margin: 0;
-            font-family: Georgia, "Times New Roman", serif;
-            letter-spacing: .01em;
+            max-width: 630px;
         }
 
         .hero h1 {
-            max-width: 620px;
-            font-size: clamp(44px, 5.4vw, 76px);
-            line-height: .95;
+            max-width: 640px;
+            margin-top: 18px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(48px, 5.4vw, 80px);
+            line-height: .93;
             text-transform: uppercase;
+            letter-spacing: .01em;
+            text-wrap: balance;
         }
 
         .hero h1 span {
-            color: var(--gold-400);
-            font-size: .48em;
-            line-height: 1.15;
             display: block;
             margin-top: 18px;
+            color: var(--gold-400);
             font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+            font-size: .42em;
+            line-height: 1.16;
+            letter-spacing: .02em;
         }
 
         .hero p {
             max-width: 560px;
-            margin: 22px 0 0;
+            margin: 20px 0 0;
             color: rgba(255,255,255,.82);
-            font-size: 17px;
-            line-height: 1.75;
+            font-size: 16px;
         }
 
         .hero-actions {
@@ -264,112 +333,129 @@
         }
 
         .hero-media {
-            min-height: 520px;
-            border-radius: 34px 0 0 34px;
-            background:
-                linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,0)),
-                linear-gradient(135deg, #d7c49b, #f5ddb3 42%, #0f5c49 42%, #0f5c49);
             position: relative;
+            min-height: 545px;
             overflow: hidden;
-            box-shadow: 0 28px 80px rgba(0,0,0,.25);
+            border-radius: 34px 0 0 34px;
+            border: 1px solid rgba(240,196,90,.22);
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,0)),
+                radial-gradient(circle at 78% 20%, rgba(240,196,90,.48), transparent 16rem),
+                linear-gradient(135deg, #efe0b8 0 43%, #276f5a 43% 100%);
+            box-shadow: 0 30px 90px rgba(0,0,0,.28);
         }
 
-        .hero-media::before {
+        .hero-media .masjid {
+            position: absolute;
+            inset: 54px 40px 120px 64px;
+            border: 18px solid rgba(255,255,255,.55);
+            border-bottom-width: 46px;
+            border-radius: 140px 140px 12px 12px;
+            box-shadow: inset 0 0 0 7px rgba(8,56,47,.18);
+        }
+
+        .hero-media .masjid::before {
             content: "";
             position: absolute;
-            inset: 42px 44px 126px;
-            border: 18px solid rgba(255,255,255,.5);
-            border-bottom-width: 42px;
-            border-radius: 120px 120px 10px 10px;
-            box-shadow: inset 0 0 0 6px rgba(8,60,49,.18);
+            right: -78px;
+            bottom: -46px;
+            width: 52px;
+            height: 250px;
+            border-radius: 26px 26px 0 0;
+            border: 10px solid rgba(255,255,255,.5);
+            background: rgba(255,249,236,.46);
         }
 
-        .hero-media::after {
-            content: "Foto kampus dan santri";
+        .hero-media .masjid::after {
+            content: "";
             position: absolute;
-            right: 34px;
-            bottom: 34px;
-            padding: 12px 16px;
-            color: rgba(255,255,255,.86);
-            background: rgba(6,43,35,.72);
-            border: 1px solid rgba(243,199,91,.42);
-            border-radius: 999px;
-            font-size: 13px;
-            font-weight: 800;
+            right: -71px;
+            top: -92px;
+            width: 38px;
+            height: 86px;
+            border-radius: 40px 40px 8px 8px;
+            background: rgba(255,249,236,.76);
+            box-shadow: 0 -22px 0 -10px var(--gold-500);
         }
 
         .hero-logo-watermark {
             position: absolute;
-            z-index: 1;
+            z-index: 2;
             top: 36px;
             right: 42px;
-            width: 118px;
-            height: 118px;
+            width: 120px;
+            height: 120px;
             object-fit: contain;
             padding: 10px;
-            border-radius: 24px;
-            background: rgba(255, 249, 237, .72);
-            border: 1px solid rgba(216,169,65,.34);
-            box-shadow: 0 18px 44px rgba(6,43,35,.18);
+            border-radius: 28px;
+            border: 1px solid rgba(213,162,59,.42);
+            background: rgba(255,249,236,.76);
+            box-shadow: 0 18px 44px rgba(3,31,26,.2);
         }
 
         .student-row {
             position: absolute;
-            z-index: 2;
-            left: 48px;
-            right: 48px;
-            bottom: 70px;
+            z-index: 3;
+            left: 54px;
+            right: 54px;
+            bottom: 66px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 12px;
         }
 
         .student {
-            height: 112px;
+            height: 116px;
+            border: 3px solid rgba(255,255,255,.6);
             border-radius: 999px 999px 16px 16px;
-            background: linear-gradient(180deg, #f8f1df 0 46%, #143d34 46% 100%);
-            border: 3px solid rgba(255,255,255,.55);
+            background:
+                radial-gradient(circle at 50% 26%, #efe4c9 0 19%, transparent 20%),
+                linear-gradient(180deg, #fff7e5 0 45%, #143b32 45% 100%);
+        }
+
+        .hero-label {
+            position: absolute;
+            right: 34px;
+            bottom: 26px;
+            z-index: 4;
+            padding: 12px 16px;
+            color: rgba(255,255,255,.9);
+            background: rgba(3,31,26,.72);
+            border: 1px solid rgba(240,196,90,.42);
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 900;
         }
 
         section {
             position: relative;
-            padding: 74px 0;
+            padding: 78px 0;
         }
 
-        .section-title {
-            display: flex;
-            align-items: end;
-            justify-content: space-between;
-            gap: 24px;
-            margin-bottom: 30px;
+        .pillars-section {
+            padding-top: 112px;
         }
 
-        h2 {
-            color: var(--green-900);
-            font-size: clamp(30px, 3vw, 46px);
-            line-height: 1;
-            text-transform: uppercase;
-        }
-
-        h2 span {
-            display: block;
-            margin-top: 8px;
+        .pillars-section .ornament {
+            right: -80px;
+            top: 30px;
+            width: 300px;
+            height: 300px;
             color: var(--gold-500);
-            font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-            font-size: 15px;
-            letter-spacing: .08em;
+            opacity: .1;
         }
 
         .pillars {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 18px;
-            padding-top: 28px;
+            gap: 0;
+            border-block: 1px solid var(--line);
         }
 
         .pillar {
+            min-height: 236px;
+            padding: 28px 20px;
             text-align: center;
-            padding: 14px 16px 22px;
             border-right: 1px solid var(--line);
         }
 
@@ -379,22 +465,23 @@
 
         .icon {
             display: grid;
-            width: 58px;
-            height: 58px;
+            width: 62px;
+            height: 62px;
             place-items: center;
             margin: 0 auto 16px;
-            color: var(--gold-500);
-            background: rgba(13,81,66,.06);
-            border: 1px solid rgba(216,169,65,.34);
+            color: var(--emerald-950);
+            background:
+                radial-gradient(circle, rgba(240,196,90,.18), transparent 70%),
+                rgba(15,81,66,.06);
+            border: 1px solid rgba(213,162,59,.34);
             border-radius: 18px;
-            font-size: 27px;
+            font-size: 28px;
+            font-weight: 900;
         }
 
         .pillar h3,
-        .program-card h3,
-        .campus h3 {
-            margin: 0;
-            color: var(--green-900);
+        .program-card h3 {
+            color: var(--emerald-950);
             font-size: 20px;
             line-height: 1.08;
         }
@@ -402,59 +489,108 @@
         .pillar p,
         .program-card p,
         .campus p,
-        .cta p,
+        .contact-card p,
         .footer p,
         .footer li {
             color: var(--muted);
-            line-height: 1.65;
             font-size: 14px;
+            line-height: 1.66;
         }
 
         .programmes {
-            background: var(--green-950);
-            border-radius: 18px;
-            padding: 38px;
+            overflow: hidden;
             color: white;
-            box-shadow: 0 22px 54px rgba(6, 43, 35, .22);
+            background:
+                linear-gradient(135deg, rgba(3,31,26,.96), rgba(8,56,47,.98)),
+                var(--emerald-950);
+            border: 1px solid rgba(240,196,90,.2);
+            border-radius: 18px;
+            padding: 42px;
+            box-shadow: var(--shadow);
+        }
+
+        .programmes::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: .08;
+            background-image:
+                linear-gradient(30deg, rgba(240,196,90,.8) 12%, transparent 12.5%, transparent 87%, rgba(240,196,90,.8) 87.5%, rgba(240,196,90,.8)),
+                linear-gradient(150deg, rgba(240,196,90,.8) 12%, transparent 12.5%, transparent 87%, rgba(240,196,90,.8) 87.5%, rgba(240,196,90,.8));
+            background-size: 90px 156px;
         }
 
         .programmes h2 {
+            position: relative;
             color: white;
             text-align: center;
-            margin-bottom: 32px;
+            margin-bottom: 34px;
         }
 
         .program-grid {
+            position: relative;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 22px;
         }
 
         .program-card {
-            min-height: 240px;
-            padding: 22px;
-            border: 1px solid rgba(243,199,91,.24);
+            position: relative;
+            min-height: 260px;
+            padding: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(240,196,90,.28);
             border-radius: 14px;
-            background:
-                linear-gradient(145deg, rgba(255,255,255,.9), rgba(255,249,237,.8)),
-                linear-gradient(135deg, transparent 0 54%, rgba(216,169,65,.22) 54% 100%);
+            background: linear-gradient(145deg, rgba(255,249,236,.96), rgba(248,239,217,.9));
+        }
+
+        .program-card::before {
+            content: "";
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            width: 50px;
+            height: 50px;
+            border: 2px solid var(--gold-500);
+            border-radius: 16px 16px 10px 10px;
+            transform: rotate(45deg);
+            opacity: .42;
         }
 
         .program-card .photo {
-            height: 98px;
-            margin: -4px -4px 18px;
+            height: 118px;
+            margin: -2px -2px 18px;
             border-radius: 10px;
             background:
-                radial-gradient(circle at 22% 38%, #f8f1df 0 16%, transparent 17%),
-                linear-gradient(135deg, rgba(13,81,66,.9), rgba(216,169,65,.34)),
-                linear-gradient(90deg, #ecd9ae, #0d5142);
+                radial-gradient(circle at 22% 48%, #fff7e5 0 14%, transparent 15%),
+                linear-gradient(135deg, rgba(20,59,50,.92), rgba(213,162,59,.28)),
+                linear-gradient(90deg, #efe0b8, #17634f);
+        }
+
+        .program-card:nth-child(2) .photo {
+            background:
+                radial-gradient(circle at 72% 42%, #fff7e5 0 15%, transparent 16%),
+                linear-gradient(135deg, rgba(213,162,59,.2), rgba(23,99,79,.84)),
+                #efe0b8;
+        }
+
+        .program-card:nth-child(3) .photo {
+            background:
+                radial-gradient(circle at 74% 52%, #fff7e5 0 13%, transparent 14%),
+                radial-gradient(circle at 58% 42%, #fff7e5 0 10%, transparent 11%),
+                linear-gradient(135deg, rgba(213,162,59,.36), rgba(20,59,50,.88)),
+                #efe0b8;
+        }
+
+        .program-card p {
+            margin-bottom: 0;
         }
 
         .stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-            padding: 34px 0 0;
+            gap: 20px;
+            padding-top: 38px;
         }
 
         .stat {
@@ -467,33 +603,71 @@
 
         .stat strong {
             display: block;
-            color: var(--green-900);
-            font-family: Georgia, serif;
+            color: var(--emerald-950);
+            font-family: Georgia, "Times New Roman", serif;
             font-size: 42px;
             line-height: 1;
         }
 
         .campus {
             display: grid;
-            grid-template-columns: .75fr 1.25fr;
-            gap: 32px;
+            grid-template-columns: .72fr 1.28fr;
+            gap: 34px;
             align-items: center;
+        }
+
+        .campus-copy {
+            position: relative;
+            padding: 30px 0 30px 28px;
+        }
+
+        .campus-copy::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120px;
+            height: 100%;
+            border-left: 4px solid var(--gold-500);
+            border-top: 4px solid var(--gold-500);
+            border-radius: 70px 0 0 0;
+            opacity: .58;
         }
 
         .campus-gallery {
             display: grid;
-            grid-template-columns: 1.25fr .75fr;
+            grid-template-columns: 1.2fr .8fr;
             gap: 12px;
         }
 
         .gallery-main,
         .gallery-small {
-            min-height: 340px;
-            border-radius: 18px;
-            background: linear-gradient(135deg, #f2dfb6, #fff6df 42%, #0d5142 42%, #144e40);
-            border: 1px solid rgba(216,169,65,.22);
             position: relative;
             overflow: hidden;
+            min-height: 348px;
+            border: 1px solid rgba(213,162,59,.28);
+            border-radius: 18px;
+            background:
+                linear-gradient(135deg, #ead8ab 0 38%, #fff8e8 38% 46%, #17634f 46% 100%);
+        }
+
+        .gallery-small {
+            min-height: 168px;
+        }
+
+        .gallery-stack {
+            display: grid;
+            gap: 12px;
+        }
+
+        .gallery-main::before,
+        .gallery-small::before {
+            content: "";
+            position: absolute;
+            inset: 42px 12% 24px;
+            border: 10px solid rgba(255,255,255,.5);
+            border-bottom-width: 24px;
+            border-radius: 80px 80px 8px 8px;
         }
 
         .gallery-main::after,
@@ -502,29 +676,28 @@
             position: absolute;
             right: 18px;
             bottom: 18px;
-            color: white;
-            background: rgba(6,43,35,.72);
-            border-radius: 999px;
             padding: 8px 12px;
+            color: white;
+            background: rgba(3,31,26,.74);
+            border-radius: 999px;
             font-size: 12px;
-            font-weight: 800;
-        }
-
-        .gallery-stack {
-            display: grid;
-            gap: 12px;
-        }
-
-        .gallery-small {
-            min-height: 164px;
+            font-weight: 900;
         }
 
         .values {
             color: white;
             background:
-                linear-gradient(90deg, rgba(6,43,35,.96), rgba(6,43,35,.78)),
-                linear-gradient(135deg, #083c31, #d8a941);
-            padding: 58px 0;
+                linear-gradient(90deg, rgba(3,31,26,.98), rgba(8,56,47,.9)),
+                linear-gradient(135deg, var(--emerald-950), var(--gold-500));
+            padding: 62px 0;
+        }
+
+        .values .ornament {
+            inset: 0 auto 0 -90px;
+            width: 360px;
+            height: 100%;
+            color: var(--gold-400);
+            opacity: .13;
         }
 
         .values h2 {
@@ -535,39 +708,57 @@
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             gap: 16px;
-            margin-top: 28px;
+            margin-top: 30px;
         }
 
         .value {
             text-align: center;
-            color: rgba(255,255,255,.72);
+            color: rgba(255,255,255,.7);
         }
 
         .value strong {
             display: block;
-            margin-top: 12px;
+            margin-top: 10px;
             color: white;
+            font-size: 15px;
+        }
+
+        .cta-wrap {
+            background:
+                linear-gradient(90deg, rgba(255,249,236,.96), rgba(255,249,236,.72)),
+                radial-gradient(circle at 84% 48%, rgba(213,162,59,.34), transparent 18rem);
         }
 
         .cta {
             display: grid;
-            grid-template-columns: 1fr .8fr;
-            gap: 32px;
+            grid-template-columns: 1fr .78fr;
+            gap: 34px;
             align-items: center;
-            background:
-                linear-gradient(90deg, var(--cream-50), rgba(255,249,237,.74)),
-                radial-gradient(circle at 86% 44%, rgba(216,169,65,.36), transparent 26%);
         }
 
         .quote {
-            padding: 30px;
+            position: relative;
+            padding: 34px;
+            color: var(--emerald-950);
             border-left: 4px solid var(--gold-500);
-            background: rgba(255,255,255,.52);
             border-radius: 12px;
-            color: var(--green-900);
-            font-family: Georgia, serif;
-            font-size: 22px;
+            background: rgba(255,255,255,.58);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
             line-height: 1.5;
+        }
+
+        .quote::after {
+            content: "";
+            position: absolute;
+            right: 24px;
+            bottom: 18px;
+            width: 90px;
+            height: 56px;
+            opacity: .28;
+            background:
+                linear-gradient(20deg, transparent 44%, var(--emerald-950) 45% 53%, transparent 54%),
+                linear-gradient(-20deg, transparent 44%, var(--emerald-950) 45% 53%, transparent 54%);
         }
 
         .contact-band {
@@ -578,15 +769,22 @@
         }
 
         .contact-card {
-            padding: 32px;
+            padding: 34px;
             color: white;
-            background: var(--green-950);
+            background:
+                linear-gradient(135deg, rgba(3,31,26,.98), rgba(8,56,47,.98)),
+                var(--emerald-950);
+            border: 1px solid rgba(240,196,90,.2);
             border-radius: 18px;
-            box-shadow: 0 22px 54px rgba(6, 43, 35, .18);
+            box-shadow: var(--shadow);
         }
 
         .contact-card h2 {
             color: white;
+        }
+
+        .contact-card p {
+            color: rgba(255,255,255,.72);
         }
 
         .contact-list {
@@ -595,50 +793,41 @@
             margin: 24px 0;
         }
 
-        .contact-list a,
-        .contact-list span {
+        .contact-list a {
             display: block;
             padding: 14px 16px;
-            color: rgba(255,255,255,.86);
-            border: 1px solid rgba(243,199,91,.22);
+            color: rgba(255,255,255,.9);
+            border: 1px solid rgba(240,196,90,.23);
             border-radius: 10px;
-            background: rgba(255,255,255,.04);
+            background: rgba(255,255,255,.045);
         }
 
         .map-frame {
-            min-height: 420px;
+            min-height: 430px;
             overflow: hidden;
-            border: 1px solid rgba(216,169,65,.26);
+            border: 1px solid rgba(213,162,59,.28);
             border-radius: 18px;
             background: var(--cream-100);
+            box-shadow: 0 16px 44px rgba(3,31,26,.08);
         }
 
         .map-frame iframe {
             width: 100%;
             height: 100%;
-            min-height: 420px;
+            min-height: 430px;
             border: 0;
-        }
-
-        .floating-wa {
-            position: fixed;
-            z-index: 20;
-            right: 22px;
-            bottom: 22px;
-            color: #10352d;
-            background: linear-gradient(180deg, var(--gold-400), var(--gold-500));
-            box-shadow: 0 18px 44px rgba(6,43,35,.22);
         }
 
         .footer {
             color: rgba(255,255,255,.75);
-            background: var(--green-950);
-            padding: 46px 0 30px;
+            background:
+                linear-gradient(180deg, var(--emerald-950), var(--emerald-980));
+            padding: 48px 0 30px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.1fr .8fr .8fr 1fr;
+            grid-template-columns: 1.12fr .75fr .85fr 1fr;
             gap: 34px;
         }
 
@@ -653,6 +842,11 @@
             padding: 0;
         }
 
+        .footer p,
+        .footer li {
+            color: rgba(255,255,255,.66);
+        }
+
         .copyright {
             margin-top: 34px;
             padding-top: 22px;
@@ -661,7 +855,17 @@
             font-size: 13px;
         }
 
-        @media (max-width: 980px) {
+        .floating-wa {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 30;
+            color: #10352d;
+            background: linear-gradient(180deg, var(--gold-400), var(--gold-500));
+            box-shadow: 0 18px 44px rgba(6,43,35,.22);
+        }
+
+        @media (max-width: 1020px) {
             .nav-links {
                 display: none;
             }
@@ -675,15 +879,8 @@
             }
 
             .hero-media {
-                min-height: 420px;
+                min-height: 430px;
                 border-radius: 28px;
-            }
-
-            .hero-logo-watermark {
-                width: 92px;
-                height: 92px;
-                top: 24px;
-                right: 24px;
             }
 
             .pillars,
@@ -699,9 +896,14 @@
             }
         }
 
-        @media (max-width: 620px) {
+        @media (max-width: 640px) {
             .container {
                 width: min(100% - 28px, 1180px);
+            }
+
+            .brand-emblem {
+                width: 58px;
+                height: 58px;
             }
 
             .hero {
@@ -709,7 +911,11 @@
             }
 
             .hero-grid {
-                padding-top: 18px;
+                padding-top: 20px;
+            }
+
+            .hero h1 {
+                font-size: clamp(42px, 15vw, 62px);
             }
 
             .hero-actions,
@@ -726,11 +932,19 @@
             }
 
             .programmes {
-                padding: 24px;
+                padding: 26px;
             }
 
             .student-row {
                 left: 24px;
+                right: 24px;
+                grid-template-columns: repeat(4, minmax(46px, 1fr));
+            }
+
+            .hero-logo-watermark {
+                width: 92px;
+                height: 92px;
+                top: 24px;
                 right: 24px;
             }
         }
@@ -739,6 +953,7 @@
 <body>
 <div class="page">
     <header class="hero">
+        <div class="ornament left"></div>
         <nav class="container nav" aria-label="Navigasi utama">
             <a class="brand" href="#">
                 <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo-128.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
@@ -749,7 +964,7 @@
                 <a href="#tentang">Tentang Kami <span>About Us</span></a>
                 <a href="#program">Program <span>Programmes</span></a>
                 <a href="#kampus">Kampus <span>Campus</span></a>
-                <a href="#kontak">Hubungi Kami <span>Contact</span></a>
+                <a href="#lokasi">Hubungi Kami <span>Contact</span></a>
                 <a class="button gold" href="https://wa.me/60174333652?text=Assalamualaikum%20Maahad%20Tahfidz%20Darul%20Furqon%2C%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank" rel="noopener">Mohon Sekarang +</a>
             </div>
         </nav>
@@ -758,12 +973,12 @@
             <div class="hero-copy">
                 <span class="eyebrow">Pendidikan Islam Modern | Islamic Modern Education</span>
                 <h1>
-                    Ilmu, Iman, Adab Menerangi Dunia
-                    <span>Knowledge, faith, and character for the future.</span>
+                    Ilmu, Iman, Amal Menerangi Dunia
+                    <span>Knowledge, faith, action enlighten the world.</span>
                 </h1>
                 <p>
-                    Maahad Tahfidz Darul Furqon membina generasi yang kuat dalam Al-Qur'an, matang dalam ilmu,
-                    santun dalam adab, dan siap memberi manfaat bagi umat.
+                    Maahad Tahfidz Darul Furqon membina generasi yang kuat dalam Al-Qur'an,
+                    matang dalam ilmu, santun dalam adab, dan siap memberi manfaat bagi umat.
                 </p>
                 <p>
                     A Qur'an-centered learning environment designed to grow disciplined,
@@ -775,7 +990,8 @@
                 </div>
             </div>
 
-            <div class="hero-media" aria-label="Placeholder foto kampus dan santri">
+            <div class="hero-media" aria-label="Ilustrasi kampus dan santri Maahad Tahfidz Darul Furqon">
+                <div class="masjid"></div>
                 <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-logo-256.png') }}" alt="Logo Maahad Tahfidz Darul Furqon">
                 <div class="student-row" aria-hidden="true">
                     <span class="student"></span>
@@ -783,16 +999,18 @@
                     <span class="student"></span>
                     <span class="student"></span>
                 </div>
+                <span class="hero-label">Foto kampus dan santri menyusul</span>
             </div>
         </div>
     </header>
 
     <main>
-        <section id="tentang">
+        <section id="tentang" class="pillars-section">
+            <div class="ornament"></div>
             <div class="container">
                 <div class="pillars">
                     <article class="pillar">
-                        <div class="icon">◈</div>
+                        <div class="icon">▤</div>
                         <h3>Pendidikan Bersepadu</h3>
                         <p>Gabungan ilmu dunia dan ukhrawi secara seimbang.</p>
                     </article>
@@ -809,12 +1027,12 @@
                     <article class="pillar">
                         <div class="icon">☷</div>
                         <h3>Komuniti & Kerjasama</h3>
-                        <p>Kolaborasi bersama orang tua dan komunitas.</p>
+                        <p>Kolaborasi bersama orang tua dan komuniti.</p>
                     </article>
                     <article class="pillar">
                         <div class="icon">♧</div>
                         <h3>Pembangunan Holistik</h3>
-                        <p>Menguatkan potensi intelektual, ruhani, emosi, dan fisik.</p>
+                        <p>Menguatkan potensi intelektual, ruhani, emosi, dan fizikal.</p>
                     </article>
                 </div>
             </div>
@@ -832,16 +1050,16 @@
                     <article class="program-card">
                         <div class="photo"></div>
                         <h3>Akademik Berprestasi</h3>
-                        <p>Kurikulum nasional dan diniyah yang disusun untuk prestasi berkelanjutan.</p>
+                        <p>Kurikulum kebangsaan dan diniyah yang disusun untuk prestasi berkelanjutan.</p>
                     </article>
                     <article class="program-card">
                         <div class="photo"></div>
                         <h3>Diri & Ko-Kurikulum</h3>
-                        <p>Kegiatan olahraga, kepemimpinan, bahasa, dan keterampilan hidup.</p>
+                        <p>Aktiviti olahraga, kepemimpinan, bahasa, dan keterampilan hidup.</p>
                     </article>
                 </div>
-                <div style="display:flex;justify-content:center;margin-top:26px">
-                    <a class="button ghost" href="#kontak">Lihat Semua Program +</a>
+                <div style="display:flex;justify-content:center;margin-top:28px">
+                    <a class="button ghost" href="#lokasi">Lihat Semua Program +</a>
                 </div>
             </div>
 
@@ -855,17 +1073,18 @@
 
         <section id="kampus">
             <div class="container campus">
-                <div>
+                <div class="campus-copy">
+                    <div class="section-kicker">Our Campus</div>
                     <h2>Kampus Kami <span>Our Campus</span></h2>
                     <p>
-                        Persekitaran yang aman, modern, dan kondusif untuk pembelajaran
+                        Persekitaran yang aman, moden, dan kondusif untuk pembelajaran
                         berteraskan nilai Islam.
                     </p>
                     <p>
                         A safe, modern, and disciplined environment for focused learning,
                         worship, and character development.
                     </p>
-                    <a class="button gold" href="https://maps.google.com/?q=2.952421,101.341522" target="_blank" rel="noopener">Terokai Kampus +</a>
+                    <a class="button dark" href="https://maps.google.com/?q=2.952421,101.341522" target="_blank" rel="noopener">Terokai Kampus +</a>
                 </div>
                 <div class="campus-gallery">
                     <div class="gallery-main"></div>
@@ -878,6 +1097,7 @@
         </section>
 
         <section class="values">
+            <div class="ornament"></div>
             <div class="container">
                 <h2>Nilai Teras Kami <span>Our Core Values</span></h2>
                 <div class="value-grid">
@@ -891,9 +1111,10 @@
             </div>
         </section>
 
-        <section class="cta">
+        <section class="cta-wrap">
             <div class="container cta">
                 <div>
+                    <div class="section-kicker">Join A Meaningful Journey</div>
                     <h2>Sertai Perjalanan Bermakna <span>Join A Meaningful Journey</span></h2>
                     <p>
                         Bersama Maahad Tahfidz Darul Furqon, anak-anak dibina bukan hanya untuk lulus ujian,
