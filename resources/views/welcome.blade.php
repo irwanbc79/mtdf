@@ -9,7 +9,10 @@
     <meta property="og:description" content="Pendidikan tahfizh moden berteraskan ilmu, iman, adab, dan kepimpinan.">
     <meta property="og:url" content="https://darulfurqon.my">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="{{ asset('images/darul-furqon-logo-512.png') }}">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/darul-furqon-logo-256.png') }}">
     <title>Maahad Tahfidz Darul Furqon</title>
     <script type="application/ld+json">
         {
@@ -139,6 +142,25 @@
             font-size: 20px;
             font-weight: 900;
             box-shadow: inset 0 0 0 5px rgba(216, 169, 65, .1);
+        }
+
+        .brand-emblem {
+            display: grid;
+            width: 68px;
+            height: 68px;
+            place-items: center;
+            padding: 4px;
+            border: 1px solid rgba(243, 199, 91, .34);
+            border-radius: 18px;
+            background: rgba(255,255,255,.08);
+            box-shadow: 0 12px 34px rgba(0,0,0,.18);
+        }
+
+        .brand-emblem img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,.2));
         }
 
         .brand small,
@@ -273,8 +295,24 @@
             font-weight: 800;
         }
 
+        .hero-logo-watermark {
+            position: absolute;
+            z-index: 1;
+            top: 36px;
+            right: 42px;
+            width: 118px;
+            height: 118px;
+            object-fit: contain;
+            padding: 10px;
+            border-radius: 24px;
+            background: rgba(255, 249, 237, .72);
+            border: 1px solid rgba(216,169,65,.34);
+            box-shadow: 0 18px 44px rgba(6,43,35,.18);
+        }
+
         .student-row {
             position: absolute;
+            z-index: 2;
             left: 48px;
             right: 48px;
             bottom: 70px;
@@ -638,6 +676,13 @@
                 border-radius: 28px;
             }
 
+            .hero-logo-watermark {
+                width: 92px;
+                height: 92px;
+                top: 24px;
+                right: 24px;
+            }
+
             .pillars,
             .program-grid,
             .stats,
@@ -693,7 +738,7 @@
     <header class="hero">
         <nav class="container nav" aria-label="Navigasi utama">
             <a class="brand" href="#">
-                <span class="brand-mark">MT</span>
+                <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo-128.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
                 <span>Maahad Tahfidz<small>Darul Furqon</small></span>
             </a>
             <div class="nav-links">
@@ -728,6 +773,7 @@
             </div>
 
             <div class="hero-media" aria-label="Placeholder foto kampus dan santri">
+                <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-logo-256.png') }}" alt="Logo Maahad Tahfidz Darul Furqon">
                 <div class="student-row" aria-hidden="true">
                     <span class="student"></span>
                     <span class="student"></span>
@@ -887,7 +933,7 @@
             <div class="footer-grid">
                 <div>
                     <a class="brand" href="#">
-                        <span class="brand-mark">MT</span>
+                        <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo-128.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
                         <span>Maahad Tahfidz<small>Darul Furqon</small></span>
                     </a>
                     <p>Membina pendidikan Islam yang melahirkan generasi berilmu, beriman, dan beradab.</p>
