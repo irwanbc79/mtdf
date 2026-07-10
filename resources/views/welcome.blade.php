@@ -9,10 +9,11 @@
     <meta property="og:description" content="Pendidikan tahfizh moden berteraskan ilmu, iman, adab, dan kepimpinan.">
     <meta property="og:url" content="https://darulfurqon.my">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="{{ asset('images/darul-furqon-logo-512.png') }}">
+    <meta property="og:image" content="{{ asset('media/mtdf/hero-tahfizh.jpeg') }}">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="{{ asset('favicon.ico') }}">
     <link rel="apple-touch-icon" href="{{ asset('images/darul-furqon-logo-256.png') }}">
+    <link rel="preload" as="image" href="{{ asset('media/mtdf/hero-tahfizh.jpeg') }}">
     <title>Maahad Tahfidz Darul Furqon</title>
     <script type="application/ld+json">
         {
@@ -426,18 +427,35 @@
             overflow: hidden;
             border-radius: 34px 0 0 34px;
             border: 1px solid rgba(240,196,90,.22);
-            background:
-                linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,0)),
-                radial-gradient(circle at 78% 20%, rgba(240,196,90,.48), transparent 16rem),
-                linear-gradient(135deg, #efe0b8 0 43%, #276f5a 43% 100%);
+            background: var(--emerald-950);
             box-shadow: 0 30px 90px rgba(0,0,0,.28);
+        }
+
+        .hero-photo {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 54% center;
+        }
+
+        .hero-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background:
+                linear-gradient(180deg, rgba(3,31,26,.04) 30%, rgba(3,31,26,.76) 100%),
+                linear-gradient(90deg, rgba(3,31,26,.18), transparent 45%);
+            pointer-events: none;
         }
 
         .hero-media::before {
             content: "";
             position: absolute;
             inset: 18px;
-            z-index: 1;
+            z-index: 3;
             border: 1px solid rgba(255,255,255,.42);
             border-radius: 24px 0 0 24px;
             box-shadow: inset 0 0 0 5px rgba(213,162,59,.12);
@@ -445,7 +463,7 @@
         }
 
         .hero-media .arch-frame {
-            z-index: 2;
+            z-index: 4;
             inset: 74px 84px 92px 84px;
             border-width: 3px;
             border-color: rgba(240,196,90,.48);
@@ -486,7 +504,7 @@
 
         .hero-logo-watermark {
             position: absolute;
-            z-index: 2;
+            z-index: 5;
             top: 36px;
             right: 42px;
             width: 150px;
@@ -525,7 +543,7 @@
             position: absolute;
             right: 34px;
             bottom: 26px;
-            z-index: 4;
+            z-index: 6;
             padding: 12px 16px;
             color: rgba(255,255,255,.9);
             background: rgba(3,31,26,.72);
@@ -692,29 +710,16 @@
         }
 
         .program-card .photo {
+            display: block;
+            width: calc(100% + 4px);
             height: 118px;
             margin: -2px -2px 18px;
             border-radius: 10px;
-            background:
-                radial-gradient(circle at 22% 48%, #fff7e5 0 14%, transparent 15%),
-                linear-gradient(135deg, rgba(20,59,50,.92), rgba(213,162,59,.28)),
-                linear-gradient(90deg, #efe0b8, #17634f);
+            object-fit: cover;
         }
 
-        .program-card:nth-child(2) .photo {
-            background:
-                radial-gradient(circle at 72% 42%, #fff7e5 0 15%, transparent 16%),
-                linear-gradient(135deg, rgba(213,162,59,.2), rgba(23,99,79,.84)),
-                #efe0b8;
-        }
-
-        .program-card:nth-child(3) .photo {
-            background:
-                radial-gradient(circle at 74% 52%, #fff7e5 0 13%, transparent 14%),
-                radial-gradient(circle at 58% 42%, #fff7e5 0 10%, transparent 11%),
-                linear-gradient(135deg, rgba(213,162,59,.36), rgba(20,59,50,.88)),
-                #efe0b8;
-        }
+        .program-card:nth-child(2) .photo { object-position: center 52%; }
+        .program-card:nth-child(3) .photo { object-position: center 42%; }
 
         .program-card p {
             margin-bottom: 0;
@@ -789,13 +794,13 @@
 
         .gallery-main,
         .gallery-small {
+            margin: 0;
             position: relative;
             overflow: hidden;
             min-height: 348px;
             border: 1px solid rgba(213,162,59,.28);
             border-radius: 18px;
-            background:
-                linear-gradient(135deg, #ead8ab 0 38%, #fff8e8 38% 46%, #17634f 46% 100%);
+            background: var(--emerald-950);
         }
 
         .gallery-small {
@@ -807,20 +812,25 @@
             gap: 12px;
         }
 
-        .gallery-main::before,
-        .gallery-small::before {
-            content: "";
+        .gallery-main img,
+        .gallery-small img {
             position: absolute;
-            inset: 42px 12% 24px;
-            border: 10px solid rgba(255,255,255,.5);
-            border-bottom-width: 24px;
-            border-radius: 80px 80px 8px 8px;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .45s ease;
         }
 
-        .gallery-main::after,
-        .gallery-small::after {
-            content: "Foto menyusul";
+        .gallery-main:hover img,
+        .gallery-small:hover img {
+            transform: scale(1.035);
+        }
+
+        .gallery-main figcaption,
+        .gallery-small figcaption {
             position: absolute;
+            z-index: 2;
             right: 18px;
             bottom: 18px;
             padding: 8px 12px;
@@ -829,6 +839,74 @@
             border-radius: 999px;
             font-size: 12px;
             font-weight: 900;
+        }
+
+        .media-section {
+            overflow: hidden;
+            background:
+                linear-gradient(180deg, rgba(248,239,217,.76), rgba(255,249,236,.96)),
+                var(--cream-100);
+        }
+
+        .media-section::before {
+            content: "";
+            position: absolute;
+            left: -110px;
+            top: 30px;
+            width: 340px;
+            height: 340px;
+            opacity: .11;
+            background: url("{{ asset('images/islamic-geometric-pattern.svg') }}") center / contain no-repeat;
+        }
+
+        .media-heading {
+            position: relative;
+            max-width: 760px;
+            margin: 0 auto 32px;
+            text-align: center;
+        }
+
+        .media-heading p {
+            max-width: 650px;
+            margin: 16px auto 0;
+        }
+
+        .video-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .video-card {
+            overflow: hidden;
+            margin: 0;
+            border: 1px solid rgba(213,162,59,.3);
+            border-radius: 16px;
+            background: var(--emerald-950);
+            box-shadow: 0 20px 50px rgba(3,31,26,.14);
+        }
+
+        .video-card video {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            background: #021814;
+        }
+
+        .video-card figcaption {
+            padding: 18px 20px 20px;
+            color: white;
+            font-weight: 900;
+        }
+
+        .video-card figcaption span {
+            display: block;
+            margin-top: 5px;
+            color: rgba(255,255,255,.62);
+            font-size: 13px;
+            font-weight: 600;
         }
 
         .values {
@@ -1095,7 +1173,8 @@
             .pillars,
             .program-grid,
             .stats,
-            .value-grid {
+            .value-grid,
+            .video-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -1160,7 +1239,8 @@
             .program-grid,
             .stats,
             .value-grid,
-            .campus-gallery {
+            .campus-gallery,
+            .video-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1218,7 +1298,7 @@
                 <a href="#">Utama <span>Home</span></a>
                 <a href="#tentang">Tentang Kami <span>About Us</span></a>
                 <a href="#program">Program <span>Programmes</span></a>
-                <a href="#kampus">Kampus <span>Campus</span></a>
+                <a href="#kegiatan">Kegiatan <span>Activities</span></a>
                 <a href="#lokasi">Hubungi Kami <span>Contact</span></a>
                 <a class="button gold" href="https://wa.me/60174333652?text=Assalamualaikum%20Maahad%20Tahfidz%20Darul%20Furqon%2C%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank" rel="noopener">Mohon Sekarang +</a>
             </div>
@@ -1245,17 +1325,11 @@
                 </div>
             </div>
 
-            <div class="hero-media" aria-label="Ilustrasi kampus dan santri Maahad Tahfidz Darul Furqon">
+            <div class="hero-media" aria-label="Halaqah Al-Qur'an santri Maahad Tahfidz Darul Furqon">
+                <img class="hero-photo" src="{{ asset('media/mtdf/hero-tahfizh.jpeg') }}" alt="Santri Maahad Tahfidz Darul Furqon mengikuti halaqah Al-Qur'an" fetchpriority="high">
                 <div class="arch-frame" aria-hidden="true"></div>
-                <div class="masjid"></div>
                 <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-logo-arabic.svg') }}" alt="Logo Maahad Tahfidz Darul Furqon dengan tulisan Arab">
-                <div class="student-row" aria-hidden="true">
-                    <span class="student"></span>
-                    <span class="student"></span>
-                    <span class="student"></span>
-                    <span class="student"></span>
-                </div>
-                <span class="hero-label">Foto kampus dan santri menyusul</span>
+                <span class="hero-label">Halaqah Al-Qur'an & Pembinaan Adab</span>
             </div>
         </div>
     </header>
@@ -1301,17 +1375,17 @@
                 <h2>Program Kami <span>Our Programmes</span></h2>
                 <div class="program-grid">
                     <article class="program-card">
-                        <div class="photo"></div>
+                        <img class="photo" src="{{ asset('media/mtdf/program-quran.jpeg') }}" alt="Santri dalam sesi pembelajaran diniyah" loading="lazy">
                         <h3>Tahfizh Al-Qur'an</h3>
                         <p>Program hafalan intensif dengan pembinaan bacaan, adab, dan muraja'ah.</p>
                     </article>
                     <article class="program-card">
-                        <div class="photo"></div>
+                        <img class="photo" src="{{ asset('media/mtdf/program-digital.jpeg') }}" alt="Santri belajar menggunakan komputer" loading="lazy">
                         <h3>Akademik Berprestasi</h3>
                         <p>Kurikulum kebangsaan dan diniyah yang disusun untuk prestasi berkelanjutan.</p>
                     </article>
                     <article class="program-card">
-                        <div class="photo"></div>
+                        <img class="photo" src="{{ asset('media/mtdf/program-co-curricular.jpeg') }}" alt="Santri mengikuti aktiviti ko-kurikulum di luar kelas" loading="lazy">
                         <h3>Diri & Ko-Kurikulum</h3>
                         <p>Aktiviti olahraga, kepemimpinan, bahasa, dan keterampilan hidup.</p>
                     </article>
@@ -1329,27 +1403,62 @@
             </div>
         </section>
 
-        <section id="kampus">
+        <section id="kegiatan">
             <div class="container campus">
                 <div class="campus-copy">
-                    <div class="section-kicker">Our Campus</div>
-                    <h2>Kampus Kami <span>Our Campus</span></h2>
+                    <div class="section-kicker">Life at Darul Furqon</div>
+                    <h2>Kegiatan Kami <span>Learning Beyond The Classroom</span></h2>
                     <p>
-                        Persekitaran yang aman, moden, dan kondusif untuk pembelajaran
-                        berteraskan nilai Islam.
+                        Pendidikan berlangsung melalui halaqah, ibadah berjemaah, lawatan ilmu,
+                        aktiviti fizikal, dan kebersamaan bersama komuniti.
                     </p>
                     <p>
-                        A safe, modern, and disciplined environment for focused learning,
-                        worship, and character development.
+                        Setiap pengalaman dirancang untuk membina disiplin, keyakinan diri,
+                        ukhuwah, dan akhlak yang hidup dalam keseharian santri.
                     </p>
-                    <a class="button dark" href="https://maps.google.com/?q=2.952421,101.341522" target="_blank" rel="noopener">Terokai Kampus +</a>
+                    <a class="button dark" href="#galeri-video">Lihat Video Kegiatan +</a>
                 </div>
                 <div class="campus-gallery">
-                    <div class="gallery-main"></div>
+                    <figure class="gallery-main">
+                        <img src="{{ asset('media/mtdf/activity-community.jpeg') }}" alt="Kebersamaan santri, guru, dan keluarga Maahad Tahfidz Darul Furqon" loading="lazy">
+                        <figcaption>Komuniti & Apresiasi</figcaption>
+                    </figure>
                     <div class="gallery-stack">
-                        <div class="gallery-small"></div>
-                        <div class="gallery-small"></div>
+                        <figure class="gallery-small">
+                            <img src="{{ asset('media/mtdf/activity-prayer.jpeg') }}" alt="Santri berdoa bersama dalam kegiatan madrasah" loading="lazy">
+                            <figcaption>Ibadah & Ukhuwah</figcaption>
+                        </figure>
+                        <figure class="gallery-small">
+                            <img src="{{ asset('media/mtdf/activity-trip.jpeg') }}" alt="Lawatan pendidikan santri Maahad Tahfidz Darul Furqon" loading="lazy">
+                            <figcaption>Lawatan Pendidikan</figcaption>
+                        </figure>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeri-video" class="media-section">
+            <div class="container">
+                <div class="media-heading">
+                    <div class="section-kicker">Galeri Kegiatan</div>
+                    <h2>Detik Bermakna <span>Moments That Shape Character</span></h2>
+                    <p>Rakaman ringkas kehidupan santri dalam pembelajaran, ibadah, rekreasi, dan pembinaan kebersamaan.</p>
+                </div>
+                <div class="video-grid">
+                    <figure class="video-card">
+                        <video controls preload="metadata" playsinline poster="{{ asset('media/mtdf/activity-prayer.jpeg') }}">
+                            <source src="{{ asset('media/mtdf/video-halaqah.mp4') }}" type="video/mp4">
+                            Browser anda tidak menyokong pemutaran video.
+                        </video>
+                        <figcaption>Halaqah & Pembinaan Ilmu <span>Pembelajaran interaktif dalam suasana ukhuwah.</span></figcaption>
+                    </figure>
+                    <figure class="video-card">
+                        <video controls preload="metadata" playsinline poster="{{ asset('media/mtdf/activity-swimming.jpeg') }}">
+                            <source src="{{ asset('media/mtdf/video-swimming.mp4') }}" type="video/mp4">
+                            Browser anda tidak menyokong pemutaran video.
+                        </video>
+                        <figcaption>Rekreasi & Kecergasan <span>Membina keberanian, kesihatan, dan kerjasama santri.</span></figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -1427,7 +1536,7 @@
                         <li>Utama</li>
                         <li>Tentang Kami</li>
                         <li>Program</li>
-                        <li>Kampus</li>
+                        <li>Kegiatan</li>
                     </ul>
                 </div>
                 <div>
