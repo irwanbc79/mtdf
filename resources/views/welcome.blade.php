@@ -345,6 +345,20 @@
             font-weight: 700;
         }
 
+        .brand > span:last-child {
+            color: white;
+            font-size: 18px;
+            line-height: 1.08;
+            white-space: nowrap;
+        }
+
+        .brand > span:last-child small {
+            margin-top: 5px;
+            font-size: 14px;
+            line-height: 1;
+            letter-spacing: .06em;
+        }
+
         .nav-links {
             display: flex;
             align-items: center;
@@ -1105,6 +1119,15 @@
                 width: 78px;
                 height: 78px;
                 margin: -7px -5px -7px 0;
+            }
+
+            .brand > span:last-child {
+                font-size: 16px;
+            }
+
+            .brand > span:last-child small {
+                margin-top: 4px;
+                font-size: 13px;
             }
 
             .hero {
