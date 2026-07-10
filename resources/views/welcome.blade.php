@@ -36,7 +36,7 @@
             "logo": "{{ asset('images/darul-furqon-logo-512.png') }}",
             "image": "{{ asset('media/mtdf/hero-tahfizh.jpeg') }}",
             "email": "info@darulfurqon.my",
-            "foundingDate": "1992",
+            "foundingDate": "2022-03",
             "sameAs": [
                 "mailto:tahfizdarulfurqon@gmail.com"
             ],
@@ -1226,6 +1226,17 @@
             font-size: 13px;
         }
 
+        .powered-by {
+            margin-top: 6px;
+            color: rgba(255,255,255,.5);
+            font-size: 13px;
+        }
+
+        .powered-by a {
+            color: var(--gold-400);
+            font-weight: 800;
+        }
+
         .floating-wa {
             position: fixed;
             right: 22px;
@@ -1235,6 +1246,35 @@
             background: linear-gradient(180deg, var(--gold-400), var(--gold-500));
             box-shadow: 0 18px 44px rgba(6,43,35,.22);
         }
+
+        /* ---- Language switcher ---- */
+        .nav { justify-content: flex-start; gap: 12px; flex-wrap: wrap; }
+        .nav-links { margin-left: auto; }
+        .lang-switch {
+            display: inline-flex; gap: 3px; padding: 4px;
+            border: 1px solid rgba(240, 196, 90, .32); border-radius: 999px;
+            background: rgba(255, 255, 255, .06);
+        }
+        .lang-btn {
+            display: inline-flex; align-items: center; gap: 5px;
+            padding: 6px 10px; border: 0; border-radius: 999px; cursor: pointer;
+            background: transparent; color: rgba(255, 255, 255, .74);
+            font: inherit; font-size: 12px; font-weight: 800; line-height: 1;
+            transition: background .2s ease, color .2s ease;
+        }
+        .lang-btn .flag { font-size: 15px; line-height: 1; }
+        .lang-btn:hover { color: #fff; }
+        .lang-btn.active { color: #12352d; background: linear-gradient(180deg, var(--gold-400), var(--gold-500)); }
+
+        /* ---- RTL (Arabic) ---- */
+        html[dir="rtl"] body { font-family: "Noto Naskh Arabic", "Amiri", "Segoe UI", Tahoma, sans-serif; }
+        html[dir="rtl"] .section-kicker,
+        html[dir="rtl"] h2 span,
+        html[dir="rtl"] .eyebrow { letter-spacing: 0; }
+        html[dir="rtl"] .campus-copy { padding: 30px 28px 30px 0; }
+        html[dir="rtl"] .campus-copy::before { left: auto; right: 0; border-left: 0; border-right: 4px solid var(--gold-500); border-radius: 0 70px 0 0; }
+        html[dir="rtl"] .quote { border-left: 0; border-right: 4px solid var(--gold-500); }
+        html[dir="rtl"] .founder-quote { padding-left: 0; padding-right: 20px; border-left: 0; border-right: 4px solid var(--gold-500); }
 
         .founder-section {
             overflow: hidden;
@@ -1553,44 +1593,45 @@
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </label>
+            <div class="lang-switch" role="group" aria-label="Tukar bahasa / Language">
+                <button type="button" class="lang-btn" data-lang="ms" aria-label="Bahasa Melayu"><span class="flag">🇲🇾</span>BM</button>
+                <button type="button" class="lang-btn" data-lang="en" aria-label="English"><span class="flag">🇬🇧</span>EN</button>
+                <button type="button" class="lang-btn" data-lang="ar" aria-label="العربية"><span class="flag">🇸🇦</span>ع</button>
+            </div>
             <div class="nav-links" id="primary-menu">
-                <a href="#">Utama <span>Home</span></a>
-                <a href="#tentang">Tentang Kami <span>About Us</span></a>
-                <a href="#pengasas">Pengasas <span>Founder</span></a>
-                <a href="#program">Program <span>Programmes</span></a>
-                <a href="#kegiatan">Kegiatan <span>Activities</span></a>
-                <a href="{{ url('/galeri') }}">Galeri <span>Gallery</span></a>
-                <a href="#lokasi">Hubungi Kami <span>Contact</span></a>
-                <a class="button gold" href="{{ $wa }}" target="_blank" rel="noopener">Mohon Sekarang +</a>
+                <a href="#" data-i18n="nav.home">Utama</a>
+                <a href="#tentang" data-i18n="nav.about">Tentang Kami</a>
+                <a href="#pengasas" data-i18n="nav.founder">Pengasas</a>
+                <a href="#program" data-i18n="nav.programmes">Program</a>
+                <a href="#kegiatan" data-i18n="nav.activities">Kegiatan</a>
+                <a href="{{ url('/galeri') }}" data-i18n="nav.gallery">Galeri</a>
+                <a href="#lokasi" data-i18n="nav.contact">Hubungi Kami</a>
+                <a class="button gold" href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="nav.apply">Mohon Sekarang +</a>
             </div>
         </nav>
 
         <div class="container hero-grid">
             <div class="hero-copy">
-                <span class="eyebrow">Pendidikan Islam Modern | Islamic Modern Education</span>
-                <h1>
+                <span class="eyebrow" data-i18n="hero.eyebrow">Pendidikan Islam Moden</span>
+                <h1 data-i18n="hero.title">
                     Ilmu, Iman, Amal Menerangi Dunia
-                    <span>Knowledge, faith, action enlighten the world.</span>
+                    <span>Membina generasi Qur'ani sejak 2022.</span>
                 </h1>
-                <p>
+                <p data-i18n="hero.lead">
                     Maahad Tahfidz Darul Furqon membina generasi yang kuat dalam Al-Qur'an,
                     matang dalam ilmu, santun dalam adab, dan siap memberi manfaat bagi umat.
                 </p>
-                <p>
-                    A Qur'an-centered learning environment designed to grow disciplined,
-                    knowledgeable, and service-minded future leaders.
-                </p>
                 <div class="hero-actions">
-                    <a class="button gold" href="#tentang">Kenali Kami +</a>
-                    <a class="button ghost" href="#program">Lihat Program +</a>
+                    <a class="button gold" href="#tentang" data-i18n="hero.cta1">Kenali Kami +</a>
+                    <a class="button ghost" href="#program" data-i18n="hero.cta2">Lihat Program +</a>
                 </div>
             </div>
 
-            <div class="hero-media" aria-label="Halaqah Al-Qur'an santri Maahad Tahfidz Darul Furqon">
-                <img class="hero-photo" src="{{ asset('media/mtdf/hero-tahfizh.jpeg') }}" alt="Santri Maahad Tahfidz Darul Furqon mengikuti halaqah Al-Qur'an" fetchpriority="high">
+            <div class="hero-media" aria-label="Halaqah Al-Qur'an pelajar Maahad Tahfidz Darul Furqon">
+                <img class="hero-photo" src="{{ asset('media/mtdf/hero-tahfizh.jpeg') }}" alt="Pelajar Maahad Tahfidz Darul Furqon mengikuti halaqah Al-Qur'an" fetchpriority="high">
                 <div class="arch-frame" aria-hidden="true"></div>
                 <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-logo.png') }}" alt="Logo Maahad Tahfidz Darul Furqon">
-                <span class="hero-label">Halaqah Al-Qur'an & Pembinaan Adab</span>
+                <span class="hero-label" data-i18n="hero.label">Halaqah Al-Qur'an &amp; Pembinaan Adab</span>
             </div>
         </div>
     </header>
@@ -1604,28 +1645,28 @@
                 <div class="pillars reveal">
                     <article class="pillar">
                         <div class="icon">▤</div>
-                        <h3>Pendidikan Bersepadu</h3>
-                        <p>Gabungan ilmu dunia dan ukhrawi secara seimbang.</p>
+                        <h3 data-i18n="pillar1.h">Pendidikan Bersepadu</h3>
+                        <p data-i18n="pillar1.p">Gabungan ilmu dunia dan ukhrawi secara seimbang.</p>
                     </article>
                     <article class="pillar">
                         <div class="icon">♡</div>
-                        <h3>Akhlak & Kepimpinan</h3>
-                        <p>Membangun karakter mulia dan kesiapan memimpin.</p>
+                        <h3 data-i18n="pillar2.h">Akhlak &amp; Kepimpinan</h3>
+                        <p data-i18n="pillar2.p">Membangun peribadi mulia dan kesediaan memimpin.</p>
                     </article>
                     <article class="pillar">
                         <div class="icon">✦</div>
-                        <h3>Persekitaran Islami</h3>
-                        <p>Lingkungan belajar yang kondusif dan berakar nilai Islam.</p>
+                        <h3 data-i18n="pillar3.h">Persekitaran Islami</h3>
+                        <p data-i18n="pillar3.p">Suasana belajar yang kondusif dan berakar nilai Islam.</p>
                     </article>
                     <article class="pillar">
                         <div class="icon">☷</div>
-                        <h3>Komuniti & Kerjasama</h3>
-                        <p>Kolaborasi bersama orang tua dan komuniti.</p>
+                        <h3 data-i18n="pillar4.h">Komuniti &amp; Kerjasama</h3>
+                        <p data-i18n="pillar4.p">Kolaborasi bersama ibu bapa dan komuniti.</p>
                     </article>
                     <article class="pillar">
                         <div class="icon">♧</div>
-                        <h3>Pembangunan Holistik</h3>
-                        <p>Menguatkan potensi intelektual, ruhani, emosi, dan fizikal.</p>
+                        <h3 data-i18n="pillar5.h">Pembangunan Holistik</h3>
+                        <p data-i18n="pillar5.p">Menguatkan potensi intelektual, ruhani, emosi, dan fizikal.</p>
                     </article>
                 </div>
             </div>
@@ -1634,25 +1675,25 @@
         <section id="pengasas" class="founder-section">
             <div class="container founder reveal">
                 <figure class="founder-portrait">
-                    <img src="{{ asset('media/mtdf/founder-umar-al-maidani.jpg') }}" alt="Ustadz Umar Al Maidani, Pengasas Maahad Tahfidz Darul Furqon" loading="lazy" onerror="this.style.display='none'">
-                    <figcaption>Ustadz Umar Al Maidani<span>Pengasas</span></figcaption>
+                    <img src="{{ asset('media/mtdf/founder-umar-al-maidani.jpg') }}" alt="Ustadz Umar Kurniawan bin Bustami, Pengasas Maahad Tahfidz Darul Furqon" loading="lazy" onerror="this.style.display='none'">
+                    <figcaption data-i18n="founder.caption">Ustadz Umar Kurniawan bin Bustami<span>Pengasas</span></figcaption>
                 </figure>
                 <div class="founder-copy">
-                    <div class="section-kicker">Pengasas &amp; Perintis</div>
-                    <h2>Pengasas Kami <span>Our Founder</span></h2>
-                    <div class="founder-name">Ustadz Umar Al Maidani</div>
-                    <span class="founder-role">Pengasas Maahad Tahfidz Darul Furqon</span>
-                    <p>
-                        Sejak 1992, Ustadz Umar Al Maidani merintis Maahad Tahfidz Darul Furqon
+                    <div class="section-kicker" data-i18n="founder.kicker">Pengasas &amp; Perintis</div>
+                    <h2 data-i18n="founder.h">Pengasas Kami <span>Peneraju Darul Furqon</span></h2>
+                    <div class="founder-name">Ustadz Umar Kurniawan bin Bustami</div>
+                    <span class="founder-role" data-i18n="founder.role">Pengasas Maahad Tahfidz Darul Furqon</span>
+                    <p data-i18n="founder.p1">
+                        Sejak Mac 2022, Ustadz Umar Kurniawan bin Bustami merintis Maahad Tahfidz Darul Furqon
                         dengan cita-cita membina generasi Qur'ani yang kukuh dalam hafazan,
                         matang dalam ilmu, dan tinggi dalam adab.
                     </p>
-                    <p>
-                        Dedikasi beliau menjadi teras pembinaan santri di kampus utama Sentul
+                    <p data-i18n="founder.p2">
+                        Dedikasi beliau menjadi teras pembinaan pelajar di kampus utama Sentul
                         serta cawangan Sepang dan Cheras — melahirkan pelajar yang berilmu,
                         beriman, dan bermanfaat bagi umat.
                     </p>
-                    <blockquote class="founder-quote">
+                    <blockquote class="founder-quote" data-i18n="founder.quote">
                         "Didiklah anak-anak dengan Al-Qur'an, kerana padanya cahaya dunia dan akhirat."
                     </blockquote>
                 </div>
@@ -1661,65 +1702,65 @@
 
         <section id="program">
             <div class="container programmes reveal">
-                <h2>Program Kami <span>Our Programmes</span></h2>
+                <h2 data-i18n="prog.h">Program Kami <span>Tawaran Pendidikan</span></h2>
                 <div class="program-grid">
                     <article class="program-card">
-                        <img class="photo" src="{{ asset('media/mtdf/program-quran.jpeg') }}" alt="Santri dalam sesi pembelajaran diniyah" loading="lazy">
-                        <h3>Tahfizh Al-Qur'an</h3>
-                        <p>Program hafalan intensif dengan pembinaan bacaan, adab, dan muraja'ah.</p>
+                        <img class="photo" src="{{ asset('media/mtdf/program-quran.jpeg') }}" alt="Pelajar dalam sesi pembelajaran diniyah" loading="lazy">
+                        <h3 data-i18n="prog1.h">Tahfizh Al-Qur'an</h3>
+                        <p data-i18n="prog1.p">Program hafalan intensif dengan pembinaan bacaan, adab, dan muraja'ah.</p>
                     </article>
                     <article class="program-card">
-                        <img class="photo" src="{{ asset('media/mtdf/program-digital.jpeg') }}" alt="Santri belajar menggunakan komputer" loading="lazy">
-                        <h3>Akademik Berprestasi</h3>
-                        <p>Kurikulum kebangsaan dan diniyah yang disusun untuk prestasi berkelanjutan.</p>
+                        <img class="photo" src="{{ asset('media/mtdf/program-digital.jpeg') }}" alt="Pelajar belajar menggunakan komputer" loading="lazy">
+                        <h3 data-i18n="prog2.h">Akademik Berprestasi</h3>
+                        <p data-i18n="prog2.p">Kurikulum kebangsaan dan diniyah yang disusun untuk prestasi berterusan.</p>
                     </article>
                     <article class="program-card">
-                        <img class="photo" src="{{ asset('media/mtdf/program-co-curricular.jpeg') }}" alt="Santri mengikuti aktiviti ko-kurikulum di luar kelas" loading="lazy">
-                        <h3>Diri & Ko-Kurikulum</h3>
-                        <p>Aktiviti olahraga, kepemimpinan, bahasa, dan keterampilan hidup.</p>
+                        <img class="photo" src="{{ asset('media/mtdf/program-co-curricular.jpeg') }}" alt="Pelajar mengikuti aktiviti ko-kurikulum di luar kelas" loading="lazy">
+                        <h3 data-i18n="prog3.h">Diri &amp; Ko-Kurikulum</h3>
+                        <p data-i18n="prog3.p">Aktiviti sukan, kepimpinan, bahasa, dan kemahiran hidup.</p>
                     </article>
                 </div>
                 <div style="display:flex;justify-content:center;margin-top:28px">
-                    <a class="button ghost" href="{{ $wa }}" target="_blank" rel="noopener">Tanya Program Lengkap +</a>
+                    <a class="button ghost" href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="prog.cta">Tanya Program Lengkap +</a>
                 </div>
             </div>
 
             <div class="container stats reveal">
-                <div class="stat"><div class="icon">☷</div><div><strong>500+</strong><span>Pelajar Aktif</span></div></div>
-                <div class="stat"><div class="icon">▣</div><div><strong>40+</strong><span>Guru Berpengalaman</span></div></div>
-                <div class="stat"><div class="icon">⌂</div><div><strong>10+</strong><span>Tahun Kecemerlangan</span></div></div>
-                <div class="stat"><div class="icon">◎</div><div><strong>Global</strong><span>Komuniti Pembelajaran</span></div></div>
+                <div class="stat"><div class="icon">☷</div><div><strong>500+</strong><span data-i18n="stat1">Pelajar Aktif</span></div></div>
+                <div class="stat"><div class="icon">▣</div><div><strong>40+</strong><span data-i18n="stat2">Guru Berpengalaman</span></div></div>
+                <div class="stat"><div class="icon">⌂</div><div><strong>10+</strong><span data-i18n="stat3">Tahun Kecemerlangan</span></div></div>
+                <div class="stat"><div class="icon">◎</div><div><strong>Global</strong><span data-i18n="stat4">Komuniti Pembelajaran</span></div></div>
             </div>
         </section>
 
         <section id="kegiatan">
             <div class="container campus">
                 <div class="campus-copy">
-                    <div class="section-kicker">Life at Darul Furqon</div>
-                    <h2>Kegiatan Kami <span>Learning Beyond The Classroom</span></h2>
-                    <p>
+                    <div class="section-kicker" data-i18n="keg.kicker">Kehidupan di Darul Furqon</div>
+                    <h2 data-i18n="keg.h">Kegiatan Kami <span>Belajar Di Luar Kelas</span></h2>
+                    <p data-i18n="keg.p1">
                         Pendidikan berlangsung melalui halaqah, ibadah berjemaah, lawatan ilmu,
                         aktiviti fizikal, dan kebersamaan bersama komuniti.
                     </p>
-                    <p>
+                    <p data-i18n="keg.p2">
                         Setiap pengalaman dirancang untuk membina disiplin, keyakinan diri,
-                        ukhuwah, dan akhlak yang hidup dalam keseharian santri.
+                        ukhuwah, dan akhlak yang hidup dalam keseharian pelajar.
                     </p>
-                    <a class="button dark" href="{{ url('/galeri') }}">Lihat Galeri Penuh +</a>
+                    <a class="button dark" href="{{ url('/galeri') }}" data-i18n="keg.cta">Lihat Galeri Penuh +</a>
                 </div>
                 <div class="campus-gallery">
                     <figure class="gallery-main">
-                        <img src="{{ asset('media/mtdf/activity-community.jpeg') }}" alt="Kebersamaan santri, guru, dan keluarga Maahad Tahfidz Darul Furqon" loading="lazy">
-                        <figcaption>Komuniti & Apresiasi</figcaption>
+                        <img src="{{ asset('media/mtdf/activity-community.jpeg') }}" alt="Kebersamaan pelajar, guru, dan keluarga Maahad Tahfidz Darul Furqon" loading="lazy">
+                        <figcaption data-i18n="keg.cap1">Komuniti &amp; Apresiasi</figcaption>
                     </figure>
                     <div class="gallery-stack">
                         <figure class="gallery-small">
-                            <img src="{{ asset('media/mtdf/activity-prayer.jpeg') }}" alt="Santri berdoa bersama dalam kegiatan madrasah" loading="lazy">
-                            <figcaption>Ibadah & Ukhuwah</figcaption>
+                            <img src="{{ asset('media/mtdf/activity-prayer.jpeg') }}" alt="Pelajar berdoa bersama dalam kegiatan madrasah" loading="lazy">
+                            <figcaption data-i18n="keg.cap2">Ibadah &amp; Ukhuwah</figcaption>
                         </figure>
                         <figure class="gallery-small">
-                            <img src="{{ asset('media/mtdf/activity-trip.jpeg') }}" alt="Lawatan pendidikan santri Maahad Tahfidz Darul Furqon" loading="lazy">
-                            <figcaption>Lawatan Pendidikan</figcaption>
+                            <img src="{{ asset('media/mtdf/activity-trip.jpeg') }}" alt="Lawatan pendidikan pelajar Maahad Tahfidz Darul Furqon" loading="lazy">
+                            <figcaption data-i18n="keg.cap3">Lawatan Pendidikan</figcaption>
                         </figure>
                     </div>
                 </div>
@@ -1729,9 +1770,9 @@
         <section id="galeri-video" class="media-section">
             <div class="container">
                 <div class="media-heading">
-                    <div class="section-kicker">Galeri Kegiatan</div>
-                    <h2>Detik Bermakna <span>Moments That Shape Character</span></h2>
-                    <p>Rakaman ringkas kehidupan santri dalam pembelajaran, ibadah, rekreasi, dan pembinaan kebersamaan.</p>
+                    <div class="section-kicker" data-i18n="vid.kicker">Galeri Kegiatan</div>
+                    <h2 data-i18n="vid.h">Detik Bermakna <span>Membentuk Peribadi</span></h2>
+                    <p data-i18n="vid.p">Rakaman ringkas kehidupan pelajar dalam pembelajaran, ibadah, rekreasi, dan pembinaan kebersamaan.</p>
                 </div>
                 <div class="video-grid reveal">
                     <figure class="video-card">
@@ -1739,14 +1780,14 @@
                             <source src="{{ asset('media/mtdf/video-halaqah.mp4') }}" type="video/mp4">
                             Browser anda tidak menyokong pemutaran video.
                         </video>
-                        <figcaption>Halaqah & Pembinaan Ilmu <span>Pembelajaran interaktif dalam suasana ukhuwah.</span></figcaption>
+                        <figcaption data-i18n="vid.cap1">Halaqah &amp; Pembinaan Ilmu <span>Pembelajaran interaktif dalam suasana ukhuwah.</span></figcaption>
                     </figure>
                     <figure class="video-card">
                         <video controls preload="metadata" playsinline poster="{{ asset('media/mtdf/activity-swimming.jpeg') }}">
                             <source src="{{ asset('media/mtdf/video-swimming.mp4') }}" type="video/mp4">
                             Browser anda tidak menyokong pemutaran video.
                         </video>
-                        <figcaption>Rekreasi & Kecergasan <span>Membina keberanian, kesihatan, dan kerjasama santri.</span></figcaption>
+                        <figcaption data-i18n="vid.cap2">Rekreasi &amp; Kecergasan <span>Membina keberanian, kesihatan, dan kerjasama pelajar.</span></figcaption>
                     </figure>
                 </div>
             </div>
@@ -1755,14 +1796,14 @@
         <section class="values">
             <div class="ornament"></div>
             <div class="container">
-                <h2>Nilai Teras Kami <span>Our Core Values</span></h2>
+                <h2 data-i18n="val.h">Nilai Teras Kami <span>Pegangan Kami</span></h2>
                 <div class="value-grid reveal">
-                    <div class="value"><div class="icon">◈</div><strong>Iman</strong>Faith</div>
-                    <div class="value"><div class="icon">▤</div><strong>Ilmu</strong>Knowledge</div>
-                    <div class="value"><div class="icon">✦</div><strong>Akhlak</strong>Character</div>
-                    <div class="value"><div class="icon">◷</div><strong>Disiplin</strong>Discipline</div>
-                    <div class="value"><div class="icon">✺</div><strong>Ikhlas</strong>Sincerity</div>
-                    <div class="value"><div class="icon">☉</div><strong>Amanah</strong>Trustworthiness</div>
+                    <div class="value"><div class="icon">◈</div><span data-i18n="val.iman"><strong>Iman</strong>Keyakinan</span></div>
+                    <div class="value"><div class="icon">▤</div><span data-i18n="val.ilmu"><strong>Ilmu</strong>Pengetahuan</span></div>
+                    <div class="value"><div class="icon">✦</div><span data-i18n="val.akhlak"><strong>Akhlak</strong>Peribadi</span></div>
+                    <div class="value"><div class="icon">◷</div><span data-i18n="val.disiplin"><strong>Disiplin</strong>Keteraturan</span></div>
+                    <div class="value"><div class="icon">✺</div><span data-i18n="val.ikhlas"><strong>Ikhlas</strong>Ketulusan</span></div>
+                    <div class="value"><div class="icon">☉</div><span data-i18n="val.amanah"><strong>Amanah</strong>Tanggungjawab</span></div>
                 </div>
             </div>
         </section>
@@ -1770,15 +1811,15 @@
         <section class="cta-wrap">
             <div class="container cta reveal">
                 <div>
-                    <div class="section-kicker">Join A Meaningful Journey</div>
-                    <h2>Sertai Perjalanan Bermakna <span>Join A Meaningful Journey</span></h2>
-                    <p>
+                    <div class="section-kicker" data-i18n="cta.kicker">Sertai Perjalanan Bermakna</div>
+                    <h2 data-i18n="cta.h">Sertai Perjalanan Bermakna <span>Bersama Darul Furqon</span></h2>
+                    <p data-i18n="cta.p">
                         Bersama Maahad Tahfidz Darul Furqon, anak-anak dibina bukan hanya untuk lulus ujian,
                         tetapi untuk membawa cahaya ilmu, iman, dan akhlak ke masyarakat.
                     </p>
-                    <a class="button gold" href="{{ $wa }}" target="_blank" rel="noopener">Mohon Sekarang +</a>
+                    <a class="button gold" href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="cta.apply">Mohon Sekarang +</a>
                 </div>
-                <div class="quote">
+                <div class="quote" data-i18n="cta.quote">
                     "Ya Tuhanku, tambahkanlah kepadaku ilmu."
                     <br><small>Surah Taha: 114</small>
                 </div>
@@ -1788,15 +1829,15 @@
         <section id="lokasi">
             <div class="container contact-band reveal">
                 <div class="contact-card">
-                    <h2>Hubungi Kami <span>Contact & Location</span></h2>
-                    <p>Untuk pertanyaan pendaftaran, lawatan kampus, atau maklumat program, hubungi pihak Maahad melalui WhatsApp atau email rasmi.</p>
+                    <h2 data-i18n="con.h">Hubungi Kami <span>Lokasi &amp; Pertanyaan</span></h2>
+                    <p data-i18n="con.p">Untuk pertanyaan pendaftaran, lawatan kampus, atau maklumat program, hubungi pihak Maahad melalui WhatsApp atau email rasmi.</p>
                     <div class="contact-list">
                         <a href="{{ $wa }}" target="_blank" rel="noopener">WhatsApp: +60 17-433 3652</a>
-                        <a href="mailto:info@darulfurqon.my">Email rasmi: info@darulfurqon.my</a>
-                        <a href="mailto:tahfizdarulfurqon@gmail.com">Email alternatif: tahfizdarulfurqon@gmail.com</a>
+                        <a href="mailto:info@darulfurqon.my" data-i18n="con.email1">Email rasmi: info@darulfurqon.my</a>
+                        <a href="mailto:tahfizdarulfurqon@gmail.com" data-i18n="con.email2">Email alternatif: tahfizdarulfurqon@gmail.com</a>
                         <a href="https://maps.google.com/?q=Maahad+Tahfiz+Darul+Furqon+Sentul+Kuala+Lumpur" target="_blank" rel="noopener">Google Maps: Maahad Tahfidz Darul Furqon</a>
                     </div>
-                    <a class="button gold" href="{{ $wa }}" target="_blank" rel="noopener">Chat WhatsApp +</a>
+                    <a class="button gold" href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="con.chat">Chat WhatsApp +</a>
                 </div>
                 <div class="map-frame">
                     <iframe
@@ -1817,40 +1858,174 @@
                         <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
                         <span>Maahad Tahfidz<small>Darul Furqon</small></span>
                     </a>
-                    <p>Membina pendidikan Islam yang melahirkan generasi berilmu, beriman, dan beradab.</p>
+                    <p data-i18n="foot.tagline">Membina pendidikan Islam yang melahirkan generasi berilmu, beriman, dan beradab.</p>
                 </div>
                 <div>
-                    <h4>Pautan Pantas</h4>
+                    <h4 data-i18n="foot.quick">Pautan Pantas</h4>
                     <ul>
-                        <li><a href="#">Utama</a></li>
-                        <li><a href="#tentang">Tentang Kami</a></li>
-                        <li><a href="#program">Program</a></li>
-                        <li><a href="#kegiatan">Kegiatan</a></li>
+                        <li><a href="#" data-i18n="nav.home">Utama</a></li>
+                        <li><a href="#tentang" data-i18n="nav.about">Tentang Kami</a></li>
+                        <li><a href="#program" data-i18n="nav.programmes">Program</a></li>
+                        <li><a href="#kegiatan" data-i18n="nav.activities">Kegiatan</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Unit Layanan</h4>
+                    <h4 data-i18n="foot.services">Unit Layanan</h4>
                     <ul>
-                        <li><a href="{{ $wa }}" target="_blank" rel="noopener">Pendaftaran Pelajar</a></li>
-                        <li><a href="{{ $wa }}" target="_blank" rel="noopener">Yuran &amp; Pembayaran</a></li>
-                        <li><a href="#galeri-video">Galeri Kegiatan</a></li>
-                        <li><a href="{{ $wa }}" target="_blank" rel="noopener">Soalan Lazim (FAQ)</a></li>
+                        <li><a href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="foot.reg">Pendaftaran Pelajar</a></li>
+                        <li><a href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="foot.fees">Yuran &amp; Pembayaran</a></li>
+                        <li><a href="#galeri-video" data-i18n="foot.gallery">Galeri Kegiatan</a></li>
+                        <li><a href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="foot.faq">Soalan Lazim (FAQ)</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Hubungi Kami</h4>
+                    <h4 data-i18n="nav.contact">Hubungi Kami</h4>
                     <p>Maahad Tahfidz Darul Furqon<br>Kampung Padang Balang, Sentul<br>Kuala Lumpur, Malaysia</p>
-                    <p>Cawangan: Sepang &amp; Cheras</p>
+                    <p data-i18n="foot.branches">Cawangan: Sepang &amp; Cheras</p>
                     <p><a href="{{ $waPlain }}" target="_blank" rel="noopener">+60 17-433 3652</a><br><a href="mailto:info@darulfurqon.my">info@darulfurqon.my</a><br><a href="mailto:tahfizdarulfurqon@gmail.com">tahfizdarulfurqon@gmail.com</a></p>
                 </div>
             </div>
-            <div class="copyright">© {{ date('Y') }} Maahad Tahfidz Darul Furqon. Hak cipta terpelihara.</div>
+            <div class="copyright" data-i18n="foot.copyright">© {{ date('Y') }} Maahad Tahfidz Darul Furqon. Hak cipta terpelihara.</div>
+            <div class="powered-by">Powered by <a href="https://morabangun.com" target="_blank" rel="noopener">morabangun.com</a></div>
         </div>
     </footer>
     <a class="button floating-wa" href="{{ $wa }}" target="_blank" rel="noopener">WhatsApp +</a>
 </div>
 <script>
     (function () {
+        // ---------- i18n (MS / EN / AR) ----------
+        var I18N = {
+            ms: {
+                'nav.home':`Utama`,'nav.about':`Tentang Kami`,'nav.founder':`Pengasas`,'nav.programmes':`Program`,'nav.activities':`Kegiatan`,'nav.gallery':`Galeri`,'nav.contact':`Hubungi Kami`,'nav.apply':`Mohon Sekarang +`,
+                'hero.eyebrow':`Pendidikan Islam Moden`,
+                'hero.title':`Ilmu, Iman, Amal Menerangi Dunia <span>Membina generasi Qur'ani sejak 2022.</span>`,
+                'hero.lead':`Maahad Tahfidz Darul Furqon membina generasi yang kuat dalam Al-Qur'an, matang dalam ilmu, santun dalam adab, dan siap memberi manfaat bagi umat.`,
+                'hero.cta1':`Kenali Kami +`,'hero.cta2':`Lihat Program +`,'hero.label':`Halaqah Al-Qur'an &amp; Pembinaan Adab`,
+                'pillar1.h':`Pendidikan Bersepadu`,'pillar1.p':`Gabungan ilmu dunia dan ukhrawi secara seimbang.`,
+                'pillar2.h':`Akhlak &amp; Kepimpinan`,'pillar2.p':`Membangun peribadi mulia dan kesediaan memimpin.`,
+                'pillar3.h':`Persekitaran Islami`,'pillar3.p':`Suasana belajar yang kondusif dan berakar nilai Islam.`,
+                'pillar4.h':`Komuniti &amp; Kerjasama`,'pillar4.p':`Kolaborasi bersama ibu bapa dan komuniti.`,
+                'pillar5.h':`Pembangunan Holistik`,'pillar5.p':`Menguatkan potensi intelektual, ruhani, emosi, dan fizikal.`,
+                'founder.caption':`Ustadz Umar Kurniawan bin Bustami<span>Pengasas</span>`,'founder.kicker':`Pengasas &amp; Perintis`,'founder.h':`Pengasas Kami <span>Peneraju Darul Furqon</span>`,'founder.role':`Pengasas Maahad Tahfidz Darul Furqon`,
+                'founder.p1':`Sejak Mac 2022, Ustadz Umar Kurniawan bin Bustami merintis Maahad Tahfidz Darul Furqon dengan cita-cita membina generasi Qur'ani yang kukuh dalam hafazan, matang dalam ilmu, dan tinggi dalam adab.`,
+                'founder.p2':`Dedikasi beliau menjadi teras pembinaan pelajar di kampus utama Sentul serta cawangan Sepang dan Cheras — melahirkan pelajar yang berilmu, beriman, dan bermanfaat bagi umat.`,
+                'founder.quote':`"Didiklah anak-anak dengan Al-Qur'an, kerana padanya cahaya dunia dan akhirat."`,
+                'prog.h':`Program Kami <span>Tawaran Pendidikan</span>`,
+                'prog1.h':`Tahfizh Al-Qur'an`,'prog1.p':`Program hafalan intensif dengan pembinaan bacaan, adab, dan muraja'ah.`,
+                'prog2.h':`Akademik Berprestasi`,'prog2.p':`Kurikulum kebangsaan dan diniyah yang disusun untuk prestasi berterusan.`,
+                'prog3.h':`Diri &amp; Ko-Kurikulum`,'prog3.p':`Aktiviti sukan, kepimpinan, bahasa, dan kemahiran hidup.`,'prog.cta':`Tanya Program Lengkap +`,
+                'stat1':`Pelajar Aktif`,'stat2':`Guru Berpengalaman`,'stat3':`Tahun Kecemerlangan`,'stat4':`Komuniti Pembelajaran`,
+                'keg.kicker':`Kehidupan di Darul Furqon`,'keg.h':`Kegiatan Kami <span>Belajar Di Luar Kelas</span>`,
+                'keg.p1':`Pendidikan berlangsung melalui halaqah, ibadah berjemaah, lawatan ilmu, aktiviti fizikal, dan kebersamaan bersama komuniti.`,
+                'keg.p2':`Setiap pengalaman dirancang untuk membina disiplin, keyakinan diri, ukhuwah, dan akhlak yang hidup dalam keseharian pelajar.`,
+                'keg.cta':`Lihat Galeri Penuh +`,'keg.cap1':`Komuniti &amp; Apresiasi`,'keg.cap2':`Ibadah &amp; Ukhuwah`,'keg.cap3':`Lawatan Pendidikan`,
+                'vid.kicker':`Galeri Kegiatan`,'vid.h':`Detik Bermakna <span>Membentuk Peribadi</span>`,'vid.p':`Rakaman ringkas kehidupan pelajar dalam pembelajaran, ibadah, rekreasi, dan pembinaan kebersamaan.`,
+                'vid.cap1':`Halaqah &amp; Pembinaan Ilmu <span>Pembelajaran interaktif dalam suasana ukhuwah.</span>`,'vid.cap2':`Rekreasi &amp; Kecergasan <span>Membina keberanian, kesihatan, dan kerjasama pelajar.</span>`,
+                'val.h':`Nilai Teras Kami <span>Pegangan Kami</span>`,'val.iman':`<strong>Iman</strong>Keyakinan`,'val.ilmu':`<strong>Ilmu</strong>Pengetahuan`,'val.akhlak':`<strong>Akhlak</strong>Peribadi`,'val.disiplin':`<strong>Disiplin</strong>Keteraturan`,'val.ikhlas':`<strong>Ikhlas</strong>Ketulusan`,'val.amanah':`<strong>Amanah</strong>Tanggungjawab`,
+                'cta.kicker':`Sertai Perjalanan Bermakna`,'cta.h':`Sertai Perjalanan Bermakna <span>Bersama Darul Furqon</span>`,
+                'cta.p':`Bersama Maahad Tahfidz Darul Furqon, anak-anak dibina bukan hanya untuk lulus ujian, tetapi untuk membawa cahaya ilmu, iman, dan akhlak ke masyarakat.`,
+                'cta.apply':`Mohon Sekarang +`,'cta.quote':`"Ya Tuhanku, tambahkanlah kepadaku ilmu."<br><small>Surah Taha: 114</small>`,
+                'con.h':`Hubungi Kami <span>Lokasi &amp; Pertanyaan</span>`,'con.p':`Untuk pertanyaan pendaftaran, lawatan kampus, atau maklumat program, hubungi pihak Maahad melalui WhatsApp atau email rasmi.`,
+                'con.email1':`Email rasmi: info@darulfurqon.my`,'con.email2':`Email alternatif: tahfizdarulfurqon@gmail.com`,'con.chat':`Chat WhatsApp +`,
+                'foot.tagline':`Membina pendidikan Islam yang melahirkan generasi berilmu, beriman, dan beradab.`,'foot.quick':`Pautan Pantas`,'foot.services':`Unit Layanan`,
+                'foot.reg':`Pendaftaran Pelajar`,'foot.fees':`Yuran &amp; Pembayaran`,'foot.gallery':`Galeri Kegiatan`,'foot.faq':`Soalan Lazim (FAQ)`,'foot.branches':`Cawangan: Sepang &amp; Cheras`,
+                'foot.copyright':`© {{ date('Y') }} Maahad Tahfidz Darul Furqon. Hak cipta terpelihara.`
+            },
+            en: {
+                'nav.home':`Home`,'nav.about':`About Us`,'nav.founder':`Founder`,'nav.programmes':`Programmes`,'nav.activities':`Activities`,'nav.gallery':`Gallery`,'nav.contact':`Contact`,'nav.apply':`Apply Now +`,
+                'hero.eyebrow':`Modern Islamic Education`,
+                'hero.title':`Knowledge, Faith &amp; Action, Enlightening the World <span>Nurturing Qur'anic generations since 2022.</span>`,
+                'hero.lead':`Maahad Tahfidz Darul Furqon nurtures a generation strong in the Qur'an, mature in knowledge, refined in character, and ready to benefit the ummah.`,
+                'hero.cta1':`Discover Us +`,'hero.cta2':`View Programmes +`,'hero.label':`Qur'an Halaqah &amp; Character Building`,
+                'pillar1.h':`Integrated Education`,'pillar1.p':`A balanced blend of worldly and spiritual knowledge.`,
+                'pillar2.h':`Character &amp; Leadership`,'pillar2.p':`Building noble character and readiness to lead.`,
+                'pillar3.h':`Islamic Environment`,'pillar3.p':`A conducive learning atmosphere rooted in Islamic values.`,
+                'pillar4.h':`Community &amp; Cooperation`,'pillar4.p':`Collaboration with parents and the community.`,
+                'pillar5.h':`Holistic Development`,'pillar5.p':`Strengthening intellectual, spiritual, emotional, and physical potential.`,
+                'founder.caption':`Ustadz Umar Kurniawan bin Bustami<span>Founder</span>`,'founder.kicker':`Founder &amp; Pioneer`,'founder.h':`Our Founder <span>Leader of Darul Furqon</span>`,'founder.role':`Founder of Maahad Tahfidz Darul Furqon`,
+                'founder.p1':`Since March 2022, Ustadz Umar Kurniawan bin Bustami has pioneered Maahad Tahfidz Darul Furqon with the aspiration of nurturing a Qur'anic generation — firm in memorisation, mature in knowledge, and high in character.`,
+                'founder.p2':`His dedication is the cornerstone of student development at the main Sentul campus and the Sepang and Cheras branches — producing students who are knowledgeable, faithful, and beneficial to the ummah.`,
+                'founder.quote':`"Educate children with the Qur'an, for in it lies the light of this world and the hereafter."`,
+                'prog.h':`Our Programmes <span>What We Offer</span>`,
+                'prog1.h':`Qur'an Memorisation`,'prog1.p':`An intensive memorisation programme building recitation, character, and revision.`,
+                'prog2.h':`Academic Excellence`,'prog2.p':`National and religious curricula designed for sustained achievement.`,
+                'prog3.h':`Self &amp; Co-Curriculum`,'prog3.p':`Sports, leadership, language, and life-skills activities.`,'prog.cta':`Ask About Programmes +`,
+                'stat1':`Active Students`,'stat2':`Experienced Teachers`,'stat3':`Years of Excellence`,'stat4':`Learning Community`,
+                'keg.kicker':`Life at Darul Furqon`,'keg.h':`Our Activities <span>Learning Beyond The Classroom</span>`,
+                'keg.p1':`Education unfolds through halaqah, congregational worship, educational visits, physical activity, and community togetherness.`,
+                'keg.p2':`Every experience is designed to build discipline, self-confidence, brotherhood, and living character in students' daily lives.`,
+                'keg.cta':`View Full Gallery +`,'keg.cap1':`Community &amp; Appreciation`,'keg.cap2':`Worship &amp; Brotherhood`,'keg.cap3':`Educational Visit`,
+                'vid.kicker':`Activity Gallery`,'vid.h':`Meaningful Moments <span>That Shape Character</span>`,'vid.p':`Short clips of student life in learning, worship, recreation, and togetherness.`,
+                'vid.cap1':`Halaqah &amp; Knowledge Building <span>Interactive learning in a spirit of brotherhood.</span>`,'vid.cap2':`Recreation &amp; Fitness <span>Building students' courage, health, and teamwork.</span>`,
+                'val.h':`Our Core Values <span>What We Stand For</span>`,'val.iman':`<strong>Faith</strong>Belief`,'val.ilmu':`<strong>Knowledge</strong>Learning`,'val.akhlak':`<strong>Character</strong>Morals`,'val.disiplin':`<strong>Discipline</strong>Order`,'val.ikhlas':`<strong>Sincerity</strong>Purity`,'val.amanah':`<strong>Trust</strong>Responsibility`,
+                'cta.kicker':`Join A Meaningful Journey`,'cta.h':`Join A Meaningful Journey <span>With Darul Furqon</span>`,
+                'cta.p':`With Maahad Tahfidz Darul Furqon, children are nurtured not merely to pass exams, but to carry the light of knowledge, faith, and character into society.`,
+                'cta.apply':`Apply Now +`,'cta.quote':`"My Lord, increase me in knowledge."<br><small>Surah Taha: 114</small>`,
+                'con.h':`Contact Us <span>Location &amp; Enquiries</span>`,'con.p':`For registration enquiries, campus visits, or programme information, contact the Maahad via WhatsApp or official email.`,
+                'con.email1':`Official email: info@darulfurqon.my`,'con.email2':`Alternate email: tahfizdarulfurqon@gmail.com`,'con.chat':`Chat on WhatsApp +`,
+                'foot.tagline':`Building Islamic education that raises a generation of knowledge, faith, and character.`,'foot.quick':`Quick Links`,'foot.services':`Services`,
+                'foot.reg':`Student Registration`,'foot.fees':`Fees &amp; Payment`,'foot.gallery':`Activity Gallery`,'foot.faq':`FAQ`,'foot.branches':`Branches: Sepang &amp; Cheras`,
+                'foot.copyright':`© {{ date('Y') }} Maahad Tahfidz Darul Furqon. All rights reserved.`
+            },
+            ar: {
+                'nav.home':`الرئيسية`,'nav.about':`عن المعهد`,'nav.founder':`المؤسس`,'nav.programmes':`البرامج`,'nav.activities':`الأنشطة`,'nav.gallery':`المعرض`,'nav.contact':`اتصل بنا`,'nav.apply':`سجّل الآن +`,
+                'hero.eyebrow':`تعليم إسلامي عصري`,
+                'hero.title':`العلم والإيمان والعمل تُنير العالم <span>نُربّي أجيالاً قرآنية منذ 2022.</span>`,
+                'hero.lead':`يُنشئ معهد تحفيظ دار الفرقان جيلاً متيناً في القرآن، ناضجاً في العلم، رفيعَ الأدب، مستعداً لنفع الأمّة.`,
+                'hero.cta1':`تعرّف علينا +`,'hero.cta2':`عرض البرامج +`,'hero.label':`حلقة القرآن وبناء الأدب`,
+                'pillar1.h':`تعليم متكامل`,'pillar1.p':`مزيج متوازن بين علوم الدنيا والآخرة.`,
+                'pillar2.h':`الأخلاق والقيادة`,'pillar2.p':`بناء الشخصية الكريمة والاستعداد للقيادة.`,
+                'pillar3.h':`بيئة إسلامية`,'pillar3.p':`أجواء تعليمية داعمة متجذّرة في قيم الإسلام.`,
+                'pillar4.h':`المجتمع والتعاون`,'pillar4.p':`التعاون مع أولياء الأمور والمجتمع.`,
+                'pillar5.h':`تنمية شاملة`,'pillar5.p':`تقوية القدرات العقلية والروحية والعاطفية والجسدية.`,
+                'founder.caption':`الأستاذ عمر كورنياوان بن بستامي<span>المؤسس</span>`,'founder.kicker':`المؤسس والرائد`,'founder.h':`مؤسسنا <span>قائد دار الفرقان</span>`,'founder.role':`مؤسس معهد تحفيظ دار الفرقان`,
+                'founder.p1':`منذ مارس 2022، أسّس الأستاذ عمر كورنياوان بن بستامي معهد تحفيظ دار الفرقان بهدف تربية جيل قرآني راسخ في الحفظ، ناضج في العلم، رفيع في الأدب.`,
+                'founder.p2':`تفانيه هو أساس تربية الطلاب في الحرم الرئيسي بسنتول وفرعَي سيبانج وشيراس — لتخريج طلاب علماء مؤمنين نافعين للأمّة.`,
+                'founder.quote':`«ربّوا الأبناء بالقرآن، فإنّ فيه نور الدنيا والآخرة.»`,
+                'prog.h':`برامجنا <span>ما نقدّمه</span>`,
+                'prog1.h':`تحفيظ القرآن`,'prog1.p':`برنامج حفظ مكثّف مع إتقان التلاوة والأدب والمراجعة.`,
+                'prog2.h':`التميّز الأكاديمي`,'prog2.p':`مناهج وطنية ودينية مصمّمة لتحصيل مستمر.`,
+                'prog3.h':`الأنشطة والمهارات`,'prog3.p':`أنشطة رياضية وقيادية ولغوية ومهارات حياتية.`,'prog.cta':`استفسر عن البرامج +`,
+                'stat1':`طالب نشط`,'stat2':`معلّم متمرّس`,'stat3':`سنوات من التميّز`,'stat4':`مجتمع تعليمي`,
+                'keg.kicker':`الحياة في دار الفرقان`,'keg.h':`أنشطتنا <span>تعلّم خارج الفصل</span>`,
+                'keg.p1':`يتحقّق التعليم عبر الحلقات والعبادة الجماعية والرحلات العلمية والأنشطة البدنية والتآلف المجتمعي.`,
+                'keg.p2':`كلّ تجربة مصمّمة لبناء الانضباط والثقة والأخوّة والأخلاق الحيّة في حياة الطلاب.`,
+                'keg.cta':`شاهد المعرض كاملاً +`,'keg.cap1':`المجتمع والتقدير`,'keg.cap2':`العبادة والأخوّة`,'keg.cap3':`رحلة تعليمية`,
+                'vid.kicker':`معرض الأنشطة`,'vid.h':`لحظات ذات معنى <span>تصنع الشخصية</span>`,'vid.p':`مقاطع قصيرة من حياة الطلاب في التعلّم والعبادة والترفيه والتآلف.`,
+                'vid.cap1':`الحلقة وبناء العلم <span>تعلّم تفاعلي في أجواء الأخوّة.</span>`,'vid.cap2':`الترفيه واللياقة <span>بناء شجاعة الطلاب وصحّتهم وتعاونهم.</span>`,
+                'val.h':`قيمنا الأساسية <span>مبادئنا</span>`,'val.iman':`<strong>الإيمان</strong>اليقين`,'val.ilmu':`<strong>العلم</strong>المعرفة`,'val.akhlak':`<strong>الأخلاق</strong>السلوك`,'val.disiplin':`<strong>الانضباط</strong>النظام`,'val.ikhlas':`<strong>الإخلاص</strong>الصدق`,'val.amanah':`<strong>الأمانة</strong>المسؤولية`,
+                'cta.kicker':`انضمّ إلى رحلة ذات معنى`,'cta.h':`انضمّ إلى رحلة ذات معنى <span>مع دار الفرقان</span>`,
+                'cta.p':`مع معهد تحفيظ دار الفرقان، يُربّى الأبناء لا لاجتياز الامتحانات فحسب، بل لحمل نور العلم والإيمان والأخلاق إلى المجتمع.`,
+                'cta.apply':`سجّل الآن +`,'cta.quote':`«رَبِّ زِدْنِي عِلْمًا»<br><small>سورة طه: ١١٤</small>`,
+                'con.h':`اتصل بنا <span>الموقع والاستفسار</span>`,'con.p':`للاستفسار عن التسجيل أو زيارة الحرم أو معلومات البرامج، تواصل مع المعهد عبر واتساب أو البريد الرسمي.`,
+                'con.email1':`البريد الرسمي: info@darulfurqon.my`,'con.email2':`بريد بديل: tahfizdarulfurqon@gmail.com`,'con.chat':`تواصل عبر واتساب +`,
+                'foot.tagline':`نبني تعليماً إسلامياً يُخرّج جيلاً عالِماً مؤمناً ذا أدب.`,'foot.quick':`روابط سريعة`,'foot.services':`الخدمات`,
+                'foot.reg':`تسجيل الطلاب`,'foot.fees':`الرسوم والدفع`,'foot.gallery':`معرض الأنشطة`,'foot.faq':`الأسئلة الشائعة`,'foot.branches':`الفروع: سيبانج وشيراس`,
+                'foot.copyright':`© {{ date('Y') }} معهد تحفيظ دار الفرقان. جميع الحقوق محفوظة.`
+            }
+        };
+        var LANGS = ['ms', 'en', 'ar'];
+        function applyLang(lang) {
+            if (LANGS.indexOf(lang) < 0) lang = 'ms';
+            var dict = I18N[lang] || {};
+            document.querySelectorAll('[data-i18n]').forEach(function (el) {
+                var v = dict[el.getAttribute('data-i18n')];
+                if (v != null) el.innerHTML = v;
+            });
+            document.documentElement.lang = lang;
+            document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            document.querySelectorAll('.lang-btn').forEach(function (b) {
+                b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+            });
+            try { localStorage.setItem('df_lang', lang); } catch (e) {}
+        }
+        document.querySelectorAll('.lang-btn').forEach(function (b) {
+            b.addEventListener('click', function () { applyLang(b.getAttribute('data-lang')); });
+        });
+        var savedLang = 'ms';
+        try { savedLang = localStorage.getItem('df_lang') || 'ms'; } catch (e) {}
+        applyLang(savedLang);
+
         // Tutup menu mobile setelah memilih pautan
         var menuToggle = document.getElementById('nav-toggle');
         var menu = document.getElementById('primary-menu');
