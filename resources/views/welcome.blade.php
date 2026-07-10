@@ -1,10 +1,20 @@
+@php
+    $waNumber = '60174333652';
+    $waText = rawurlencode("Assalamualaikum Maahad Tahfidz Darul Furqon, saya ingin bertanya tentang pendaftaran.");
+    $wa = "https://wa.me/{$waNumber}?text={$waText}";
+    $waPlain = "https://wa.me/{$waNumber}";
+@endphp
 <!DOCTYPE html>
-<html lang="id">
+<html lang="ms">
 <head>
+    <script>document.documentElement.classList.add('js');</script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#062b23">
     <meta name="description" content="Maahad Tahfidz Darul Furqon adalah madrasah tahfizh moden yang memadukan Al-Qur'an, ilmu, adab, dan pembinaan karakter di Selangor, Malaysia.">
     <link rel="canonical" href="https://darulfurqon.my">
+    <link rel="preconnect" href="https://maps.google.com">
+    <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
     <meta property="og:title" content="Maahad Tahfidz Darul Furqon">
     <meta property="og:description" content="Pendidikan tahfizh moden berteraskan ilmu, iman, adab, dan kepimpinan.">
     <meta property="og:url" content="https://darulfurqon.my">
@@ -21,20 +31,20 @@
             "@@type": "EducationalOrganization",
             "name": "Maahad Tahfidz Darul Furqon",
             "url": "https://darulfurqon.my",
+            "logo": "{{ asset('images/darul-furqon-logo-512.png') }}",
+            "image": "{{ asset('media/mtdf/hero-tahfizh.jpeg') }}",
             "email": "info@darulfurqon.my",
+            "foundingDate": "1992",
             "sameAs": [
                 "mailto:tahfizdarulfurqon@gmail.com"
             ],
             "telephone": "+60174333652",
             "address": {
                 "@@type": "PostalAddress",
-                "addressRegion": "Selangor",
+                "streetAddress": "Kampung Padang Balang, Sentul",
+                "addressLocality": "Kuala Lumpur",
+                "addressRegion": "Wilayah Persekutuan Kuala Lumpur",
                 "addressCountry": "MY"
-            },
-            "geo": {
-                "@@type": "GeoCoordinates",
-                "latitude": 2.952421,
-                "longitude": 101.341522
             }
         }
     </script>
@@ -89,6 +99,47 @@
         a {
             color: inherit;
             text-decoration: none;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--gold-400);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        .footer li a {
+            transition: color .2s ease;
+        }
+
+        .footer li a:hover {
+            color: var(--gold-400);
+        }
+
+        .nav-links a.is-active {
+            color: var(--gold-400);
+        }
+
+        html.js .reveal {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        html.js .reveal.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            html.js .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
         }
 
         .page {
@@ -326,7 +377,7 @@
             padding: 0;
             border: 0;
             border-radius: 0;
-            background: url("{{ asset('images/darul-furqon-logo.png') }}") center 61% / 68% auto no-repeat;
+            background: transparent;
             box-shadow: none;
         }
 
@@ -370,6 +421,39 @@
 
         .nav-links a {
             line-height: 1.15;
+        }
+
+        .nav-toggle {
+            display: none;
+            width: 46px;
+            height: 46px;
+            place-items: center;
+            gap: 5px;
+            flex-direction: column;
+            cursor: pointer;
+            border: 1px solid rgba(240, 196, 90, .38);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, .06);
+        }
+
+        .nav-toggle span {
+            width: 22px;
+            height: 2px;
+            background: var(--gold-400);
+            border-radius: 2px;
+            transition: transform .25s ease, opacity .2s ease;
+        }
+
+        .nav-toggle-cb:checked ~ .nav-toggle span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .nav-toggle-cb:checked ~ .nav-toggle span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle-cb:checked ~ .nav-toggle span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
         }
 
         .hero-grid {
@@ -513,9 +597,7 @@
             padding: 4px;
             border-radius: 28px;
             border: 1px solid rgba(213,162,59,.42);
-            background:
-                url("{{ asset('images/darul-furqon-logo.png') }}") center 62% / 68% auto no-repeat,
-                rgba(255,249,236,.76);
+            background: rgba(6,43,35,.82);
             box-shadow: 0 18px 44px rgba(3,31,26,.2);
         }
 
@@ -1153,8 +1235,48 @@
         }
 
         @media (max-width: 1020px) {
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+            }
+
             .nav-links {
-                display: none;
+                position: absolute;
+                left: 20px;
+                right: 20px;
+                top: 92px;
+                z-index: 20;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 4px;
+                max-height: 0;
+                padding: 0 14px;
+                overflow: hidden;
+                opacity: 0;
+                background: linear-gradient(180deg, rgba(6, 43, 35, .98), rgba(3, 31, 26, .99));
+                border: 1px solid rgba(240, 196, 90, .22);
+                border-radius: 16px;
+                box-shadow: 0 24px 60px rgba(3, 31, 26, .4);
+                transition: max-height .32s ease, opacity .28s ease, padding .32s ease;
+            }
+
+            .nav-links a {
+                padding: 13px 12px;
+                border-bottom: 1px solid rgba(255, 255, 255, .07);
+            }
+
+            .nav-links a:last-child {
+                border-bottom: 0;
+                margin-top: 8px;
+            }
+
+            .nav-toggle-cb:checked ~ .nav-links {
+                max-height: 460px;
+                padding: 10px 14px;
+                opacity: 1;
             }
 
             .hero-grid,
@@ -1294,13 +1416,19 @@
                 <span class="brand-emblem arabic-lockup"><img src="{{ asset('images/darul-furqon-logo-arabic.svg') }}" alt="Logo Maahad Tahfidz Darul Furqon dengan tulisan Arab"></span>
                 <span>Maahad Tahfidz<small>Darul Furqon</small></span>
             </a>
-            <div class="nav-links">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-cb" hidden>
+            <label class="nav-toggle" for="nav-toggle" role="button" tabindex="0" aria-label="Buka atau tutup menu" aria-controls="nav-toggle">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </label>
+            <div class="nav-links" id="primary-menu">
                 <a href="#">Utama <span>Home</span></a>
                 <a href="#tentang">Tentang Kami <span>About Us</span></a>
                 <a href="#program">Program <span>Programmes</span></a>
                 <a href="#kegiatan">Kegiatan <span>Activities</span></a>
                 <a href="#lokasi">Hubungi Kami <span>Contact</span></a>
-                <a class="button gold" href="https://wa.me/60174333652?text=Assalamualaikum%20Maahad%20Tahfidz%20Darul%20Furqon%2C%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank" rel="noopener">Mohon Sekarang +</a>
+                <a class="button gold" href="{{ $wa }}" target="_blank" rel="noopener">Mohon Sekarang +</a>
             </div>
         </nav>
 
@@ -1340,7 +1468,7 @@
         <section id="tentang" class="pillars-section">
             <div class="ornament"></div>
             <div class="container">
-                <div class="pillars">
+                <div class="pillars reveal">
                     <article class="pillar">
                         <div class="icon">▤</div>
                         <h3>Pendidikan Bersepadu</h3>
@@ -1371,7 +1499,7 @@
         </section>
 
         <section id="program">
-            <div class="container programmes">
+            <div class="container programmes reveal">
                 <h2>Program Kami <span>Our Programmes</span></h2>
                 <div class="program-grid">
                     <article class="program-card">
@@ -1391,11 +1519,11 @@
                     </article>
                 </div>
                 <div style="display:flex;justify-content:center;margin-top:28px">
-                    <a class="button ghost" href="#lokasi">Lihat Semua Program +</a>
+                    <a class="button ghost" href="{{ $wa }}" target="_blank" rel="noopener">Tanya Program Lengkap +</a>
                 </div>
             </div>
 
-            <div class="container stats">
+            <div class="container stats reveal">
                 <div class="stat"><div class="icon">☷</div><div><strong>500+</strong><span>Pelajar Aktif</span></div></div>
                 <div class="stat"><div class="icon">▣</div><div><strong>40+</strong><span>Guru Berpengalaman</span></div></div>
                 <div class="stat"><div class="icon">⌂</div><div><strong>10+</strong><span>Tahun Kecemerlangan</span></div></div>
@@ -1444,7 +1572,7 @@
                     <h2>Detik Bermakna <span>Moments That Shape Character</span></h2>
                     <p>Rakaman ringkas kehidupan santri dalam pembelajaran, ibadah, rekreasi, dan pembinaan kebersamaan.</p>
                 </div>
-                <div class="video-grid">
+                <div class="video-grid reveal">
                     <figure class="video-card">
                         <video controls preload="metadata" playsinline poster="{{ asset('media/mtdf/activity-prayer.jpeg') }}">
                             <source src="{{ asset('media/mtdf/video-halaqah.mp4') }}" type="video/mp4">
@@ -1467,7 +1595,7 @@
             <div class="ornament"></div>
             <div class="container">
                 <h2>Nilai Teras Kami <span>Our Core Values</span></h2>
-                <div class="value-grid">
+                <div class="value-grid reveal">
                     <div class="value"><div class="icon">◈</div><strong>Iman</strong>Faith</div>
                     <div class="value"><div class="icon">▤</div><strong>Ilmu</strong>Knowledge</div>
                     <div class="value"><div class="icon">✦</div><strong>Akhlak</strong>Character</div>
@@ -1479,7 +1607,7 @@
         </section>
 
         <section class="cta-wrap">
-            <div class="container cta">
+            <div class="container cta reveal">
                 <div>
                     <div class="section-kicker">Join A Meaningful Journey</div>
                     <h2>Sertai Perjalanan Bermakna <span>Join A Meaningful Journey</span></h2>
@@ -1487,7 +1615,7 @@
                         Bersama Maahad Tahfidz Darul Furqon, anak-anak dibina bukan hanya untuk lulus ujian,
                         tetapi untuk membawa cahaya ilmu, iman, dan akhlak ke masyarakat.
                     </p>
-                    <a class="button gold" href="https://wa.me/60174333652?text=Assalamualaikum%20Maahad%20Tahfidz%20Darul%20Furqon%2C%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank" rel="noopener">Mohon Sekarang +</a>
+                    <a class="button gold" href="{{ $wa }}" target="_blank" rel="noopener">Mohon Sekarang +</a>
                 </div>
                 <div class="quote">
                     "Ya Tuhanku, tambahkanlah kepadaku ilmu."
@@ -1497,23 +1625,23 @@
         </section>
 
         <section id="lokasi">
-            <div class="container contact-band">
+            <div class="container contact-band reveal">
                 <div class="contact-card">
                     <h2>Hubungi Kami <span>Contact & Location</span></h2>
                     <p>Untuk pertanyaan pendaftaran, lawatan kampus, atau maklumat program, hubungi pihak Maahad melalui WhatsApp atau email rasmi.</p>
                     <div class="contact-list">
-                        <a href="https://wa.me/60174333652?text=Assalamualaikum%20Maahad%20Tahfidz%20Darul%20Furqon%2C%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank" rel="noopener">WhatsApp: +60 17-433 3652</a>
+                        <a href="{{ $wa }}" target="_blank" rel="noopener">WhatsApp: +60 17-433 3652</a>
                         <a href="mailto:info@darulfurqon.my">Email rasmi: info@darulfurqon.my</a>
                         <a href="mailto:tahfizdarulfurqon@gmail.com">Email alternatif: tahfizdarulfurqon@gmail.com</a>
-                        <a href="https://maps.google.com/?q=2.952421,101.341522" target="_blank" rel="noopener">Google Maps: Maahad Tahfidz Darul Furqon</a>
+                        <a href="https://maps.google.com/?q=Maahad+Tahfiz+Darul+Furqon+Sentul+Kuala+Lumpur" target="_blank" rel="noopener">Google Maps: Maahad Tahfidz Darul Furqon</a>
                     </div>
-                    <a class="button gold" href="https://wa.me/60174333652?text=Assalamualaikum%20Maahad%20Tahfidz%20Darul%20Furqon%2C%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank" rel="noopener">Chat WhatsApp +</a>
+                    <a class="button gold" href="{{ $wa }}" target="_blank" rel="noopener">Chat WhatsApp +</a>
                 </div>
                 <div class="map-frame">
                     <iframe
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"
-                        src="https://maps.google.com/maps?q=2.952421,101.341522&z=15&output=embed"
+                        src="https://maps.google.com/maps?q=Maahad+Tahfiz+Darul+Furqon+Sentul+Kuala+Lumpur&z=15&output=embed"
                         title="Lokasi Maahad Tahfidz Darul Furqon"></iframe>
                 </div>
             </div>
@@ -1533,31 +1661,93 @@
                 <div>
                     <h4>Pautan Pantas</h4>
                     <ul>
-                        <li>Utama</li>
-                        <li>Tentang Kami</li>
-                        <li>Program</li>
-                        <li>Kegiatan</li>
+                        <li><a href="#">Utama</a></li>
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#program">Program</a></li>
+                        <li><a href="#kegiatan">Kegiatan</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>Unit Layanan</h4>
                     <ul>
-                        <li>Pendaftaran Pelajar</li>
-                        <li>Yuran & Pembayaran</li>
-                        <li>Berita Sekolah</li>
-                        <li>FAQ</li>
+                        <li><a href="{{ $wa }}" target="_blank" rel="noopener">Pendaftaran Pelajar</a></li>
+                        <li><a href="{{ $wa }}" target="_blank" rel="noopener">Yuran &amp; Pembayaran</a></li>
+                        <li><a href="#galeri-video">Galeri Kegiatan</a></li>
+                        <li><a href="{{ $wa }}" target="_blank" rel="noopener">Soalan Lazim (FAQ)</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>Hubungi Kami</h4>
-                    <p>Maahad Tahfidz Darul Furqon<br>Selangor, Malaysia</p>
-                    <p><a href="https://wa.me/60174333652" target="_blank" rel="noopener">+60 17-433 3652</a><br><a href="mailto:info@darulfurqon.my">info@darulfurqon.my</a><br><a href="mailto:tahfizdarulfurqon@gmail.com">tahfizdarulfurqon@gmail.com</a></p>
+                    <p>Maahad Tahfidz Darul Furqon<br>Kampung Padang Balang, Sentul<br>Kuala Lumpur, Malaysia</p>
+                    <p>Cawangan: Sepang &amp; Cheras</p>
+                    <p><a href="{{ $waPlain }}" target="_blank" rel="noopener">+60 17-433 3652</a><br><a href="mailto:info@darulfurqon.my">info@darulfurqon.my</a><br><a href="mailto:tahfizdarulfurqon@gmail.com">tahfizdarulfurqon@gmail.com</a></p>
                 </div>
             </div>
             <div class="copyright">© {{ date('Y') }} Maahad Tahfidz Darul Furqon. Hak cipta terpelihara.</div>
         </div>
     </footer>
-    <a class="button floating-wa" href="https://wa.me/60174333652?text=Assalamualaikum%20Maahad%20Tahfidz%20Darul%20Furqon%2C%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank" rel="noopener">WhatsApp +</a>
+    <a class="button floating-wa" href="{{ $wa }}" target="_blank" rel="noopener">WhatsApp +</a>
 </div>
+<script>
+    (function () {
+        // Tutup menu mobile setelah memilih pautan
+        var menuToggle = document.getElementById('nav-toggle');
+        var menu = document.getElementById('primary-menu');
+        if (menuToggle && menu) {
+            menu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    menuToggle.checked = false;
+                });
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') menuToggle.checked = false;
+            });
+        }
+
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Reveal bertahap saat digulir
+        var reveals = document.querySelectorAll('.reveal');
+        if (!reduce && 'IntersectionObserver' in window) {
+            var revealObserver = new IntersectionObserver(function (entries, obs) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+            reveals.forEach(function (el) { revealObserver.observe(el); });
+        } else {
+            reveals.forEach(function (el) { el.classList.add('is-visible'); });
+        }
+
+        // Sorot pautan navigasi mengikut seksyen aktif
+        var navLinks = Array.prototype.slice.call(
+            document.querySelectorAll('.nav-links a[href^="#"]')
+        );
+        var linkById = {};
+        navLinks.forEach(function (link) {
+            var id = link.getAttribute('href').slice(1);
+            if (id) linkById[id] = link;
+        });
+        var sections = Object.keys(linkById)
+            .map(function (id) { return document.getElementById(id); })
+            .filter(Boolean);
+        if ('IntersectionObserver' in window && sections.length) {
+            var spyObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    var link = linkById[entry.target.id];
+                    if (!link) return;
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(function (l) { l.classList.remove('is-active'); });
+                        link.classList.add('is-active');
+                    }
+                });
+            }, { rootMargin: '-45% 0px -50% 0px' });
+            sections.forEach(function (s) { spyObserver.observe(s); });
+        }
+    })();
+</script>
 </body>
 </html>

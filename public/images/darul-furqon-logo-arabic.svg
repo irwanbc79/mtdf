@@ -1,8 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="620" height="620" viewBox="0 0 620 620" fill="none">
-  <g fill="#F0C45A" stroke="#062B23" stroke-width="2" paint-order="stroke fill" font-family="Noto Naskh Arabic, Amiri, Scheherazade New, serif" font-weight="700" text-anchor="middle">
-    <text x="310" y="82" font-size="58" direction="rtl" unicode-bidi="bidi-override">تحفيظ دار</text>
-    <text x="491" y="164" font-size="54" direction="rtl" unicode-bidi="bidi-override" transform="rotate(55 491 164)">معهد</text>
-    <text x="129" y="164" font-size="54" direction="rtl" unicode-bidi="bidi-override" transform="rotate(-55 129 164)">الفرقان</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="620" viewBox="0 0 620 620" fill="none" role="img" aria-label="Maahad Tahfiz Darul Furqon">
+  <defs>
+    <linearGradient id="dfGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7D97C"/>
+      <stop offset="0.5" stop-color="#F0C45A"/>
+      <stop offset="1" stop-color="#CE982F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Bulan sabit + bintang (finial atas) -->
+  <g fill="url(#dfGold)" stroke="#062B23" stroke-width="2" paint-order="stroke fill">
+    <path d="M300 92a44 44 0 1 0 30 71 34 34 0 1 1-30-71z"/>
+    <path d="M360 118l4.4 9 9.9 1.4-7.2 7 1.7 9.8-8.8-4.6-8.8 4.6 1.7-9.8-7.2-7 9.9-1.4z"/>
   </g>
-  <path d="M119 185C164 93 249 51 310 51c61 0 146 42 191 134" stroke="#D5A23B" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- Busur ornamen atas (garis lengkung yang dipercantik) -->
+  <path d="M150 208Q310 120 470 208" stroke="url(#dfGold)" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M178 214Q310 148 442 214" stroke="url(#dfGold)" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.55"/>
+  <circle cx="150" cy="208" r="6" fill="url(#dfGold)" stroke="#062B23" stroke-width="1.5"/>
+  <circle cx="470" cy="208" r="6" fill="url(#dfGold)" stroke="#062B23" stroke-width="1.5"/>
+
+  <!-- Nama dalam tulisan Arab -->
+  <g fill="url(#dfGold)" stroke="#062B23" stroke-width="2.5" paint-order="stroke fill"
+     font-family="'Noto Naskh Arabic','Amiri','Scheherazade New',serif" font-weight="700"
+     text-anchor="middle" direction="rtl">
+    <text x="310" y="262" font-size="52">معهد</text>
+    <text x="310" y="342" font-size="78">تحفيظ</text>
+    <text x="310" y="418" font-size="52">دار الفرقان</text>
+  </g>
+
+  <!-- Busur ornamen bawah (cermin) + belah ketupat tengah -->
+  <path d="M150 452Q310 540 470 452" stroke="url(#dfGold)" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M178 446Q310 512 442 446" stroke="url(#dfGold)" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.55"/>
+  <circle cx="150" cy="452" r="6" fill="url(#dfGold)" stroke="#062B23" stroke-width="1.5"/>
+  <circle cx="470" cy="452" r="6" fill="url(#dfGold)" stroke="#062B23" stroke-width="1.5"/>
+  <path d="M310 486l13 10-13 10-13-10z" fill="url(#dfGold)" stroke="#062B23" stroke-width="1.5"/>
 </svg>
