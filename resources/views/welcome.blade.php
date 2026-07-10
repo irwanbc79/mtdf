@@ -1267,10 +1267,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 12%;
+            object-position: center 34%;
+            filter: saturate(.92) contrast(1.04);
         }
 
-        /* Wash + vignette emerald supaya latar foto membaur dgn tema */
+        /* Wash + vignette emerald supaya latar tembok foto meleleh jadi emerald */
         .founder-portrait::before {
             content: "";
             position: absolute;
@@ -1278,8 +1279,9 @@
             z-index: 2;
             pointer-events: none;
             background:
-                linear-gradient(180deg, rgba(6,43,35,.06) 40%, rgba(3,31,26,.62) 100%),
-                radial-gradient(120% 90% at 50% 8%, transparent 55%, rgba(6,43,35,.5) 100%);
+                linear-gradient(180deg, rgba(3,31,26,.72) 0%, rgba(6,43,35,.28) 20%, rgba(6,43,35,.04) 42%, rgba(3,31,26,.30) 74%, rgba(3,31,26,.86) 100%),
+                radial-gradient(125% 78% at 50% 42%, transparent 46%, rgba(6,43,35,.62) 100%),
+                linear-gradient(0deg, rgba(15,81,66,.12), rgba(15,81,66,.12));
         }
 
         .founder-portrait::after {
