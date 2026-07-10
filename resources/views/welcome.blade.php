@@ -21,6 +21,9 @@
             "name": "Maahad Tahfidz Darul Furqon",
             "url": "https://darulfurqon.my",
             "email": "info@darulfurqon.my",
+            "sameAs": [
+                "mailto:tahfizdarulfurqon@gmail.com"
+            ],
             "telephone": "+60174333652",
             "address": {
                 "@@type": "PostalAddress",
@@ -912,7 +915,8 @@
                     <p>Untuk pertanyaan pendaftaran, lawatan kampus, atau maklumat program, hubungi pihak Maahad melalui WhatsApp atau email rasmi.</p>
                     <div class="contact-list">
                         <a href="https://wa.me/60174333652?text=Assalamualaikum%20Maahad%20Tahfidz%20Darul%20Furqon%2C%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank" rel="noopener">WhatsApp: +60 17-433 3652</a>
-                        <a href="mailto:info@darulfurqon.my">Email: info@darulfurqon.my</a>
+                        <a href="mailto:info@darulfurqon.my">Email rasmi: info@darulfurqon.my</a>
+                        <a href="mailto:tahfizdarulfurqon@gmail.com">Email alternatif: tahfizdarulfurqon@gmail.com</a>
                         <a href="https://maps.google.com/?q=2.952421,101.341522" target="_blank" rel="noopener">Google Maps: Maahad Tahfidz Darul Furqon</a>
                     </div>
                     <a class="button gold" href="https://wa.me/60174333652?text=Assalamualaikum%20Maahad%20Tahfidz%20Darul%20Furqon%2C%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank" rel="noopener">Chat WhatsApp +</a>
@@ -959,7 +963,7 @@
                 <div>
                     <h4>Hubungi Kami</h4>
                     <p>Maahad Tahfidz Darul Furqon<br>Selangor, Malaysia</p>
-                    <p><a href="https://wa.me/60174333652" target="_blank" rel="noopener">+60 17-433 3652</a><br><a href="mailto:info@darulfurqon.my">info@darulfurqon.my</a></p>
+                    <p><a href="https://wa.me/60174333652" target="_blank" rel="noopener">+60 17-433 3652</a><br><a href="mailto:info@darulfurqon.my">info@darulfurqon.my</a><br><a href="mailto:tahfizdarulfurqon@gmail.com">tahfizdarulfurqon@gmail.com</a></p>
                 </div>
             </div>
             <div class="copyright">© {{ date('Y') }} Maahad Tahfidz Darul Furqon. Hak cipta terpelihara.</div>
