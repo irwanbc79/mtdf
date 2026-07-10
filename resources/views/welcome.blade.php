@@ -1234,7 +1234,136 @@
             box-shadow: 0 18px 44px rgba(6,43,35,.22);
         }
 
+        .founder-section {
+            overflow: hidden;
+            background:
+                linear-gradient(180deg, rgba(248,239,217,.55), rgba(255,249,236,.96)),
+                var(--cream-50);
+        }
+
+        .founder {
+            display: grid;
+            grid-template-columns: .82fr 1.18fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .founder-portrait {
+            position: relative;
+            margin: 0;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            border-radius: 22px;
+            border: 1px solid rgba(213,162,59,.4);
+            background:
+                radial-gradient(circle at 50% 22%, rgba(15,81,66,.55), transparent 60%),
+                linear-gradient(160deg, var(--emerald-800), var(--emerald-950));
+            box-shadow: var(--shadow);
+        }
+
+        .founder-portrait img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 12%;
+        }
+
+        /* Wash + vignette emerald supaya latar foto membaur dgn tema */
+        .founder-portrait::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            background:
+                linear-gradient(180deg, rgba(6,43,35,.06) 40%, rgba(3,31,26,.62) 100%),
+                radial-gradient(120% 90% at 50% 8%, transparent 55%, rgba(6,43,35,.5) 100%);
+        }
+
+        .founder-portrait::after {
+            content: "";
+            position: absolute;
+            inset: 14px;
+            z-index: 3;
+            pointer-events: none;
+            border: 1px solid rgba(240,196,90,.5);
+            border-radius: 16px;
+        }
+
+        .founder-portrait figcaption {
+            position: absolute;
+            z-index: 4;
+            left: 18px;
+            right: 18px;
+            bottom: 18px;
+            padding: 12px 16px;
+            color: white;
+            text-align: center;
+            background: rgba(3,31,26,.66);
+            border: 1px solid rgba(240,196,90,.34);
+            border-radius: 12px;
+            font-weight: 900;
+            font-size: 15px;
+        }
+
+        .founder-portrait figcaption span {
+            display: block;
+            margin-top: 3px;
+            color: var(--gold-400);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .founder-copy .founder-name {
+            margin-top: 12px;
+            color: var(--emerald-950);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(30px, 3vw, 42px);
+            line-height: 1.02;
+        }
+
+        .founder-role {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 7px 14px;
+            color: var(--emerald-950);
+            background: linear-gradient(180deg, rgba(240,196,90,.34), rgba(213,162,59,.22));
+            border: 1px solid rgba(213,162,59,.5);
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: .04em;
+        }
+
+        .founder-quote {
+            margin-top: 22px;
+            padding-left: 20px;
+            border-left: 4px solid var(--gold-500);
+            color: var(--emerald-900);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 20px;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
         @media (max-width: 1020px) {
+            .founder {
+                grid-template-columns: 1fr;
+                gap: 26px;
+            }
+
+            .founder-portrait {
+                max-width: 420px;
+                margin-inline: auto;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
             .nav-toggle {
                 display: flex;
             }
@@ -1425,6 +1554,7 @@
             <div class="nav-links" id="primary-menu">
                 <a href="#">Utama <span>Home</span></a>
                 <a href="#tentang">Tentang Kami <span>About Us</span></a>
+                <a href="#pengasas">Pengasas <span>Founder</span></a>
                 <a href="#program">Program <span>Programmes</span></a>
                 <a href="#kegiatan">Kegiatan <span>Activities</span></a>
                 <a href="#lokasi">Hubungi Kami <span>Contact</span></a>
@@ -1494,6 +1624,34 @@
                         <h3>Pembangunan Holistik</h3>
                         <p>Menguatkan potensi intelektual, ruhani, emosi, dan fizikal.</p>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="pengasas" class="founder-section">
+            <div class="container founder reveal">
+                <figure class="founder-portrait">
+                    <img src="{{ asset('media/mtdf/founder-umar-al-maidani.jpg') }}" alt="Ustadz Umar Al Maidani, Pengasas Maahad Tahfidz Darul Furqon" loading="lazy" onerror="this.style.display='none'">
+                    <figcaption>Ustadz Umar Al Maidani<span>Pengasas</span></figcaption>
+                </figure>
+                <div class="founder-copy">
+                    <div class="section-kicker">Pengasas &amp; Perintis</div>
+                    <h2>Pengasas Kami <span>Our Founder</span></h2>
+                    <div class="founder-name">Ustadz Umar Al Maidani</div>
+                    <span class="founder-role">Pengasas Maahad Tahfidz Darul Furqon</span>
+                    <p>
+                        Sejak 1992, Ustadz Umar Al Maidani merintis Maahad Tahfidz Darul Furqon
+                        dengan cita-cita membina generasi Qur'ani yang kukuh dalam hafazan,
+                        matang dalam ilmu, dan tinggi dalam adab.
+                    </p>
+                    <p>
+                        Dedikasi beliau menjadi teras pembinaan santri di kampus utama Sentul
+                        serta cawangan Sepang dan Cheras — melahirkan pelajar yang berilmu,
+                        beriman, dan bermanfaat bagi umat.
+                    </p>
+                    <blockquote class="founder-quote">
+                        "Didiklah anak-anak dengan Al-Qur'an, kerana padanya cahaya dunia dan akhirat."
+                    </blockquote>
                 </div>
             </div>
         </section>
