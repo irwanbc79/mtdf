@@ -74,6 +74,17 @@
             font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         }
 
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            opacity: .045;
+            background-image: url("{{ asset('images/islamic-geometric-pattern.svg') }}");
+            background-size: 240px 240px;
+        }
+
         a {
             color: inherit;
             text-decoration: none;
@@ -139,6 +150,41 @@
                 linear-gradient(150deg, transparent 44%, currentColor 45% 46%, transparent 47%);
             background-size: 86px 86px;
             color: var(--gold-400);
+        }
+
+        .islamic-rosette {
+            position: absolute;
+            width: 270px;
+            aspect-ratio: 1;
+            pointer-events: none;
+            opacity: .24;
+            background: url("{{ asset('images/islamic-geometric-pattern.svg') }}") center / contain no-repeat;
+            filter: drop-shadow(0 0 18px rgba(213,162,59,.12));
+        }
+
+        .islamic-rosette::after {
+            content: "";
+            position: absolute;
+            inset: 23%;
+            border: 1px solid rgba(240,196,90,.68);
+            transform: rotate(22.5deg);
+        }
+
+        .islamic-divider {
+            height: 34px;
+            margin: 0;
+            opacity: .72;
+            background:
+                linear-gradient(135deg, transparent 19px, var(--gold-500) 20px 21px, transparent 22px) 0 0 / 40px 40px,
+                linear-gradient(225deg, transparent 19px, var(--gold-500) 20px 21px, transparent 22px) 0 0 / 40px 40px;
+        }
+
+        .arch-frame {
+            position: absolute;
+            pointer-events: none;
+            border: 2px solid rgba(213,162,59,.5);
+            border-bottom: 0;
+            border-radius: 999px 999px 0 0;
         }
 
         .section-head {
@@ -224,6 +270,23 @@
             top: 120px;
             width: 260px;
             height: 340px;
+        }
+
+        .hero > .islamic-rosette {
+            left: -105px;
+            top: 128px;
+            width: 320px;
+            opacity: .31;
+        }
+
+        .hero-pattern-right {
+            position: absolute;
+            inset: 0 0 0 auto;
+            width: 46%;
+            opacity: .1;
+            background-image: url("{{ asset('images/islamic-geometric-pattern.svg') }}");
+            background-size: 210px 210px;
+            mask-image: linear-gradient(90deg, transparent, black 50%);
         }
 
         .nav {
@@ -345,6 +408,24 @@
             box-shadow: 0 30px 90px rgba(0,0,0,.28);
         }
 
+        .hero-media::before {
+            content: "";
+            position: absolute;
+            inset: 18px;
+            z-index: 1;
+            border: 1px solid rgba(255,255,255,.42);
+            border-radius: 24px 0 0 24px;
+            box-shadow: inset 0 0 0 5px rgba(213,162,59,.12);
+            pointer-events: none;
+        }
+
+        .hero-media .arch-frame {
+            z-index: 2;
+            inset: 74px 84px 92px 84px;
+            border-width: 3px;
+            border-color: rgba(240,196,90,.48);
+        }
+
         .hero-media .masjid {
             position: absolute;
             inset: 54px 40px 120px 64px;
@@ -436,6 +517,20 @@
             padding-top: 112px;
         }
 
+        .pillars-section::before,
+        .pillars-section::after {
+            content: "";
+            position: absolute;
+            top: 88px;
+            width: 210px;
+            height: 310px;
+            opacity: .1;
+            background: url("{{ asset('images/islamic-geometric-pattern.svg') }}") center / 210px repeat-y;
+        }
+
+        .pillars-section::before { left: -70px; }
+        .pillars-section::after { right: -70px; }
+
         .pillars-section .ornament {
             right: -80px;
             top: 30px;
@@ -514,10 +609,21 @@
             position: absolute;
             inset: 0;
             opacity: .08;
-            background-image:
-                linear-gradient(30deg, rgba(240,196,90,.8) 12%, transparent 12.5%, transparent 87%, rgba(240,196,90,.8) 87.5%, rgba(240,196,90,.8)),
-                linear-gradient(150deg, rgba(240,196,90,.8) 12%, transparent 12.5%, transparent 87%, rgba(240,196,90,.8) 87.5%, rgba(240,196,90,.8));
-            background-size: 90px 156px;
+            background-image: url("{{ asset('images/islamic-geometric-pattern.svg') }}");
+            background-size: 220px 220px;
+        }
+
+        .programmes::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 76px;
+            height: 28px;
+            opacity: .24;
+            background:
+                linear-gradient(135deg, transparent 19px, var(--gold-400) 20px 21px, transparent 22px) 0 0 / 40px 40px,
+                linear-gradient(225deg, transparent 19px, var(--gold-400) 20px 21px, transparent 22px) 0 0 / 40px 40px;
         }
 
         .programmes h2 {
@@ -552,9 +658,10 @@
             width: 50px;
             height: 50px;
             border: 2px solid var(--gold-500);
-            border-radius: 16px 16px 10px 10px;
-            transform: rotate(45deg);
-            opacity: .42;
+            border-radius: 50%;
+            transform: rotate(22.5deg);
+            opacity: .55;
+            background: url("{{ asset('images/islamic-geometric-pattern.svg') }}") center / 86px 86px;
         }
 
         .program-card .photo {
@@ -635,9 +742,22 @@
         }
 
         .campus-gallery {
+            position: relative;
             display: grid;
             grid-template-columns: 1.2fr .8fr;
             gap: 12px;
+        }
+
+        .campus-gallery::before {
+            content: "";
+            position: absolute;
+            z-index: 4;
+            inset: -16px -16px auto auto;
+            width: 105px;
+            height: 105px;
+            background: url("{{ asset('images/islamic-geometric-pattern.svg') }}") center / contain no-repeat;
+            opacity: .55;
+            pointer-events: none;
         }
 
         .gallery-main,
@@ -692,6 +812,15 @@
             padding: 62px 0;
         }
 
+        .values::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0;
+            height: 190px;
+            background: url("{{ asset('images/islamic-mosque-silhouette.svg') }}") center bottom / cover no-repeat;
+            pointer-events: none;
+        }
+
         .values .ornament {
             inset: 0 auto 0 -90px;
             width: 360px;
@@ -705,6 +834,8 @@
         }
 
         .value-grid {
+            position: relative;
+            z-index: 2;
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             gap: 16px;
@@ -724,12 +855,35 @@
         }
 
         .cta-wrap {
+            overflow: hidden;
             background:
                 linear-gradient(90deg, rgba(255,249,236,.96), rgba(255,249,236,.72)),
                 radial-gradient(circle at 84% 48%, rgba(213,162,59,.34), transparent 18rem);
         }
 
+        .cta-wrap::before {
+            content: "";
+            position: absolute;
+            right: -95px;
+            top: -105px;
+            width: 380px;
+            height: 380px;
+            opacity: .17;
+            background: url("{{ asset('images/islamic-geometric-pattern.svg') }}") center / contain no-repeat;
+        }
+
+        .cta-wrap::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0;
+            height: 150px;
+            opacity: .5;
+            background: url("{{ asset('images/islamic-mosque-silhouette.svg') }}") center bottom / cover no-repeat;
+        }
+
         .cta {
+            position: relative;
+            z-index: 2;
             display: grid;
             grid-template-columns: 1fr .78fr;
             gap: 34px;
@@ -769,6 +923,8 @@
         }
 
         .contact-card {
+            position: relative;
+            overflow: hidden;
             padding: 34px;
             color: white;
             background:
@@ -777,6 +933,18 @@
             border: 1px solid rgba(240,196,90,.2);
             border-radius: 18px;
             box-shadow: var(--shadow);
+        }
+
+        .contact-card::after {
+            content: "";
+            position: absolute;
+            right: -95px;
+            bottom: -95px;
+            width: 250px;
+            height: 250px;
+            opacity: .1;
+            background: url("{{ asset('images/islamic-geometric-pattern.svg') }}") center / contain no-repeat;
+            pointer-events: none;
         }
 
         .contact-card h2 {
@@ -823,6 +991,20 @@
             background:
                 linear-gradient(180deg, var(--emerald-950), var(--emerald-980));
             padding: 48px 0 30px;
+        }
+
+        .footer::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: .055;
+            background-image: url("{{ asset('images/islamic-geometric-pattern.svg') }}");
+            background-size: 220px 220px;
+            pointer-events: none;
+        }
+
+        .footer .container {
+            position: relative;
         }
 
         .footer-grid {
@@ -915,12 +1097,21 @@
             }
 
             .hero h1 {
-                font-size: clamp(42px, 15vw, 62px);
+                max-width: 100%;
+                font-size: clamp(40px, 12.2vw, 48px);
+                line-height: .96;
+                overflow-wrap: anywhere;
             }
 
             .hero-actions,
-            .button {
+            .hero-actions .button {
                 width: 100%;
+            }
+
+            .floating-wa {
+                left: auto;
+                right: 14px;
+                width: auto;
             }
 
             .pillars,
@@ -947,6 +1138,26 @@
                 top: 24px;
                 right: 24px;
             }
+
+            .hero > .islamic-rosette {
+                left: -150px;
+                top: 180px;
+                opacity: .2;
+            }
+
+            .hero-pattern-right {
+                width: 70%;
+                opacity: .055;
+            }
+
+            .hero-media .arch-frame {
+                inset: 86px 38px 92px;
+            }
+
+            .pillars-section::before,
+            .pillars-section::after {
+                opacity: .055;
+            }
         }
     </style>
 </head>
@@ -954,6 +1165,8 @@
 <div class="page">
     <header class="hero">
         <div class="ornament left"></div>
+        <div class="islamic-rosette" aria-hidden="true"></div>
+        <div class="hero-pattern-right" aria-hidden="true"></div>
         <nav class="container nav" aria-label="Navigasi utama">
             <a class="brand" href="#">
                 <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo-128.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
@@ -991,6 +1204,7 @@
             </div>
 
             <div class="hero-media" aria-label="Ilustrasi kampus dan santri Maahad Tahfidz Darul Furqon">
+                <div class="arch-frame" aria-hidden="true"></div>
                 <div class="masjid"></div>
                 <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-logo-256.png') }}" alt="Logo Maahad Tahfidz Darul Furqon">
                 <div class="student-row" aria-hidden="true">
@@ -1003,6 +1217,8 @@
             </div>
         </div>
     </header>
+
+    <div class="islamic-divider" aria-hidden="true"></div>
 
     <main>
         <section id="tentang" class="pillars-section">
