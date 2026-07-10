@@ -3,8 +3,34 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Madrasah Darul Furqon adalah madrasah Islam modern yang memadukan ilmu, iman, adab, tahfizh, dan kesiapan masa depan.">
-    <title>Madrasah Darul Furqon</title>
+    <meta name="description" content="Maahad Tahfidz Darul Furqon adalah madrasah tahfizh moden yang memadukan Al-Qur'an, ilmu, adab, dan pembinaan karakter di Selangor, Malaysia.">
+    <link rel="canonical" href="https://darulfurqon.my">
+    <meta property="og:title" content="Maahad Tahfidz Darul Furqon">
+    <meta property="og:description" content="Pendidikan tahfizh moden berteraskan ilmu, iman, adab, dan kepimpinan.">
+    <meta property="og:url" content="https://darulfurqon.my">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Maahad Tahfidz Darul Furqon</title>
+    <script type="application/ld+json">
+        {
+            "@@context": "https://schema.org",
+            "@@type": "EducationalOrganization",
+            "name": "Maahad Tahfidz Darul Furqon",
+            "url": "https://darulfurqon.my",
+            "email": "info@darulfurqon.my",
+            "telephone": "+60174333652",
+            "address": {
+                "@@type": "PostalAddress",
+                "addressRegion": "Selangor",
+                "addressCountry": "MY"
+            },
+            "geo": {
+                "@@type": "GeoCoordinates",
+                "latitude": 2.952421,
+                "longitude": 101.341522
+            }
+        }
+    </script>
     <style>
         :root {
             --green-950: #062b23;
@@ -503,6 +529,66 @@
             line-height: 1.5;
         }
 
+        .contact-band {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .contact-card {
+            padding: 32px;
+            color: white;
+            background: var(--green-950);
+            border-radius: 18px;
+            box-shadow: 0 22px 54px rgba(6, 43, 35, .18);
+        }
+
+        .contact-card h2 {
+            color: white;
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 14px;
+            margin: 24px 0;
+        }
+
+        .contact-list a,
+        .contact-list span {
+            display: block;
+            padding: 14px 16px;
+            color: rgba(255,255,255,.86);
+            border: 1px solid rgba(243,199,91,.22);
+            border-radius: 10px;
+            background: rgba(255,255,255,.04);
+        }
+
+        .map-frame {
+            min-height: 420px;
+            overflow: hidden;
+            border: 1px solid rgba(216,169,65,.26);
+            border-radius: 18px;
+            background: var(--cream-100);
+        }
+
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            border: 0;
+        }
+
+        .floating-wa {
+            position: fixed;
+            z-index: 20;
+            right: 22px;
+            bottom: 22px;
+            color: #10352d;
+            background: linear-gradient(180deg, var(--gold-400), var(--gold-500));
+            box-shadow: 0 18px 44px rgba(6,43,35,.22);
+        }
+
         .footer {
             color: rgba(255,255,255,.75);
             background: var(--green-950);
@@ -542,6 +628,7 @@
             .hero-grid,
             .campus,
             .cta,
+            .contact-band,
             .footer-grid {
                 grid-template-columns: 1fr;
             }
@@ -607,7 +694,7 @@
         <nav class="container nav" aria-label="Navigasi utama">
             <a class="brand" href="#">
                 <span class="brand-mark">MT</span>
-                <span>Madrasah<small>Darul Furqon</small></span>
+                <span>Maahad Tahfidz<small>Darul Furqon</small></span>
             </a>
             <div class="nav-links">
                 <a href="#">Utama <span>Home</span></a>
@@ -615,7 +702,7 @@
                 <a href="#program">Program <span>Programmes</span></a>
                 <a href="#kampus">Kampus <span>Campus</span></a>
                 <a href="#kontak">Hubungi Kami <span>Contact</span></a>
-                <a class="button gold" href="#kontak">Mohon Sekarang +</a>
+                <a class="button gold" href="https://wa.me/60174333652?text=Assalamualaikum%20Maahad%20Tahfidz%20Darul%20Furqon%2C%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank" rel="noopener">Mohon Sekarang +</a>
             </div>
         </nav>
 
@@ -627,7 +714,7 @@
                     <span>Knowledge, faith, and character for the future.</span>
                 </h1>
                 <p>
-                    Madrasah Darul Furqon membina generasi yang kuat dalam Al-Qur'an, matang dalam ilmu,
+                    Maahad Tahfidz Darul Furqon membina generasi yang kuat dalam Al-Qur'an, matang dalam ilmu,
                     santun dalam adab, dan siap memberi manfaat bagi umat.
                 </p>
                 <p>
@@ -729,7 +816,7 @@
                         A safe, modern, and disciplined environment for focused learning,
                         worship, and character development.
                     </p>
-                    <a class="button gold" href="#kontak">Terokai Kampus +</a>
+                    <a class="button gold" href="https://maps.google.com/?q=2.952421,101.341522" target="_blank" rel="noopener">Terokai Kampus +</a>
                 </div>
                 <div class="campus-gallery">
                     <div class="gallery-main"></div>
@@ -760,14 +847,36 @@
                 <div>
                     <h2>Sertai Perjalanan Bermakna <span>Join A Meaningful Journey</span></h2>
                     <p>
-                        Bersama Madrasah Darul Furqon, anak-anak dibina bukan hanya untuk lulus ujian,
+                        Bersama Maahad Tahfidz Darul Furqon, anak-anak dibina bukan hanya untuk lulus ujian,
                         tetapi untuk membawa cahaya ilmu, iman, dan akhlak ke masyarakat.
                     </p>
-                    <a class="button gold" href="#kontak">Mohon Sekarang +</a>
+                    <a class="button gold" href="https://wa.me/60174333652?text=Assalamualaikum%20Maahad%20Tahfidz%20Darul%20Furqon%2C%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank" rel="noopener">Mohon Sekarang +</a>
                 </div>
                 <div class="quote">
                     "Ya Tuhanku, tambahkanlah kepadaku ilmu."
                     <br><small>Surah Taha: 114</small>
+                </div>
+            </div>
+        </section>
+
+        <section id="lokasi">
+            <div class="container contact-band">
+                <div class="contact-card">
+                    <h2>Hubungi Kami <span>Contact & Location</span></h2>
+                    <p>Untuk pertanyaan pendaftaran, lawatan kampus, atau maklumat program, hubungi pihak Maahad melalui WhatsApp atau email rasmi.</p>
+                    <div class="contact-list">
+                        <a href="https://wa.me/60174333652?text=Assalamualaikum%20Maahad%20Tahfidz%20Darul%20Furqon%2C%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank" rel="noopener">WhatsApp: +60 17-433 3652</a>
+                        <a href="mailto:info@darulfurqon.my">Email: info@darulfurqon.my</a>
+                        <a href="https://maps.google.com/?q=2.952421,101.341522" target="_blank" rel="noopener">Google Maps: Maahad Tahfidz Darul Furqon</a>
+                    </div>
+                    <a class="button gold" href="https://wa.me/60174333652?text=Assalamualaikum%20Maahad%20Tahfidz%20Darul%20Furqon%2C%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank" rel="noopener">Chat WhatsApp +</a>
+                </div>
+                <div class="map-frame">
+                    <iframe
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://maps.google.com/maps?q=2.952421,101.341522&z=15&output=embed"
+                        title="Lokasi Maahad Tahfidz Darul Furqon"></iframe>
                 </div>
             </div>
         </section>
@@ -779,7 +888,7 @@
                 <div>
                     <a class="brand" href="#">
                         <span class="brand-mark">MT</span>
-                        <span>Madrasah<small>Darul Furqon</small></span>
+                        <span>Maahad Tahfidz<small>Darul Furqon</small></span>
                     </a>
                     <p>Membina pendidikan Islam yang melahirkan generasi berilmu, beriman, dan beradab.</p>
                 </div>
@@ -803,13 +912,14 @@
                 </div>
                 <div>
                     <h4>Hubungi Kami</h4>
-                    <p>No. 123, Jalan Ilmu<br>Medan, Sumatera Utara</p>
-                    <p>+62 812 0000 0000<br>info@mtdf.sch.id</p>
+                    <p>Maahad Tahfidz Darul Furqon<br>Selangor, Malaysia</p>
+                    <p><a href="https://wa.me/60174333652" target="_blank" rel="noopener">+60 17-433 3652</a><br><a href="mailto:info@darulfurqon.my">info@darulfurqon.my</a></p>
                 </div>
             </div>
-            <div class="copyright">© {{ date('Y') }} Madrasah Darul Furqon. Hak cipta terpelihara.</div>
+            <div class="copyright">© {{ date('Y') }} Maahad Tahfidz Darul Furqon. Hak cipta terpelihara.</div>
         </div>
     </footer>
+    <a class="button floating-wa" href="https://wa.me/60174333652?text=Assalamualaikum%20Maahad%20Tahfidz%20Darul%20Furqon%2C%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank" rel="noopener">WhatsApp +</a>
 </div>
 </body>
 </html>
