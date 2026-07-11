@@ -1313,6 +1313,111 @@
             pointer-events: none;
         }
 
+        /* ---- Visi & Misi ---- */
+        .vm-section {
+            background:
+                linear-gradient(180deg, rgba(248,239,217,.55), rgba(255,249,236,.96)),
+                var(--cream-100);
+        }
+        .vm-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+        .vm-card {
+            position: relative;
+            padding: 32px 26px;
+            border-radius: 16px;
+            border: 1px solid rgba(213,162,59,.3);
+            background: #fff;
+            box-shadow: 0 16px 40px rgba(3,31,26,.07);
+        }
+        .vm-card .vm-icon {
+            display: grid;
+            place-items: center;
+            width: 56px;
+            height: 56px;
+            margin-bottom: 16px;
+            border-radius: 15px;
+            color: var(--emerald-950);
+            font-size: 26px;
+            font-weight: 900;
+            background: radial-gradient(circle, rgba(240,196,90,.22), transparent 70%), rgba(15,81,66,.06);
+            border: 1px solid rgba(213,162,59,.34);
+        }
+        .vm-card h3 {
+            color: var(--emerald-950);
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        .vm-card p { color: var(--muted); font-size: 14.5px; line-height: 1.66; }
+        .vm-motto {
+            margin-top: 26px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 14px;
+            color: var(--gold-400);
+            background: linear-gradient(135deg, var(--emerald-950), var(--emerald-800));
+            border: 1px solid rgba(240,196,90,.28);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(20px, 2.4vw, 28px);
+            font-weight: 700;
+            letter-spacing: .04em;
+        }
+
+        /* ---- Lanjutan Pengajian (pathway) ---- */
+        .pathway { max-width: 940px; margin: 0 auto; }
+        .path-steps {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: nowrap;
+        }
+        .path-step {
+            flex: 1;
+            text-align: center;
+            padding: 26px 18px;
+            border-radius: 16px;
+            border: 1px solid rgba(240,196,90,.26);
+            background: linear-gradient(160deg, rgba(255,249,236,.06), rgba(255,255,255,.03));
+        }
+        .path-step .path-num {
+            display: grid;
+            place-items: center;
+            width: 46px;
+            height: 46px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            color: #12352d;
+            font-weight: 900;
+            background: linear-gradient(180deg, var(--gold-400), var(--gold-500));
+        }
+        .path-step .path-tag {
+            display: inline-block;
+            margin-bottom: 8px;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--gold-400);
+        }
+        .path-step h3 { color: #fff; font-size: 17px; line-height: 1.15; }
+        .path-step p { color: rgba(255,255,255,.66); font-size: 13px; margin-top: 6px; }
+        .path-arrow {
+            display: flex;
+            align-items: center;
+            padding: 0 6px;
+            color: var(--gold-500);
+            font-size: 26px;
+            font-weight: 900;
+        }
+        @media (max-width: 720px) {
+            .vm-grid { grid-template-columns: 1fr; }
+            .path-steps { flex-direction: column; }
+            .path-arrow { justify-content: center; padding: 8px 0; transform: rotate(90deg); }
+        }
+
         .founder-section {
             overflow: hidden;
             background:
@@ -1734,6 +1839,33 @@
             </div>
         </section>
 
+        <section id="visi-misi" class="vm-section">
+            <div class="container">
+                <div class="section-head" style="justify-content:center;text-align:center;flex-direction:column;gap:8px">
+                    <div class="section-kicker" data-i18n="vm.kicker">Falsafah Kami</div>
+                    <h2 data-i18n="vm.h">Visi &amp; Misi <span>Hala Tuju Darul Furqon</span></h2>
+                </div>
+                <div class="vm-grid reveal">
+                    <article class="vm-card">
+                        <div class="vm-icon">◎</div>
+                        <h3 data-i18n="vm.visi.label">Visi</h3>
+                        <p data-i18n="vm.visi.text">Menjadikan Al-Qur'an dan Hadis sebagai sumber rujukan, dengan tidak meninggalkan kecanggihan semasa, sehingga mampu melahirkan para huffaz yang berdaya saing.</p>
+                    </article>
+                    <article class="vm-card">
+                        <div class="vm-icon">✦</div>
+                        <h3 data-i18n="vm.misi.label">Misi</h3>
+                        <p data-i18n="vm.misi.text">Melahirkan generasi Islamik yang berdaya saing mengikuti arus zaman, tanpa meninggalkan jati diri sebagai Muslim yang bertaqwa dan berilmu.</p>
+                    </article>
+                    <article class="vm-card">
+                        <div class="vm-icon">▣</div>
+                        <h3 data-i18n="vm.objektif.label">Objektif</h3>
+                        <p data-i18n="vm.objektif.text">Menjadikan MTDF sebagai pusat aktiviti keagamaan yang mewujudkan suasana agama yang harmoni dan mesra masyarakat.</p>
+                    </article>
+                </div>
+                <div class="vm-motto reveal" data-i18n="vm.motto">Beriman &middot; Berilmu &middot; Berakhlak</div>
+            </div>
+        </section>
+
         <section id="program">
             <div class="container programmes reveal">
                 <h2 data-i18n="prog.h">Program Kami <span>Tawaran Pendidikan</span></h2>
@@ -1764,6 +1896,40 @@
                 <div class="stat"><div class="icon">▣</div><div><strong>40+</strong><span data-i18n="stat2">Guru Berpengalaman</span></div></div>
                 <div class="stat"><div class="icon">⌂</div><div><strong>10+</strong><span data-i18n="stat3">Tahun Kecemerlangan</span></div></div>
                 <div class="stat"><div class="icon">◎</div><div><strong>Global</strong><span data-i18n="stat4">Komuniti Pembelajaran</span></div></div>
+            </div>
+        </section>
+
+        <section class="values">
+            <div class="container">
+                <div class="section-head" style="justify-content:center;text-align:center;flex-direction:column;gap:8px;margin-bottom:14px">
+                    <div class="section-kicker" style="color:var(--gold-400)" data-i18n="lp.kicker">Laluan Pendidikan</div>
+                    <h2 style="color:#fff" data-i18n="lp.h">Lanjutan Pengajian <span>Dari Tanah Air ke Timur Tengah</span></h2>
+                    <p style="color:rgba(255,255,255,.8);max-width:640px;margin:6px auto 0" data-i18n="lp.intro">Lulusan MTDF berpeluang menyambung pengajian ke peringkat lebih tinggi, dari dalam negara hingga ke Timur Tengah.</p>
+                </div>
+                <div class="pathway reveal">
+                    <div class="path-steps">
+                        <article class="path-step">
+                            <div class="path-num">1</div>
+                            <span class="path-tag" data-i18n="lp.step1.tag">Peringkat Asas</span>
+                            <h3 data-i18n="lp.step1.h">Ma'ahad Tahfidz Darul Furqon</h3>
+                            <p data-i18n="lp.step1.p">Pulau Indah, Selangor</p>
+                        </article>
+                        <div class="path-arrow" aria-hidden="true">→</div>
+                        <article class="path-step">
+                            <div class="path-num">2</div>
+                            <span class="path-tag" data-i18n="lp.step2.tag">Pendalaman</span>
+                            <h3 data-i18n="lp.step2.h">Pondok Pesantren Temboro</h3>
+                            <p data-i18n="lp.step2.p">Jawa Timur, Indonesia</p>
+                        </article>
+                        <div class="path-arrow" aria-hidden="true">→</div>
+                        <article class="path-step">
+                            <div class="path-num">3</div>
+                            <span class="path-tag" data-i18n="lp.step3.tag">Pengajian Tinggi</span>
+                            <h3 data-i18n="lp.step3.h">Timur Tengah</h3>
+                            <p data-i18n="lp.step3.p">Sudan &middot; Mesir &middot; Jordan</p>
+                        </article>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1949,6 +2115,13 @@
                 'founder.p1':`Ma'ahad Tahfidz Darul Furqon ditubuhkan pada Mac 2022 di Kampung Sungai Pinang, Pulau Indah, Selangor — dirintis Ustaz Umar Kurniawan bin Bustami atas wakaf tanah Puan Hajah Salbiah binti Haji Abdul Hamid.`,
                 'founder.p2':`Bermula dengan 20 orang pelajar dan sokongan masyarakat setempat, MTDF terus berkembang membina generasi Qur'ani yang berilmu, beriman, dan berakhlak.`,
                 'founder.quote':`"Didiklah anak-anak dengan Al-Qur'an, kerana padanya cahaya dunia dan akhirat."`,
+                'vm.kicker':`Falsafah Kami`,'vm.h':`Visi &amp; Misi <span>Hala Tuju Darul Furqon</span>`,
+                'vm.visi.label':`Visi`,'vm.visi.text':`Menjadikan Al-Qur'an dan Hadis sebagai sumber rujukan, dengan tidak meninggalkan kecanggihan semasa, sehingga mampu melahirkan para huffaz yang berdaya saing.`,
+                'vm.misi.label':`Misi`,'vm.misi.text':`Melahirkan generasi Islamik yang berdaya saing mengikuti arus zaman, tanpa meninggalkan jati diri sebagai Muslim yang bertaqwa dan berilmu.`,
+                'vm.objektif.label':`Objektif`,'vm.objektif.text':`Menjadikan MTDF sebagai pusat aktiviti keagamaan yang mewujudkan suasana agama yang harmoni dan mesra masyarakat.`,
+                'vm.motto':`Beriman &middot; Berilmu &middot; Berakhlak`,
+                'lp.kicker':`Laluan Pendidikan`,'lp.h':`Lanjutan Pengajian <span>Dari Tanah Air ke Timur Tengah</span>`,'lp.intro':`Lulusan MTDF berpeluang menyambung pengajian ke peringkat lebih tinggi, dari dalam negara hingga ke Timur Tengah.`,
+                'lp.step1.tag':`Peringkat Asas`,'lp.step2.tag':`Pendalaman`,'lp.step3.tag':`Pengajian Tinggi`,'lp.step3.h':`Timur Tengah`,'lp.step3.p':`Sudan &middot; Mesir &middot; Jordan`,
                 'prog.h':`Program Kami <span>Tawaran Pendidikan</span>`,
                 'prog1.h':`Tahfizh Al-Qur'an`,'prog1.p':`Program hafalan intensif dengan pembinaan bacaan, adab, dan muraja'ah.`,
                 'prog2.h':`Akademik Berprestasi`,'prog2.p':`Kurikulum kebangsaan dan diniyah yang disusun untuk prestasi berterusan.`,
@@ -1985,6 +2158,13 @@
                 'founder.p1':`Maahad Tahfidz Darul Furqon was established in March 2022 in Kampung Sungai Pinang, Pulau Indah, Selangor — pioneered by Ustaz Umar Kurniawan bin Bustami on land endowed (waqf) by Puan Hajah Salbiah binti Haji Abdul Hamid.`,
                 'founder.p2':`Beginning with 20 students and the support of the local community, MTDF continues to grow, nurturing a Qur'anic generation that is knowledgeable, faithful, and of good character.`,
                 'founder.quote':`"Educate children with the Qur'an, for in it lies the light of this world and the hereafter."`,
+                'vm.kicker':`Our Philosophy`,'vm.h':`Vision &amp; Mission <span>Our Direction</span>`,
+                'vm.visi.label':`Vision`,'vm.visi.text':`To make the Qur'an and Hadith our primary reference while embracing modern advancement, producing competitive huffaz.`,
+                'vm.misi.label':`Mission`,'vm.misi.text':`To raise a competitive Islamic generation that keeps pace with the times without losing its identity as knowledgeable, God-fearing Muslims.`,
+                'vm.objektif.label':`Objective`,'vm.objektif.text':`To make MTDF a centre of religious activity that fosters a harmonious, community-friendly environment.`,
+                'vm.motto':`Faithful &middot; Knowledgeable &middot; Virtuous`,
+                'lp.kicker':`Education Pathway`,'lp.h':`Continuing Studies <span>From Home to the Middle East</span>`,'lp.intro':`MTDF graduates have the opportunity to continue their studies to higher levels, from within the country to the Middle East.`,
+                'lp.step1.tag':`Foundation`,'lp.step2.tag':`Deepening`,'lp.step3.tag':`Higher Studies`,'lp.step3.h':`Middle East`,'lp.step3.p':`Sudan &middot; Egypt &middot; Jordan`,
                 'prog.h':`Our Programmes <span>What We Offer</span>`,
                 'prog1.h':`Qur'an Memorisation`,'prog1.p':`An intensive memorisation programme building recitation, character, and revision.`,
                 'prog2.h':`Academic Excellence`,'prog2.p':`National and religious curricula designed for sustained achievement.`,
@@ -2021,6 +2201,13 @@
                 'founder.p1':`تأسّس معهد تحفيظ دار الفرقان في مارس 2022 بقرية سونغاي بينانج، بولاو إنداه، سلانجور — على يد الأستاذ عمر كورنياوان بن بستامي، على أرض موقوفة من الحاجة صلبية بنت الحاج عبد الحميد.`,
                 'founder.p2':`بدأ المعهد بعشرين طالباً وبدعم من المجتمع المحلي، ويواصل نموّه في تربية جيل قرآني عالِم مؤمن حَسَن الأخلاق.`,
                 'founder.quote':`«ربّوا الأبناء بالقرآن، فإنّ فيه نور الدنيا والآخرة.»`,
+                'vm.kicker':`فلسفتنا`,'vm.h':`الرؤية والرسالة <span>توجّهنا</span>`,
+                'vm.visi.label':`الرؤية`,'vm.visi.text':`جعل القرآن والسنّة مرجعاً أساسياً مع مواكبة التقدّم الحديث، لتخريج حفظة متميّزين قادرين على المنافسة.`,
+                'vm.misi.label':`الرسالة`,'vm.misi.text':`إعداد جيل إسلامي قادر على المنافسة يواكب العصر دون أن يفقد هويته كمسلم تقيّ عالِم.`,
+                'vm.objektif.label':`الهدف`,'vm.objektif.text':`جعل المعهد مركزاً للأنشطة الدينية يهيّئ أجواءً دينية متناغمة وقريبة من المجتمع.`,
+                'vm.motto':`إيماناً &middot; علماً &middot; خُلُقاً`,
+                'lp.kicker':`المسار التعليمي`,'lp.h':`مواصلة الدراسة <span>من الوطن إلى الشرق الأوسط</span>`,'lp.intro':`يحظى خريجو المعهد بفرصة مواصلة دراستهم إلى مستويات أعلى، من داخل البلاد إلى الشرق الأوسط.`,
+                'lp.step1.tag':`المرحلة الأساسية`,'lp.step2.tag':`التعمّق`,'lp.step3.tag':`الدراسات العليا`,'lp.step3.h':`الشرق الأوسط`,'lp.step3.p':`السودان &middot; مصر &middot; الأردن`,
                 'prog.h':`برامجنا <span>ما نقدّمه</span>`,
                 'prog1.h':`تحفيظ القرآن`,'prog1.p':`برنامج حفظ مكثّف مع إتقان التلاوة والأدب والمراجعة.`,
                 'prog2.h':`التميّز الأكاديمي`,'prog2.p':`مناهج وطنية ودينية مصمّمة لتحصيل مستمر.`,
