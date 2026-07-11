@@ -740,7 +740,7 @@
         }
 
         .programmes::after {
-            content: "";
+            content: none;
             position: absolute;
             left: 0;
             right: 0;
@@ -1000,7 +1000,7 @@
         }
 
         .values::after {
-            content: "";
+            content: none;
             position: absolute;
             inset: auto 0 0;
             height: 190px;
@@ -1060,7 +1060,7 @@
         }
 
         .cta-wrap::after {
-            content: "";
+            content: none;
             position: absolute;
             inset: auto 0 0;
             height: 150px;
@@ -1090,7 +1090,7 @@
         }
 
         .quote::after {
-            content: "";
+            content: none;
             position: absolute;
             right: 24px;
             bottom: 18px;
@@ -1673,11 +1673,8 @@
         </div>
     </header>
 
-    <div class="islamic-divider" aria-hidden="true"></div>
-
     <main>
         <section id="tentang" class="pillars-section">
-            <div class="ornament"></div>
             <div class="container">
                 <div class="pillars reveal">
                     <article class="pillar">
@@ -1831,7 +1828,6 @@
         </section>
 
         <section class="values">
-            <div class="ornament"></div>
             <div class="container">
                 <h2 data-i18n="val.h">Nilai Teras Kami <span>Pegangan Kami</span></h2>
                 <div class="value-grid reveal">
