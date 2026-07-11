@@ -1418,6 +1418,38 @@
             .path-arrow { justify-content: center; padding: 8px 0; transform: rotate(90deg); }
         }
 
+        /* ---- Kurikulum / Jadual Tahfiz ---- */
+        .curriculum { margin-top: 40px; }
+        .schedule-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        .sched-card {
+            padding: 26px 22px;
+            text-align: center;
+            border-radius: 14px;
+            border: 1px solid rgba(213,162,59,.3);
+            background: #fff;
+            box-shadow: 0 14px 34px rgba(3,31,26,.07);
+        }
+        .sched-card .sched-time {
+            display: block;
+            color: var(--gold-600);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .sched-card h4 { margin: 10px 0 6px; color: var(--emerald-950); font-size: 18px; }
+        .sched-card p { color: var(--muted); font-size: 13.5px; line-height: 1.55; }
+        .subjects { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 24px; }
+        .subject-chip {
+            padding: 9px 16px;
+            border-radius: 999px;
+            border: 1px solid rgba(213,162,59,.42);
+            background: rgba(15,81,66,.05);
+            color: var(--emerald-900);
+            font-size: 13px;
+            font-weight: 800;
+        }
+        @media (max-width: 720px) { .schedule-grid { grid-template-columns: 1fr; } }
+
         .founder-section {
             overflow: hidden;
             background:
@@ -1891,6 +1923,44 @@
                 </div>
             </div>
 
+            <div class="container curriculum reveal">
+                <div class="section-head" style="justify-content:center;text-align:center;flex-direction:column;gap:8px">
+                    <div class="section-kicker" data-i18n="cur.kicker">Kurikulum Tahfiz</div>
+                    <h2 data-i18n="cur.h">Jadual Harian <span>Rutin Hafazan Pelajar</span></h2>
+                </div>
+                <div class="schedule-grid">
+                    <div class="sched-card">
+                        <span class="sched-time">8:00 – 9:45</span>
+                        <h4 data-i18n="cur.s1.h">Hafalan Baru</h4>
+                        <p data-i18n="cur.s1.p">Sesi malam menghafal halaman baharu, disemak guru keesokan hari.</p>
+                    </div>
+                    <div class="sched-card">
+                        <span class="sched-time">9:00 – 11:00</span>
+                        <h4 data-i18n="cur.s2.h">Juzu' Baru</h4>
+                        <p data-i18n="cur.s2.p">Mengulang juzu' yang baru dihafal bagi memantapkan hafazan.</p>
+                    </div>
+                    <div class="sched-card">
+                        <span class="sched-time">2:00 – 3:30</span>
+                        <h4 data-i18n="cur.s3.h">Juzu' Lama</h4>
+                        <p data-i18n="cur.s3.p">Mengulang juzu'-juzu' lama mengikut turutan untuk kekal mantap.</p>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:26px">
+                    <div class="section-kicker" style="color:var(--gold-600)" data-i18n="cur.subj">Mata Pelajaran Sokongan</div>
+                </div>
+                <div class="subjects">
+                    <span class="subject-chip">Feqah</span>
+                    <span class="subject-chip">Tajwid</span>
+                    <span class="subject-chip">Tauhid</span>
+                    <span class="subject-chip">Akhlak</span>
+                    <span class="subject-chip">Sirah Nabi</span>
+                    <span class="subject-chip">Jawi</span>
+                    <span class="subject-chip">Solat</span>
+                    <span class="subject-chip" data-i18n="cur.english">Bahasa Inggeris</span>
+                    <span class="subject-chip" data-i18n="cur.computer">Perkomputeran</span>
+                </div>
+            </div>
+
             <div class="container stats reveal">
                 <div class="stat"><div class="icon">☷</div><div><strong>500+</strong><span data-i18n="stat1">Pelajar Aktif</span></div></div>
                 <div class="stat"><div class="icon">▣</div><div><strong>40+</strong><span data-i18n="stat2">Guru Berpengalaman</span></div></div>
@@ -2122,6 +2192,11 @@
                 'vm.motto':`Beriman &middot; Berilmu &middot; Berakhlak`,
                 'lp.kicker':`Laluan Pendidikan`,'lp.h':`Lanjutan Pengajian <span>Dari Tanah Air ke Timur Tengah</span>`,'lp.intro':`Lulusan MTDF berpeluang menyambung pengajian ke peringkat lebih tinggi, dari dalam negara hingga ke Timur Tengah.`,
                 'lp.step1.tag':`Peringkat Asas`,'lp.step2.tag':`Pendalaman`,'lp.step3.tag':`Pengajian Tinggi`,'lp.step3.h':`Timur Tengah`,'lp.step3.p':`Sudan &middot; Mesir &middot; Jordan`,
+                'cur.kicker':`Kurikulum Tahfiz`,'cur.h':`Jadual Harian <span>Rutin Hafazan Pelajar</span>`,
+                'cur.s1.h':`Hafalan Baru`,'cur.s1.p':`Sesi malam menghafal halaman baharu, disemak guru keesokan hari.`,
+                'cur.s2.h':`Juzu' Baru`,'cur.s2.p':`Mengulang juzu' yang baru dihafal bagi memantapkan hafazan.`,
+                'cur.s3.h':`Juzu' Lama`,'cur.s3.p':`Mengulang juzu'-juzu' lama mengikut turutan untuk kekal mantap.`,
+                'cur.subj':`Mata Pelajaran Sokongan`,'cur.english':`Bahasa Inggeris`,'cur.computer':`Perkomputeran`,
                 'prog.h':`Program Kami <span>Tawaran Pendidikan</span>`,
                 'prog1.h':`Tahfizh Al-Qur'an`,'prog1.p':`Program hafalan intensif dengan pembinaan bacaan, adab, dan muraja'ah.`,
                 'prog2.h':`Akademik Berprestasi`,'prog2.p':`Kurikulum kebangsaan dan diniyah yang disusun untuk prestasi berterusan.`,
@@ -2165,6 +2240,11 @@
                 'vm.motto':`Faithful &middot; Knowledgeable &middot; Virtuous`,
                 'lp.kicker':`Education Pathway`,'lp.h':`Continuing Studies <span>From Home to the Middle East</span>`,'lp.intro':`MTDF graduates have the opportunity to continue their studies to higher levels, from within the country to the Middle East.`,
                 'lp.step1.tag':`Foundation`,'lp.step2.tag':`Deepening`,'lp.step3.tag':`Higher Studies`,'lp.step3.h':`Middle East`,'lp.step3.p':`Sudan &middot; Egypt &middot; Jordan`,
+                'cur.kicker':`Tahfiz Curriculum`,'cur.h':`Daily Schedule <span>Students' Memorisation Routine</span>`,
+                'cur.s1.h':`New Memorisation`,'cur.s1.p':`An evening session memorising new pages, reviewed by teachers the next morning.`,
+                'cur.s2.h':`New Juz'`,'cur.s2.p':`Revising the newly memorised juz' to strengthen retention.`,
+                'cur.s3.h':`Previous Juz'`,'cur.s3.p':`Revising earlier juz' in order to keep memorisation firm.`,
+                'cur.subj':`Supporting Subjects`,'cur.english':`English`,'cur.computer':`Computing`,
                 'prog.h':`Our Programmes <span>What We Offer</span>`,
                 'prog1.h':`Qur'an Memorisation`,'prog1.p':`An intensive memorisation programme building recitation, character, and revision.`,
                 'prog2.h':`Academic Excellence`,'prog2.p':`National and religious curricula designed for sustained achievement.`,
@@ -2208,6 +2288,11 @@
                 'vm.motto':`إيماناً &middot; علماً &middot; خُلُقاً`,
                 'lp.kicker':`المسار التعليمي`,'lp.h':`مواصلة الدراسة <span>من الوطن إلى الشرق الأوسط</span>`,'lp.intro':`يحظى خريجو المعهد بفرصة مواصلة دراستهم إلى مستويات أعلى، من داخل البلاد إلى الشرق الأوسط.`,
                 'lp.step1.tag':`المرحلة الأساسية`,'lp.step2.tag':`التعمّق`,'lp.step3.tag':`الدراسات العليا`,'lp.step3.h':`الشرق الأوسط`,'lp.step3.p':`السودان &middot; مصر &middot; الأردن`,
+                'cur.kicker':`منهج التحفيظ`,'cur.h':`الجدول اليومي <span>روتين حفظ الطلاب</span>`,
+                'cur.s1.h':`حفظ جديد`,'cur.s1.p':`جلسة مسائية لحفظ صفحات جديدة، يراجعها المعلّم في اليوم التالي.`,
+                'cur.s2.h':`الجزء الجديد`,'cur.s2.p':`مراجعة الجزء المحفوظ حديثاً لترسيخ الحفظ.`,
+                'cur.s3.h':`الجزء القديم`,'cur.s3.p':`مراجعة الأجزاء السابقة بالترتيب للحفاظ على متانة الحفظ.`,
+                'cur.subj':`المواد المساندة`,'cur.english':`اللغة الإنجليزية`,'cur.computer':`الحاسوب`,
                 'prog.h':`برامجنا <span>ما نقدّمه</span>`,
                 'prog1.h':`تحفيظ القرآن`,'prog1.p':`برنامج حفظ مكثّف مع إتقان التلاوة والأدب والمراجعة.`,
                 'prog2.h':`التميّز الأكاديمي`,'prog2.p':`مناهج وطنية ودينية مصمّمة لتحصيل مستمر.`,

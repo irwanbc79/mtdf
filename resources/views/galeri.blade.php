@@ -16,6 +16,10 @@
         ['file' => 'keluarga.jpg',   'title' => 'Keluarga Besar Darul Furqon', 'desc' => 'Ukhuwah pelajar dan guru'],
         ['file' => 'tazkirah.jpg',   'title' => 'Tazkirah & Motivasi',         'desc' => 'Santapan rohani pelajar'],
         ['file' => 'santriwati.jpg', 'title' => 'Pelajar Perempuan Darul Furqon', 'desc' => "Membina generasi Qur'ani"],
+        ['file' => 'campus-mtdf.jpg',   'title' => 'Kampus MTDF',              'desc' => 'Pulau Indah, Selangor'],
+        ['file' => 'kelas.jpg',         'title' => 'Kelas Pengajian',          'desc' => 'Suasana pembelajaran harian'],
+        ['file' => 'muraja-putri.jpg',  'title' => "Muraja'ah Pelajar Puteri", 'desc' => 'Mengulang hafazan bersama'],
+        ['file' => 'perhimpunan.jpg',   'title' => 'Perhimpunan Pelajar',      'desc' => 'Kedisiplinan dan kebersamaan'],
     ];
 
     $videos = [
@@ -294,7 +298,11 @@
                     {t:`Communal Feast`,d:`The etiquette of eating together`},
                     {t:`The Darul Furqon Family`,d:`Brotherhood of students and teachers`},
                     {t:`Reminder & Motivation`,d:`Spiritual nourishment`},
-                    {t:`Female Students`,d:`Nurturing a Qur'anic generation`}
+                    {t:`Female Students`,d:`Nurturing a Qur'anic generation`},
+                    {t:`MTDF Campus`,d:`Pulau Indah, Selangor`},
+                    {t:`Learning Class`,d:`The daily learning atmosphere`},
+                    {t:`Female Students' Revision`,d:`Revising memorisation together`},
+                    {t:`Student Assembly`,d:`Discipline and togetherness`}
                 ],
                 ar: [
                     {t:`حلقة القرآن`,d:`توجيه الحفظ مع الأساتذة`},
@@ -308,7 +316,11 @@
                     {t:`مأدبة جماعية`,d:`آداب الطعام جماعة`},
                     {t:`أسرة دار الفرقان`,d:`أخوّة الطلاب والمعلمين`},
                     {t:`تذكير وتحفيز`,d:`غذاء روحي`},
-                    {t:`طالبات دار الفرقان`,d:`بناء جيل قرآني`}
+                    {t:`طالبات دار الفرقان`,d:`بناء جيل قرآني`},
+                    {t:`حرم المعهد`,d:`بولاو إنداه، سلانجور`},
+                    {t:`حصة الدراسة`,d:`أجواء التعلّم اليومي`},
+                    {t:`مراجعة الطالبات`,d:`مراجعة الحفظ معاً`},
+                    {t:`طابور الطلاب`,d:`الانضباط والتآلف`}
                 ]
             };
             var VIDEOS = {
