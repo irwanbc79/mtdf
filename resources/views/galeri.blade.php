@@ -74,7 +74,7 @@
         .gnav-right { display:flex; align-items:center; gap:12px; }
         .brand { display:flex; align-items:center; gap:12px; }
         .brand-emblem {
-            display:grid; width:58px; height:58px; place-items:center; padding:0;
+            display:grid; width:80px; height:90px; place-items:center; padding:0; margin:-10px 0;
             background:transparent;
         }
         .brand-emblem img { width:100%; height:100%; object-fit:contain; }
@@ -174,7 +174,7 @@
     <header class="gnav">
         <div class="container">
             <a class="brand" href="{{ url('/') }}">
-                <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-crest-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
+                <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
                 <span><b>Maahad Tahfidz</b><small>DARUL FURQON</small></span>
             </a>
             <div class="gnav-right">

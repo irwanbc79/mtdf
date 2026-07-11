@@ -363,9 +363,10 @@
 
         .brand-emblem {
             display: grid;
-            width: 70px;
-            height: 70px;
+            width: 104px;
+            height: 118px;
             place-items: center;
+            margin: -12px 0;
             padding: 0;
             border: 0;
             border-radius: 0;
@@ -1658,8 +1659,9 @@
             }
 
             .brand-emblem {
-                width: 58px;
-                height: 58px;
+                width: 84px;
+                height: 96px;
+                margin: -10px 0;
             }
 
             .brand-emblem.arabic-lockup {
@@ -1760,7 +1762,7 @@
         <div class="hero-pattern-right" aria-hidden="true"></div>
         <nav class="container nav" aria-label="Navigasi utama">
             <a class="brand" href="#">
-                <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-crest-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
+                <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
                 <span>Maahad Tahfidz<small>Darul Furqon</small></span>
             </a>
             <input type="checkbox" id="nav-toggle" class="nav-toggle-cb" hidden>
@@ -2124,7 +2126,7 @@
             <div class="footer-grid">
                 <div>
                     <a class="brand" href="#">
-                        <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-crest-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
+                        <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
                         <span>Maahad Tahfidz<small>Darul Furqon</small></span>
                     </a>
                     <p data-i18n="foot.tagline">Membina pendidikan Islam yang melahirkan generasi berilmu, beriman, dan beradab.</p>
