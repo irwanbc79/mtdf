@@ -588,12 +588,12 @@
             z-index: 5;
             top: 32px;
             right: 34px;
-            width: 132px;
-            height: 154px;
+            width: 138px;
+            height: 138px;
             object-fit: contain;
             object-position: center;
-            padding: 11px 12px;
-            border-radius: 16px;
+            padding: 10px;
+            border-radius: 18px;
             border: 1px solid rgba(213,162,59,.42);
             background: rgba(4, 32, 26, .84);
             box-shadow: 0 18px 44px rgba(3,31,26,.2);
@@ -1571,8 +1571,8 @@
             }
 
             .hero-logo-watermark {
-                width: 104px;
-                height: 122px;
+                width: 108px;
+                height: 108px;
                 top: 20px;
                 right: 20px;
             }
@@ -1650,7 +1650,7 @@
 
             <div class="hero-media" aria-label="Halaqah Al-Qur'an pelajar Maahad Tahfidz Darul Furqon">
                 <img class="hero-photo" src="{{ asset('media/mtdf/hero-tahfizh.jpeg') }}" alt="Pelajar Maahad Tahfidz Darul Furqon mengikuti halaqah Al-Qur'an" fetchpriority="high">
-                <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-logo-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon">
+                <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-crest-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon">
                 <span class="hero-label" data-i18n="hero.label">Halaqah Al-Qur'an &amp; Pembinaan Adab</span>
             </div>
         </div>
