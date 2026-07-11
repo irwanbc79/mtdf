@@ -734,6 +734,7 @@
             position: absolute;
             inset: 0;
             opacity: .08;
+            pointer-events: none;
             background-image: url("{{ asset('images/islamic-geometric-pattern.svg') }}");
             background-size: 220px 220px;
         }
@@ -746,6 +747,7 @@
             top: 76px;
             height: 28px;
             opacity: .24;
+            pointer-events: none;
             background:
                 linear-gradient(135deg, transparent 19px, var(--gold-400) 20px 21px, transparent 22px) 0 0 / 40px 40px,
                 linear-gradient(225deg, transparent 19px, var(--gold-400) 20px 21px, transparent 22px) 0 0 / 40px 40px;
@@ -1294,6 +1296,21 @@
         html[dir="rtl"] .campus-copy::before { left: auto; right: 0; border-left: 0; border-right: 4px solid var(--gold-500); border-radius: 0 70px 0 0; }
         html[dir="rtl"] .quote { border-left: 0; border-right: 4px solid var(--gold-500); }
         html[dir="rtl"] .founder-quote { padding-left: 0; padding-right: 20px; border-left: 0; border-right: 4px solid var(--gold-500); }
+
+        /* Semua overlay hiasan tidak menghalang klik pada butang/pautan */
+        .hero::before, .hero::after,
+        .pillars-section::before, .pillars-section::after,
+        .program-card::before,
+        .campus-copy::before, .campus-gallery::before,
+        .media-section::before,
+        .values::after,
+        .cta-wrap::before, .cta-wrap::after,
+        .quote::after,
+        .contact-card::after,
+        .footer::before,
+        .islamic-rosette::after {
+            pointer-events: none;
+        }
 
         .founder-section {
             overflow: hidden;

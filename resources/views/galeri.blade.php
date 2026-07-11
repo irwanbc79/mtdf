@@ -145,6 +145,15 @@
         .gfoot .powered-by { margin-top:6px; color:rgba(255,255,255,.5); font-size:13px; }
         .gfoot .powered-by a { color:var(--gold-400); font-weight:800; }
 
+        .fab-stack { position:fixed; right:22px; bottom:22px; z-index:70; display:flex; flex-direction:column; gap:12px; align-items:center; }
+        .fab { display:grid; place-items:center; width:54px; height:54px; border:0; border-radius:50%; cursor:pointer; box-shadow:0 12px 30px rgba(3,31,26,.32); transition:transform .2s, box-shadow .2s, opacity .25s; }
+        .fab:hover { transform:translateY(-3px); box-shadow:0 16px 38px rgba(3,31,26,.4); }
+        .fab svg { width:27px; height:27px; display:block; }
+        .fab-wa { background:#25d366; color:#fff; }
+        .fab-top { background:linear-gradient(180deg,var(--gold-400),var(--gold-500)); color:#12352d; opacity:0; visibility:hidden; transform:translateY(12px); }
+        .fab-top.show { opacity:1; visibility:visible; transform:none; }
+        @media (max-width:600px){ .fab-stack{ right:14px; bottom:14px; } .fab{ width:50px; height:50px; } }
+
         .lb { position:fixed; inset:0; z-index:60; display:none; align-items:center; justify-content:center; background:rgba(2,18,14,.92); backdrop-filter:blur(4px); padding:24px; }
         .lb.open { display:flex; }
         .lb-img { max-width:min(1100px,92vw); max-height:82vh; border-radius:12px; border:1px solid rgba(240,196,90,.35); box-shadow:0 30px 90px rgba(0,0,0,.5); object-fit:contain; }
@@ -231,6 +240,15 @@
             <div class="powered-by">Powered by <a href="https://morabangun.com" target="_blank" rel="noopener">morabangun.com</a></div>
         </div>
     </footer>
+
+    <div class="fab-stack">
+        <button type="button" class="fab fab-top" id="scrollTop" aria-label="Kembali ke atas" title="Ke atas">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </button>
+        <a class="fab fab-wa" href="{{ $wa }}" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.2 4.79 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.42 1.31-1.95 1.35-.5.05-.99.24-3.33-.7-2.82-1.13-4.6-4.02-4.74-4.2-.14-.18-1.13-1.5-1.13-2.86 0-1.36.71-2.03.96-2.31.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.62.48.24.56.81 1.96.88 2.1.07.14.12.31.02.49-.09.18-.14.29-.28.45-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.18-.21.69-.8.87-1.08.18-.28.37-.23.62-.14.25.09 1.6.76 1.87.9.28.14.46.21.53.32.07.12.07.68-.17 1.36z"/></svg>
+        </a>
+    </div>
 
     <div class="lb" id="lightbox" aria-hidden="true">
         <span class="lb-count" id="lbCount"></span>
@@ -330,6 +348,18 @@
             var savedLang = 'ms';
             try { savedLang = localStorage.getItem('df_lang') || 'ms'; } catch (e) {}
             applyLang(savedLang);
+
+            // ---------- Butang kembali ke atas ----------
+            var reduceMo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var scrollTopBtn = document.getElementById('scrollTop');
+            if (scrollTopBtn) {
+                var toggleTop = function () { scrollTopBtn.classList.toggle('show', window.pageYOffset > 400); };
+                window.addEventListener('scroll', toggleTop, { passive: true });
+                toggleTop();
+                scrollTopBtn.addEventListener('click', function () {
+                    window.scrollTo({ top: 0, behavior: reduceMo ? 'auto' : 'smooth' });
+                });
+            }
 
             // ---------- Lightbox ----------
             var lb = document.getElementById('lightbox');
