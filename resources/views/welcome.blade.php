@@ -43,9 +43,10 @@
             "telephone": "+60174333652",
             "address": {
                 "@@type": "PostalAddress",
-                "streetAddress": "Kampung Padang Balang, Sentul",
-                "addressLocality": "Kuala Lumpur",
-                "addressRegion": "Wilayah Persekutuan Kuala Lumpur",
+                "streetAddress": "Lot 5713, Jalan Dato' Harun, Kampung Sungai Pinang",
+                "addressLocality": "Pulau Indah, Pelabuhan Klang",
+                "addressRegion": "Selangor",
+                "postalCode": "42920",
                 "addressCountry": "MY"
             }
         }
@@ -586,14 +587,14 @@
         .hero-logo-watermark {
             position: absolute;
             z-index: 5;
-            top: 32px;
-            right: 34px;
-            width: 138px;
-            height: 138px;
+            top: 30px;
+            right: 32px;
+            width: 136px;
+            height: 158px;
             object-fit: contain;
             object-position: center;
-            padding: 10px;
-            border-radius: 18px;
+            padding: 12px 13px;
+            border-radius: 16px;
             border: 1px solid rgba(213,162,59,.42);
             background: rgba(4, 32, 26, .84);
             box-shadow: 0 18px 44px rgba(3,31,26,.2);
@@ -1344,9 +1345,9 @@
             inset: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            object-position: center bottom;
-            filter: drop-shadow(0 18px 26px rgba(0,0,0,.35));
+            object-fit: cover;
+            object-position: center top;
+            filter: drop-shadow(0 14px 22px rgba(0,0,0,.28));
         }
 
         /* Foto founder kini cutout transparan; latar emerald frame jadi backdrop studio */
@@ -1588,8 +1589,8 @@
             }
 
             .hero-logo-watermark {
-                width: 108px;
-                height: 108px;
+                width: 106px;
+                height: 124px;
                 top: 20px;
                 right: 20px;
             }
@@ -1667,7 +1668,7 @@
 
             <div class="hero-media" aria-label="Halaqah Al-Qur'an pelajar Maahad Tahfidz Darul Furqon">
                 <img class="hero-photo" src="{{ asset('media/mtdf/hero-tahfizh.jpeg') }}" alt="Pelajar Maahad Tahfidz Darul Furqon mengikuti halaqah Al-Qur'an" fetchpriority="high">
-                <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-crest-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon">
+                <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-logo-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon">
                 <span class="hero-label" data-i18n="hero.label">Halaqah Al-Qur'an &amp; Pembinaan Adab</span>
             </div>
         </div>
@@ -1718,14 +1719,13 @@
                     <div class="founder-name">Ustadz Umar Kurniawan bin Bustami</div>
                     <span class="founder-role" data-i18n="founder.role">Pengasas Maahad Tahfidz Darul Furqon</span>
                     <p data-i18n="founder.p1">
-                        Sejak Mac 2022, Ustadz Umar Kurniawan bin Bustami merintis Maahad Tahfidz Darul Furqon
-                        dengan cita-cita membina generasi Qur'ani yang kukuh dalam hafazan,
-                        matang dalam ilmu, dan tinggi dalam adab.
+                        Ma'ahad Tahfidz Darul Furqon ditubuhkan pada Mac 2022 di Kampung Sungai Pinang,
+                        Pulau Indah, Selangor — dirintis Ustaz Umar Kurniawan bin Bustami atas wakaf tanah
+                        Puan Hajah Salbiah binti Haji Abdul Hamid.
                     </p>
                     <p data-i18n="founder.p2">
-                        Dedikasi beliau menjadi teras pembinaan pelajar di kampus utama Sentul
-                        serta cawangan Sepang dan Cheras — melahirkan pelajar yang berilmu,
-                        beriman, dan bermanfaat bagi umat.
+                        Bermula dengan 20 orang pelajar dan sokongan masyarakat setempat, MTDF terus
+                        berkembang membina generasi Qur'ani yang berilmu, beriman, dan berakhlak.
                     </p>
                     <blockquote class="founder-quote" data-i18n="founder.quote">
                         "Didiklah anak-anak dengan Al-Qur'an, kerana padanya cahaya dunia dan akhirat."
@@ -1868,7 +1868,7 @@
                         <a href="{{ $wa }}" target="_blank" rel="noopener">WhatsApp: +60 17-433 3652</a>
                         <a href="mailto:info@darulfurqon.my" data-i18n="con.email1">Email rasmi: info@darulfurqon.my</a>
                         <a href="mailto:tahfizdarulfurqon@gmail.com" data-i18n="con.email2">Email alternatif: tahfizdarulfurqon@gmail.com</a>
-                        <a href="https://maps.google.com/?q=Maahad+Tahfiz+Darul+Furqon+Sentul+Kuala+Lumpur" target="_blank" rel="noopener">Google Maps: Maahad Tahfidz Darul Furqon</a>
+                        <a href="https://maps.google.com/?q=Maahad+Tahfidz+Darul+Furqon+Kampung+Sungai+Pinang+Pulau+Indah+Selangor" target="_blank" rel="noopener">Google Maps: Maahad Tahfidz Darul Furqon</a>
                     </div>
                     <a class="button gold" href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="con.chat">Chat WhatsApp +</a>
                 </div>
@@ -1876,7 +1876,7 @@
                     <iframe
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"
-                        src="https://maps.google.com/maps?q=Maahad+Tahfiz+Darul+Furqon+Sentul+Kuala+Lumpur&z=15&output=embed"
+                        src="https://maps.google.com/maps?q=Maahad+Tahfidz+Darul+Furqon+Kampung+Sungai+Pinang+Pulau+Indah+Selangor&z=15&output=embed"
                         title="Lokasi Maahad Tahfidz Darul Furqon"></iframe>
                 </div>
             </div>
@@ -1913,8 +1913,7 @@
                 </div>
                 <div>
                     <h4 data-i18n="nav.contact">Hubungi Kami</h4>
-                    <p>Maahad Tahfidz Darul Furqon<br>Kampung Padang Balang, Sentul<br>Kuala Lumpur, Malaysia</p>
-                    <p data-i18n="foot.branches">Cawangan: Sepang &amp; Cheras</p>
+                    <p>Maahad Tahfidz Darul Furqon<br>Lot 5713, Jalan Dato' Harun<br>Kampung Sungai Pinang, 42920 Pulau Indah<br>Pelabuhan Klang, Selangor</p>
                     <p><a href="{{ $waPlain }}" target="_blank" rel="noopener">+60 17-433 3652</a><br><a href="mailto:info@darulfurqon.my">info@darulfurqon.my</a><br><a href="mailto:tahfizdarulfurqon@gmail.com">tahfizdarulfurqon@gmail.com</a></p>
                 </div>
             </div>
@@ -1947,8 +1946,8 @@
                 'pillar4.h':`Komuniti &amp; Kerjasama`,'pillar4.p':`Kolaborasi bersama ibu bapa dan komuniti.`,
                 'pillar5.h':`Pembangunan Holistik`,'pillar5.p':`Menguatkan potensi intelektual, ruhani, emosi, dan fizikal.`,
                 'founder.caption':`Ustadz Umar Kurniawan bin Bustami<span>Pengasas</span>`,'founder.kicker':`Pengasas &amp; Perintis`,'founder.h':`Pengasas Kami <span>Peneraju Darul Furqon</span>`,'founder.role':`Pengasas Maahad Tahfidz Darul Furqon`,
-                'founder.p1':`Sejak Mac 2022, Ustadz Umar Kurniawan bin Bustami merintis Maahad Tahfidz Darul Furqon dengan cita-cita membina generasi Qur'ani yang kukuh dalam hafazan, matang dalam ilmu, dan tinggi dalam adab.`,
-                'founder.p2':`Dedikasi beliau menjadi teras pembinaan pelajar di kampus utama Sentul serta cawangan Sepang dan Cheras — melahirkan pelajar yang berilmu, beriman, dan bermanfaat bagi umat.`,
+                'founder.p1':`Ma'ahad Tahfidz Darul Furqon ditubuhkan pada Mac 2022 di Kampung Sungai Pinang, Pulau Indah, Selangor — dirintis Ustaz Umar Kurniawan bin Bustami atas wakaf tanah Puan Hajah Salbiah binti Haji Abdul Hamid.`,
+                'founder.p2':`Bermula dengan 20 orang pelajar dan sokongan masyarakat setempat, MTDF terus berkembang membina generasi Qur'ani yang berilmu, beriman, dan berakhlak.`,
                 'founder.quote':`"Didiklah anak-anak dengan Al-Qur'an, kerana padanya cahaya dunia dan akhirat."`,
                 'prog.h':`Program Kami <span>Tawaran Pendidikan</span>`,
                 'prog1.h':`Tahfizh Al-Qur'an`,'prog1.p':`Program hafalan intensif dengan pembinaan bacaan, adab, dan muraja'ah.`,
@@ -1983,8 +1982,8 @@
                 'pillar4.h':`Community &amp; Cooperation`,'pillar4.p':`Collaboration with parents and the community.`,
                 'pillar5.h':`Holistic Development`,'pillar5.p':`Strengthening intellectual, spiritual, emotional, and physical potential.`,
                 'founder.caption':`Ustadz Umar Kurniawan bin Bustami<span>Founder</span>`,'founder.kicker':`Founder &amp; Pioneer`,'founder.h':`Our Founder <span>Leader of Darul Furqon</span>`,'founder.role':`Founder of Maahad Tahfidz Darul Furqon`,
-                'founder.p1':`Since March 2022, Ustadz Umar Kurniawan bin Bustami has pioneered Maahad Tahfidz Darul Furqon with the aspiration of nurturing a Qur'anic generation — firm in memorisation, mature in knowledge, and high in character.`,
-                'founder.p2':`His dedication is the cornerstone of student development at the main Sentul campus and the Sepang and Cheras branches — producing students who are knowledgeable, faithful, and beneficial to the ummah.`,
+                'founder.p1':`Maahad Tahfidz Darul Furqon was established in March 2022 in Kampung Sungai Pinang, Pulau Indah, Selangor — pioneered by Ustaz Umar Kurniawan bin Bustami on land endowed (waqf) by Puan Hajah Salbiah binti Haji Abdul Hamid.`,
+                'founder.p2':`Beginning with 20 students and the support of the local community, MTDF continues to grow, nurturing a Qur'anic generation that is knowledgeable, faithful, and of good character.`,
                 'founder.quote':`"Educate children with the Qur'an, for in it lies the light of this world and the hereafter."`,
                 'prog.h':`Our Programmes <span>What We Offer</span>`,
                 'prog1.h':`Qur'an Memorisation`,'prog1.p':`An intensive memorisation programme building recitation, character, and revision.`,
@@ -2019,8 +2018,8 @@
                 'pillar4.h':`المجتمع والتعاون`,'pillar4.p':`التعاون مع أولياء الأمور والمجتمع.`,
                 'pillar5.h':`تنمية شاملة`,'pillar5.p':`تقوية القدرات العقلية والروحية والعاطفية والجسدية.`,
                 'founder.caption':`الأستاذ عمر كورنياوان بن بستامي<span>المؤسس</span>`,'founder.kicker':`المؤسس والرائد`,'founder.h':`مؤسسنا <span>قائد دار الفرقان</span>`,'founder.role':`مؤسس معهد تحفيظ دار الفرقان`,
-                'founder.p1':`منذ مارس 2022، أسّس الأستاذ عمر كورنياوان بن بستامي معهد تحفيظ دار الفرقان بهدف تربية جيل قرآني راسخ في الحفظ، ناضج في العلم، رفيع في الأدب.`,
-                'founder.p2':`تفانيه هو أساس تربية الطلاب في الحرم الرئيسي بسنتول وفرعَي سيبانج وشيراس — لتخريج طلاب علماء مؤمنين نافعين للأمّة.`,
+                'founder.p1':`تأسّس معهد تحفيظ دار الفرقان في مارس 2022 بقرية سونغاي بينانج، بولاو إنداه، سلانجور — على يد الأستاذ عمر كورنياوان بن بستامي، على أرض موقوفة من الحاجة صلبية بنت الحاج عبد الحميد.`,
+                'founder.p2':`بدأ المعهد بعشرين طالباً وبدعم من المجتمع المحلي، ويواصل نموّه في تربية جيل قرآني عالِم مؤمن حَسَن الأخلاق.`,
                 'founder.quote':`«ربّوا الأبناء بالقرآن، فإنّ فيه نور الدنيا والآخرة.»`,
                 'prog.h':`برامجنا <span>ما نقدّمه</span>`,
                 'prog1.h':`تحفيظ القرآن`,'prog1.p':`برنامج حفظ مكثّف مع إتقان التلاوة والأدب والمراجعة.`,
