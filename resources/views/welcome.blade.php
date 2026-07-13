@@ -344,14 +344,38 @@
             mask-image: linear-gradient(90deg, transparent, black 50%);
         }
 
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(4, 32, 26, .82);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(240, 196, 90, .14);
+            transition: background .3s ease, box-shadow .3s ease, border-color .3s ease;
+        }
+        .site-header.scrolled {
+            background: rgba(3, 25, 20, .97);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, .34);
+            border-bottom-color: rgba(240, 196, 90, .22);
+        }
+
         .nav {
             position: relative;
             z-index: 4;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 24px 0;
+            padding: 14px 0;
         }
+        .brand-emblem, .brand > span:last-child, .brand > span:last-child small {
+            transition: width .3s ease, height .3s ease, font-size .3s ease, margin .3s ease;
+        }
+        .site-header.scrolled .brand-emblem { width: 82px; height: 78px; margin: -6px 0; }
+        .site-header.scrolled .brand > span:last-child { font-size: 12px; }
+        .site-header.scrolled .brand > span:last-child small { font-size: 18px; }
+        .site-header.scrolled .nav { padding: 7px 0; }
+        .site-header.scrolled .nav-links { gap: 18px; font-size: 13px; transition: gap .3s ease, font-size .3s ease; }
 
         .brand {
             display: flex;
@@ -1265,6 +1289,8 @@
         .fab:hover { transform: translateY(-3px); box-shadow: 0 16px 38px rgba(3,31,26,.4); }
         .fab svg { width: 27px; height: 27px; display: block; }
         .fab-wa { background: #25d366; color: #fff; }
+        .fab-infak { background: var(--emerald-800); color: var(--gold-400); border: 1px solid rgba(240,196,90,.55); }
+        .fab-infak:hover { color: var(--gold-400); }
         .fab-top {
             background: linear-gradient(180deg, var(--gold-400), var(--gold-500));
             color: #12352d;
@@ -1623,6 +1649,13 @@
             .founder-portrait {
                 max-width: 420px;
                 margin-inline: auto;
+                width: 100%;
+                aspect-ratio: auto;
+            }
+            .founder-portrait img {
+                position: relative;
+                height: auto;
+                aspect-ratio: 4 / 5;
             }
 
             .nav-toggle {
@@ -2054,12 +2087,71 @@
             .pdf-modal__title { font-size: 12.5px; }
             .pdf-modal__link { padding: 6px 9px; font-size: 11.5px; }
         }
+
+        /* ===== Infak & Sedekah Jariah ===== */
+        .infak-section {
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            background:
+                radial-gradient(900px 420px at 88% 12%, rgba(240,196,90,.18), transparent 60%),
+                linear-gradient(135deg, var(--emerald-980), var(--emerald-800));
+            border-top: 1px solid rgba(240,196,90,.16);
+            border-bottom: 1px solid rgba(240,196,90,.16);
+        }
+        .infak-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+            gap: 48px;
+            align-items: center;
+            padding: 78px 0;
+        }
+        .infak-poster { margin: 0; position: relative; }
+        .infak-poster a { display: block; border-radius: 20px; overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,.42); border: 1px solid rgba(240,196,90,.3); transition: transform .3s ease; }
+        .infak-poster a:hover { transform: translateY(-4px); }
+        .infak-poster img { width: 100%; display: block; }
+        .infak-poster figcaption { margin-top: 10px; text-align: center; color: rgba(255,255,255,.6); font-size: 12px; }
+        .infak-copy .section-kicker { color: var(--gold-400); }
+        .infak-copy h2 { color: #fff; margin-bottom: 16px; }
+        .infak-copy h2 span { display: block; color: var(--gold-400); font-size: .62em; font-weight: 800; margin-top: 4px; }
+        .infak-lead { color: rgba(255,255,255,.86); font-size: 15.5px; line-height: 1.7; }
+        .infak-hadith {
+            margin: 20px 0;
+            padding: 14px 20px;
+            border-left: 4px solid var(--gold-500);
+            border-radius: 0 12px 12px 0;
+            background: rgba(255,255,255,.05);
+            color: rgba(255,255,255,.9);
+            font-style: italic;
+            line-height: 1.6;
+            font-size: 14.5px;
+        }
+        .infak-hadith span { display: block; margin-top: 8px; font-style: normal; font-weight: 800; color: var(--gold-400); font-size: 12.5px; }
+        .infak-points { list-style: none; margin: 18px 0 24px; padding: 0; display: grid; gap: 10px; }
+        .infak-points li { position: relative; padding-left: 28px; color: rgba(255,255,255,.88); font-size: 14.5px; line-height: 1.5; }
+        .infak-points li::before {
+            content: "\2713"; position: absolute; left: 0; top: 1px;
+            width: 18px; height: 18px; border-radius: 50%;
+            display: grid; place-items: center; font-size: 11px;
+            background: rgba(240,196,90,.18); color: var(--gold-400); font-weight: 900;
+        }
+        .infak-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+        html[dir="rtl"] .infak-hadith { border-left: 0; border-right: 4px solid var(--gold-500); border-radius: 12px 0 0 12px; }
+        html[dir="rtl"] .infak-points li { padding-left: 0; padding-right: 28px; }
+        html[dir="rtl"] .infak-points li::before { left: auto; right: 0; }
+        @media (max-width: 860px) {
+            .infak-grid { grid-template-columns: 1fr; gap: 28px; padding: 56px 0; justify-items: center; text-align: center; }
+            .infak-poster { max-width: 320px; }
+            .infak-copy { text-align: center; }
+            .infak-hadith { text-align: left; }
+            .infak-points { justify-items: start; text-align: left; max-width: 420px; margin-inline: auto; }
+            .infak-actions { justify-content: center; }
+        }
     </style>
 </head>
 <body>
 <div class="page">
-    <header class="hero">
-        <div class="hero-pattern-right" aria-hidden="true"></div>
+    <header class="site-header" id="siteHeader">
         <nav class="container nav" aria-label="Navigasi utama">
             <a class="brand" href="#">
                 <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo-full.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
@@ -2084,10 +2176,15 @@
                 <a href="#program" data-i18n="nav.programmes">Program</a>
                 <a href="#kegiatan" data-i18n="nav.activities">Kegiatan</a>
                 <a href="{{ url('/galeri') }}" data-i18n="nav.gallery">Galeri</a>
+                <a href="#infak" data-i18n="nav.infak">Infak</a>
                 <a href="#lokasi" data-i18n="nav.contact">Hubungi Kami</a>
                 <a class="button gold" href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="nav.apply">Mohon Sekarang +</a>
             </div>
         </nav>
+    </header>
+
+    <header class="hero">
+        <div class="hero-pattern-right" aria-hidden="true"></div>
 
         <div class="container hero-grid">
             <div class="hero-copy">
@@ -2452,10 +2549,10 @@
             </div>
 
             <div class="container stats reveal">
-                <div class="stat"><div class="icon">☷</div><div><strong>500+</strong><span data-i18n="stat1">Pelajar Aktif</span></div></div>
-                <div class="stat"><div class="icon">▣</div><div><strong>40+</strong><span data-i18n="stat2">Guru Berpengalaman</span></div></div>
-                <div class="stat"><div class="icon">⌂</div><div><strong>10+</strong><span data-i18n="stat3">Tahun Kecemerlangan</span></div></div>
-                <div class="stat"><div class="icon">◎</div><div><strong>Global</strong><span data-i18n="stat4">Komuniti Pembelajaran</span></div></div>
+                <div class="stat"><div class="icon">☷</div><div><strong>40</strong><span data-i18n="stat1">Pelajar Lelaki (Banin)</span></div></div>
+                <div class="stat"><div class="icon">❁</div><div><strong>20</strong><span data-i18n="stat2">Pelajar Perempuan (Banat)</span></div></div>
+                <div class="stat"><div class="icon">▣</div><div><strong>4</strong><span data-i18n="stat3">Guru Hafazan &amp; Fardhu Ain</span></div></div>
+                <div class="stat"><div class="icon">⌂</div><div><strong>2022</strong><span data-i18n="stat4">Tahun Penubuhan</span></div></div>
             </div>
         </section>
 
@@ -2567,6 +2664,32 @@
             </div>
         </section>
 
+        <section id="infak" class="infak-section">
+            <div class="container infak-grid reveal">
+                <figure class="infak-poster">
+                    <a href="{{ asset('media/mtdf/donasi-qr-poster.jpg') }}" target="_blank" rel="noopener" aria-label="Buka poster QR donasi">
+                        <img src="{{ asset('media/mtdf/donasi-qr-poster.jpg') }}" alt="Poster QR DuitNow untuk infak &amp; sedekah Maahad Tahfidz Darul Furqon" loading="lazy">
+                    </a>
+                    <figcaption data-i18n="inf.cap">Ketik untuk paparan penuh &amp; imbas QR</figcaption>
+                </figure>
+                <div class="infak-copy">
+                    <div class="section-kicker" data-i18n="inf.kicker">Wakaf &middot; Infak &middot; Sedekah Jariah</div>
+                    <h2 data-i18n="inf.h">Sokong Perjalanan Tahfiz <span>Amal Yang Terus Mengalir</span></h2>
+                    <p class="infak-lead" data-i18n="inf.lead">MTDF dibina atas wakaf tanah dan sumbangan masyarakat. Setiap infak anda menjadi sedekah jariah &mdash; pahalanya terus mengalir selama Al-Qur'an dihafal dan diamalkan pelajar.</p>
+                    <blockquote class="infak-hadith" data-i18n="inf.hadith">"Apabila mati anak Adam, terputuslah amalannya kecuali tiga perkara: sedekah jariah, ilmu yang dimanfaatkan, dan anak soleh yang mendoakannya."<span>&mdash; Hadis Riwayat Muslim</span></blockquote>
+                    <ul class="infak-points">
+                        <li data-i18n="inf.p1">Membina generasi huffaz Al-Qur'an</li>
+                        <li data-i18n="inf.p2">Menyokong keperluan harian &amp; pendidikan pelajar</li>
+                        <li data-i18n="inf.p3">Pahala berterusan sebagai sedekah jariah</li>
+                    </ul>
+                    <div class="infak-actions">
+                        <a class="button gold" href="{{ asset('media/mtdf/donasi-qr-poster.jpg') }}" download data-i18n="inf.dl">Muat Turun QR +</a>
+                        <a class="button dark" href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="inf.wa">Hubungi untuk Wakaf +</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="cta-wrap">
             <div class="container cta reveal">
                 <div>
@@ -2651,6 +2774,9 @@
         <button type="button" class="fab fab-top" id="scrollTop" aria-label="Kembali ke atas" title="Ke atas">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
         </button>
+        <a class="fab fab-infak" href="#infak" aria-label="Infak &amp; Sedekah" title="Infak &amp; Sedekah">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </a>
         <a class="fab fab-wa" href="{{ $wa }}" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.2 4.79 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.42 1.31-1.95 1.35-.5.05-.99.24-3.33-.7-2.82-1.13-4.6-4.02-4.74-4.2-.14-.18-1.13-1.5-1.13-2.86 0-1.36.71-2.03.96-2.31.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.62.48.24.56.81 1.96.88 2.1.07.14.12.31.02.49-.09.18-.14.29-.28.45-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.18-.21.69-.8.87-1.08.18-.28.37-.23.62-.14.25.09 1.6.76 1.87.9.28.14.46.21.53.32.07.12.07.68-.17 1.36z"/></svg>
         </a>
@@ -2661,7 +2787,8 @@
         // ---------- i18n (MS / EN / AR) ----------
         var I18N = {
             ms: {
-                'nav.home':`Utama`,'nav.about':`Tentang Kami`,'nav.founder':`Pengasas`,'nav.story':`Sejarah`,'nav.programmes':`Program`,'nav.activities':`Kegiatan`,'nav.gallery':`Galeri`,'nav.contact':`Hubungi Kami`,'nav.apply':`Mohon Sekarang +`,
+                'nav.home':`Utama`,'nav.about':`Tentang Kami`,'nav.founder':`Pengasas`,'nav.story':`Sejarah`,'nav.programmes':`Program`,'nav.activities':`Kegiatan`,'nav.gallery':`Galeri`,'nav.infak':`Infak`,'nav.contact':`Hubungi Kami`,'nav.apply':`Mohon Sekarang +`,
+                'inf.kicker':`Wakaf &middot; Infak &middot; Sedekah Jariah`,'inf.h':`Sokong Perjalanan Tahfiz <span>Amal Yang Terus Mengalir</span>`,'inf.lead':`MTDF dibina atas wakaf tanah dan sumbangan masyarakat. Setiap infak anda menjadi sedekah jariah &mdash; pahalanya terus mengalir selama Al-Qur'an dihafal dan diamalkan pelajar.`,'inf.hadith':`"Apabila mati anak Adam, terputuslah amalannya kecuali tiga perkara: sedekah jariah, ilmu yang dimanfaatkan, dan anak soleh yang mendoakannya."<span>&mdash; Hadis Riwayat Muslim</span>`,'inf.p1':`Membina generasi huffaz Al-Qur'an`,'inf.p2':`Menyokong keperluan harian &amp; pendidikan pelajar`,'inf.p3':`Pahala berterusan sebagai sedekah jariah`,'inf.cap':`Ketik untuk paparan penuh &amp; imbas QR`,'inf.dl':`Muat Turun QR +`,'inf.wa':`Hubungi untuk Wakaf +`,
                 'hero.eyebrow':`Pendidikan Islam Moden`,
                 'hero.title':`Ilmu, Iman, Amal Menerangi Dunia <span>Membina generasi Qur'ani sejak 2022.</span>`,
                 'hero.lead':`Maahad Tahfidz Darul Furqon membina generasi yang kuat dalam Al-Qur'an, matang dalam ilmu, santun dalam adab, dan siap memberi manfaat bagi umat.`,
@@ -2717,7 +2844,7 @@
                 'prog1.h':`Tahfizh Al-Qur'an`,'prog1.p':`Program hafalan intensif dengan pembinaan bacaan, adab, dan muraja'ah.`,
                 'prog2.h':`Akademik Berprestasi`,'prog2.p':`Kurikulum kebangsaan dan diniyah yang disusun untuk prestasi berterusan.`,
                 'prog3.h':`Diri &amp; Ko-Kurikulum`,'prog3.p':`Aktiviti sukan, kepimpinan, bahasa, dan kemahiran hidup.`,'prog.cta':`Tanya Program Lengkap +`,
-                'stat1':`Pelajar Aktif`,'stat2':`Guru Berpengalaman`,'stat3':`Tahun Kecemerlangan`,'stat4':`Komuniti Pembelajaran`,
+                'stat1':`Pelajar Lelaki (Banin)`,'stat2':`Pelajar Perempuan (Banat)`,'stat3':`Guru Hafazan &amp; Fardhu Ain`,'stat4':`Tahun Penubuhan`,
                 'keg.kicker':`Kehidupan di Darul Furqon`,'keg.h':`Kegiatan Kami <span>Belajar Di Luar Kelas</span>`,
                 'keg.p1':`Pendidikan berlangsung melalui halaqah, ibadah berjemaah, lawatan ilmu, aktiviti fizikal, dan kebersamaan bersama komuniti.`,
                 'keg.p2':`Setiap pengalaman dirancang untuk membina disiplin, keyakinan diri, ukhuwah, dan akhlak yang hidup dalam keseharian pelajar.`,
@@ -2735,7 +2862,8 @@
                 'foot.copyright':`© {{ date('Y') }} Maahad Tahfidz Darul Furqon. Hak cipta terpelihara.`
             },
             en: {
-                'nav.home':`Home`,'nav.about':`About Us`,'nav.founder':`Founder`,'nav.story':`History`,'nav.programmes':`Programmes`,'nav.activities':`Activities`,'nav.gallery':`Gallery`,'nav.contact':`Contact`,'nav.apply':`Apply Now +`,
+                'nav.home':`Home`,'nav.about':`About Us`,'nav.founder':`Founder`,'nav.story':`History`,'nav.programmes':`Programmes`,'nav.activities':`Activities`,'nav.gallery':`Gallery`,'nav.infak':`Donate`,'nav.contact':`Contact`,'nav.apply':`Apply Now +`,
+                'inf.kicker':`Endowment &middot; Donation &middot; Ongoing Charity`,'inf.h':`Support the Tahfiz Journey <span>A Charity That Keeps Flowing</span>`,'inf.lead':`MTDF was built on endowed land and community donations. Every contribution becomes sadaqah jariah &mdash; its reward keeps flowing as long as the Qur'an is memorised and practised by the students.`,'inf.hadith':`"When a person dies, their deeds end except three: an ongoing charity, beneficial knowledge, and a righteous child who prays for them."<span>&mdash; Narrated by Muslim</span>`,'inf.p1':`Nurturing a generation of Qur'an memorisers`,'inf.p2':`Supporting students' daily needs &amp; education`,'inf.p3':`Continuous reward as ongoing charity`,'inf.cap':`Tap for full view &amp; to scan the QR`,'inf.dl':`Download QR +`,'inf.wa':`Contact for Endowment +`,
                 'hero.eyebrow':`Modern Islamic Education`,
                 'hero.title':`Knowledge, Faith &amp; Action, Enlightening the World <span>Nurturing Qur'anic generations since 2022.</span>`,
                 'hero.lead':`Maahad Tahfidz Darul Furqon nurtures a generation strong in the Qur'an, mature in knowledge, refined in character, and ready to benefit the ummah.`,
@@ -2791,7 +2919,7 @@
                 'prog1.h':`Qur'an Memorisation`,'prog1.p':`An intensive memorisation programme building recitation, character, and revision.`,
                 'prog2.h':`Academic Excellence`,'prog2.p':`National and religious curricula designed for sustained achievement.`,
                 'prog3.h':`Self &amp; Co-Curriculum`,'prog3.p':`Sports, leadership, language, and life-skills activities.`,'prog.cta':`Ask About Programmes +`,
-                'stat1':`Active Students`,'stat2':`Experienced Teachers`,'stat3':`Years of Excellence`,'stat4':`Learning Community`,
+                'stat1':`Male Students (Banin)`,'stat2':`Female Students (Banat)`,'stat3':`Tahfiz &amp; Fardhu Ain Teachers`,'stat4':`Year Established`,
                 'keg.kicker':`Life at Darul Furqon`,'keg.h':`Our Activities <span>Learning Beyond The Classroom</span>`,
                 'keg.p1':`Education unfolds through halaqah, congregational worship, educational visits, physical activity, and community togetherness.`,
                 'keg.p2':`Every experience is designed to build discipline, self-confidence, brotherhood, and living character in students' daily lives.`,
@@ -2809,7 +2937,8 @@
                 'foot.copyright':`© {{ date('Y') }} Maahad Tahfidz Darul Furqon. All rights reserved.`
             },
             ar: {
-                'nav.home':`الرئيسية`,'nav.about':`عن المعهد`,'nav.founder':`المؤسس`,'nav.story':`النشأة`,'nav.programmes':`البرامج`,'nav.activities':`الأنشطة`,'nav.gallery':`المعرض`,'nav.contact':`اتصل بنا`,'nav.apply':`سجّل الآن +`,
+                'nav.home':`الرئيسية`,'nav.about':`عن المعهد`,'nav.founder':`المؤسس`,'nav.story':`النشأة`,'nav.programmes':`البرامج`,'nav.activities':`الأنشطة`,'nav.gallery':`المعرض`,'nav.infak':`تبرّع`,'nav.contact':`اتصل بنا`,'nav.apply':`سجّل الآن +`,
+                'inf.kicker':`وقف &middot; إنفاق &middot; صدقة جارية`,'inf.h':`ادعم مسيرة التحفيظ <span>صدقة جارية لا تنقطع</span>`,'inf.lead':`أُنشئ المعهد على أرض موقوفة وتبرّعات المجتمع. كل إنفاق منك يصبح صدقة جارية &mdash; يستمر أجره ما دام القرآن يُحفظ ويُعمل به لدى الطلاب.`,'inf.hadith':`«إذا مات ابن آدم انقطع عمله إلا من ثلاث: صدقة جارية، أو علم يُنتفع به، أو ولد صالح يدعو له.»<span>&mdash; رواه مسلم</span>`,'inf.p1':`إعداد جيل من حفظة القرآن`,'inf.p2':`دعم الاحتياجات اليومية وتعليم الطلاب`,'inf.p3':`أجر مستمر كصدقة جارية`,'inf.cap':`انقر للعرض الكامل ولمسح رمز QR`,'inf.dl':`تحميل رمز QR +`,'inf.wa':`للتواصل حول الوقف +`,
                 'hero.eyebrow':`تعليم إسلامي عصري`,
                 'hero.title':`العلم والإيمان والعمل تُنير العالم <span>نُربّي أجيالاً قرآنية منذ 2022.</span>`,
                 'hero.lead':`يُنشئ معهد تحفيظ دار الفرقان جيلاً متيناً في القرآن، ناضجاً في العلم، رفيعَ الأدب، مستعداً لنفع الأمّة.`,
@@ -2865,7 +2994,7 @@
                 'prog1.h':`تحفيظ القرآن`,'prog1.p':`برنامج حفظ مكثّف مع إتقان التلاوة والأدب والمراجعة.`,
                 'prog2.h':`التميّز الأكاديمي`,'prog2.p':`مناهج وطنية ودينية مصمّمة لتحصيل مستمر.`,
                 'prog3.h':`الأنشطة والمهارات`,'prog3.p':`أنشطة رياضية وقيادية ولغوية ومهارات حياتية.`,'prog.cta':`استفسر عن البرامج +`,
-                'stat1':`طالب نشط`,'stat2':`معلّم متمرّس`,'stat3':`سنوات من التميّز`,'stat4':`مجتمع تعليمي`,
+                'stat1':`الطلاب (البنون)`,'stat2':`الطالبات (البنات)`,'stat3':`معلّمو التحفيظ وفرض العين`,'stat4':`سنة التأسيس`,
                 'keg.kicker':`الحياة في دار الفرقان`,'keg.h':`أنشطتنا <span>تعلّم خارج الفصل</span>`,
                 'keg.p1':`يتحقّق التعليم عبر الحلقات والعبادة الجماعية والرحلات العلمية والأنشطة البدنية والتآلف المجتمعي.`,
                 'keg.p2':`كلّ تجربة مصمّمة لبناء الانضباط والثقة والأخوّة والأخلاق الحيّة في حياة الطلاب.`,
@@ -2922,11 +3051,16 @@
         var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         // Butang kembali ke atas
+        var siteHeader = document.getElementById('siteHeader');
         var scrollTopBtn = document.getElementById('scrollTop');
+        var onScroll = function () {
+            var y = window.pageYOffset;
+            if (siteHeader) siteHeader.classList.toggle('scrolled', y > 30);
+            if (scrollTopBtn) scrollTopBtn.classList.toggle('show', y > 400);
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
         if (scrollTopBtn) {
-            var toggleTop = function () { scrollTopBtn.classList.toggle('show', window.pageYOffset > 400); };
-            window.addEventListener('scroll', toggleTop, { passive: true });
-            toggleTop();
             scrollTopBtn.addEventListener('click', function () {
                 window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
             });
