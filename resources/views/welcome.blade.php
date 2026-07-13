@@ -1481,6 +1481,43 @@
         }
         @media (max-width: 720px) { .schedule-grid { grid-template-columns: 1fr; } }
 
+        /* Kelas Al-Quran (peringkat) */
+        .quran-classes { margin-top: 26px; }
+        .quran-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 22px; }
+        .quran-tier {
+            position: relative;
+            background: #fff;
+            border: 1px solid rgba(213,162,59,.3);
+            border-radius: 16px;
+            padding: 26px 22px;
+            text-align: center;
+            box-shadow: 0 14px 34px rgba(3,31,26,.07);
+        }
+        .quran-tier .tier-num {
+            display: inline-grid; place-items: center;
+            width: 46px; height: 46px; margin-bottom: 12px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #f6cf69, #d9a23b);
+            color: #12352d; font-weight: 900; font-size: 16px;
+            font-family: Georgia, "Times New Roman", serif;
+            box-shadow: 0 8px 20px rgba(213,162,59,.28);
+        }
+        .quran-tier h4 { margin: 0 0 6px; color: var(--emerald-950); font-size: 18px; }
+        .quran-tier p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.55; }
+
+        /* Aktiviti hujung minggu */
+        .weekend-activity { margin-top: 42px; text-align: center; }
+        .weekend-note { display: inline-block; margin: 6px 0 16px; color: var(--muted); font-size: 12.5px; font-weight: 700; letter-spacing: .02em; }
+        .weekend-items { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+        .weekend-item {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 12px 24px; border-radius: 999px;
+            background: rgba(15,81,66,.06); border: 1px solid rgba(213,162,59,.42);
+            color: var(--emerald-900); font-weight: 800; font-size: 14.5px;
+        }
+        .weekend-item .wk-ic { color: var(--gold-600); font-size: 17px; line-height: 1; }
+        @media (max-width: 720px) { .quran-tiers { grid-template-columns: 1fr; max-width: 380px; margin-inline: auto; } }
+
         /* Jadual harian penuh */
         .daysched-head { text-align: center; margin-top: 42px; }
         .daysched-lead { max-width: 720px; margin: 12px auto 14px; color: var(--muted); font-size: 15px; line-height: 1.65; }
@@ -2467,19 +2504,45 @@
                     <div class="section-kicker" data-i18n="cur.kicker">Kurikulum Tahfiz</div>
                     <h2 data-i18n="cur.h">Jadual Harian <span>Rutin Hafazan Pelajar</span></h2>
                 </div>
-                <div style="text-align:center;margin-top:8px">
-                    <div class="section-kicker" style="color:var(--gold-600)" data-i18n="cur.subj">Mata Pelajaran Sokongan</div>
+                <div class="quran-classes reveal">
+                    <div style="text-align:center">
+                        <div class="section-kicker" style="color:var(--gold-600)" data-i18n="cur.q.kicker">Kelas Al-Quran</div>
+                        <p class="daysched-lead" data-i18n="cur.q.lead">Pengajian Al-Quran mengikut tahap kemampuan pelajar &mdash; dari mengenal huruf sehingga menghafal.</p>
+                    </div>
+                    <div class="quran-tiers">
+                        <article class="quran-tier">
+                            <span class="tier-num">01</span>
+                            <h4 data-i18n="cur.q.iqra.h">Iqra'</h4>
+                            <p data-i18n="cur.q.iqra.p">Peringkat permulaan bagi pelajar yang baru belajar membaca Al-Quran.</p>
+                        </article>
+                        <article class="quran-tier">
+                            <span class="tier-num">02</span>
+                            <h4 data-i18n="cur.q.naz.h">Nazirah</h4>
+                            <p data-i18n="cur.q.naz.p">Bagi pelajar yang sedang melancarkan bacaan Al-Quran.</p>
+                        </article>
+                        <article class="quran-tier">
+                            <span class="tier-num">03</span>
+                            <h4 data-i18n="cur.q.haf.h">Hafazan</h4>
+                            <p data-i18n="cur.q.haf.p">Bagi pelajar yang mahir membaca Al-Quran dan dibolehkan menghafal.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div style="text-align:center;margin-top:40px">
+                    <div class="section-kicker" style="color:var(--gold-600)" data-i18n="cur.subj">Mata Pelajaran</div>
                 </div>
                 <div class="subjects">
+                    <span class="subject-chip" data-i18n="cur.quran">Al-Quran</span>
                     <span class="subject-chip">Feqah</span>
-                    <span class="subject-chip">Tajwid</span>
                     <span class="subject-chip">Tauhid</span>
                     <span class="subject-chip">Akhlak</span>
-                    <span class="subject-chip">Sirah Nabi</span>
+                    <span class="subject-chip">Sirah</span>
                     <span class="subject-chip">Jawi</span>
-                    <span class="subject-chip">Solat</span>
+                    <span class="subject-chip" data-i18n="cur.solat">Bacaan Solat</span>
+                    <span class="subject-chip" data-i18n="cur.arab">Bahasa Arab</span>
+                    <span class="subject-chip" data-i18n="cur.melayu">Bahasa Melayu</span>
                     <span class="subject-chip" data-i18n="cur.english">Bahasa Inggeris</span>
-                    <span class="subject-chip" data-i18n="cur.computer">Perkomputeran</span>
+                    <span class="subject-chip" data-i18n="cur.computer">Komputer</span>
                 </div>
 
                 <div class="daysched-head reveal">
@@ -2528,6 +2591,15 @@
                             <li><span class="t">23:00</span><span class="a" data-i18n="cur.day.15">Rehat malam.</span></li>
                         </ul>
                     </article>
+                </div>
+
+                <div class="weekend-activity reveal">
+                    <div class="section-kicker" style="color:var(--gold-600)" data-i18n="cur.wk.kicker">Aktiviti Hujung Minggu</div>
+                    <span class="weekend-note" data-i18n="cur.wk.note">Khas pelajar asrama</span>
+                    <div class="weekend-items">
+                        <span class="weekend-item"><span class="wk-ic">◎</span><span data-i18n="cur.wk.memanah">Memanah</span></span>
+                        <span class="weekend-item"><span class="wk-ic">✦</span><span data-i18n="cur.wk.riadah">Riadah &amp; Sukan</span></span>
+                    </div>
                 </div>
             </div>
 
@@ -2815,7 +2887,9 @@
                 'cur.s1.h':`Hafalan Baru`,'cur.s1.p':`Sesi malam menghafal halaman baharu, disemak guru keesokan hari.`,
                 'cur.s2.h':`Juzu' Baru`,'cur.s2.p':`Mengulang juzu' yang baru dihafal bagi memantapkan hafazan.`,
                 'cur.s3.h':`Juzu' Lama`,'cur.s3.p':`Mengulang juzu'-juzu' lama mengikut turutan untuk kekal mantap.`,
-                'cur.subj':`Mata Pelajaran Sokongan`,'cur.english':`Bahasa Inggeris`,'cur.computer':`Perkomputeran`,
+                'cur.subj':`Mata Pelajaran`,'cur.english':`Bahasa Inggeris`,'cur.computer':`Komputer`,'cur.quran':`Al-Quran`,'cur.solat':`Bacaan Solat`,'cur.arab':`Bahasa Arab`,'cur.melayu':`Bahasa Melayu`,
+                'cur.q.kicker':`Kelas Al-Quran`,'cur.q.lead':`Pengajian Al-Quran mengikut tahap kemampuan pelajar &mdash; dari mengenal huruf sehingga menghafal.`,'cur.q.iqra.h':`Iqra'`,'cur.q.iqra.p':`Peringkat permulaan bagi pelajar yang baru belajar membaca Al-Quran.`,'cur.q.naz.h':`Nazirah`,'cur.q.naz.p':`Bagi pelajar yang sedang melancarkan bacaan Al-Quran.`,'cur.q.haf.h':`Hafazan`,'cur.q.haf.p':`Bagi pelajar yang mahir membaca Al-Quran dan dibolehkan menghafal.`,
+                'cur.wk.kicker':`Aktiviti Hujung Minggu`,'cur.wk.note':`Khas pelajar asrama`,'cur.wk.memanah':`Memanah`,'cur.wk.riadah':`Riadah &amp; Sukan`,
                 'cur.day.kicker':`Rutin Harian Penuh`,'cur.day.lead':`Hari pelajar disusun seimbang &mdash; ibadah, hafazan Al-Qur'an, ilmu, riadah dan rehat, dari sebelum Subuh hingga malam.`,'cur.day.fast':`Isnin &amp; Khamis &mdash; puasa sunat`,
                 'cur.day.p1':`Dinihari &amp; Subuh`,'cur.day.p2':`Sesi Pagi`,'cur.day.p3':`Tengah Hari`,'cur.day.p4':`Sesi Petang`,'cur.day.p5':`Sesi Malam`,
                 'cur.day.1':`Bangun, mandi, solat Tahajud &amp; mengulang hafazan sementara menanti Subuh.`,'cur.day.2':`Solat Subuh berjemaah &amp; zikir bacaan Ayatul Kihrzi.`,'cur.day.3':`Kelas Sabaq &mdash; hafazan baharu.`,
@@ -2890,7 +2964,9 @@
                 'cur.s1.h':`New Memorisation`,'cur.s1.p':`An evening session memorising new pages, reviewed by teachers the next morning.`,
                 'cur.s2.h':`New Juz'`,'cur.s2.p':`Revising the newly memorised juz' to strengthen retention.`,
                 'cur.s3.h':`Previous Juz'`,'cur.s3.p':`Revising earlier juz' in order to keep memorisation firm.`,
-                'cur.subj':`Supporting Subjects`,'cur.english':`English`,'cur.computer':`Computing`,
+                'cur.subj':`Subjects`,'cur.english':`English`,'cur.computer':`Computing`,'cur.quran':`Qur'an`,'cur.solat':`Prayer Recitation`,'cur.arab':`Arabic`,'cur.melayu':`Malay`,
+                'cur.q.kicker':`Al-Quran Classes`,'cur.q.lead':`Qur'an study by each student's level &mdash; from learning the letters to memorisation.`,'cur.q.iqra.h':`Iqra'`,'cur.q.iqra.p':`The beginning level for students new to reading the Qur'an.`,'cur.q.naz.h':`Nazirah`,'cur.q.naz.p':`For students working on fluency in reciting the Qur'an.`,'cur.q.haf.h':`Hafazan`,'cur.q.haf.p':`For students proficient in reciting the Qur'an and permitted to memorise.`,
+                'cur.wk.kicker':`Weekend Activities`,'cur.wk.note':`For boarding students`,'cur.wk.memanah':`Archery`,'cur.wk.riadah':`Recreation &amp; Sports`,
                 'cur.day.kicker':`Full Daily Routine`,'cur.day.lead':`The student's day is carefully balanced &mdash; worship, Qur'an memorisation, knowledge, recreation and rest, from before dawn until night.`,'cur.day.fast':`Mondays &amp; Thursdays &mdash; sunnah fasting`,
                 'cur.day.p1':`Pre-dawn &amp; Fajr`,'cur.day.p2':`Morning`,'cur.day.p3':`Midday`,'cur.day.p4':`Afternoon`,'cur.day.p5':`Night`,
                 'cur.day.1':`Wake, wash, Tahajjud prayer &amp; revise memorisation while awaiting Fajr.`,'cur.day.2':`Congregational Fajr prayer &amp; recitation of the protective verses (Ayatul Kihrzi).`,'cur.day.3':`Sabaq class &mdash; new memorisation.`,
@@ -2965,7 +3041,9 @@
                 'cur.s1.h':`حفظ جديد`,'cur.s1.p':`جلسة مسائية لحفظ صفحات جديدة، يراجعها المعلّم في اليوم التالي.`,
                 'cur.s2.h':`الجزء الجديد`,'cur.s2.p':`مراجعة الجزء المحفوظ حديثاً لترسيخ الحفظ.`,
                 'cur.s3.h':`الجزء القديم`,'cur.s3.p':`مراجعة الأجزاء السابقة بالترتيب للحفاظ على متانة الحفظ.`,
-                'cur.subj':`المواد المساندة`,'cur.english':`اللغة الإنجليزية`,'cur.computer':`الحاسوب`,
+                'cur.subj':`المواد الدراسية`,'cur.english':`اللغة الإنجليزية`,'cur.computer':`الحاسوب`,'cur.quran':`القرآن`,'cur.solat':`أذكار الصلاة`,'cur.arab':`اللغة العربية`,'cur.melayu':`اللغة الملايوية`,
+                'cur.q.kicker':`حصص القرآن`,'cur.q.lead':`تعليم القرآن حسب مستوى كل طالب &mdash; من تعلّم الحروف حتى الحفظ.`,'cur.q.iqra.h':`اقرأ`,'cur.q.iqra.p':`المرحلة الأولى للطلاب المبتدئين في قراءة القرآن.`,'cur.q.naz.h':`النظرة`,'cur.q.naz.p':`للطلاب الذين يُتقنون تلاوة القرآن نظراً.`,'cur.q.haf.h':`التحفيظ`,'cur.q.haf.p':`للطلاب المتمكّنين من قراءة القرآن والمأذون لهم بالحفظ.`,
+                'cur.wk.kicker':`أنشطة نهاية الأسبوع`,'cur.wk.note':`خاصة لطلاب السكن الداخلي`,'cur.wk.memanah':`الرماية`,'cur.wk.riadah':`الرياضة والألعاب`,
                 'cur.day.kicker':`الروتين اليومي الكامل`,'cur.day.lead':`يوم الطالب متوازن بعناية &mdash; عبادة وحفظ للقرآن وعلم ورياضة وراحة، من قبل الفجر حتى الليل.`,'cur.day.fast':`الإثنين والخميس &mdash; صيام السنّة`,
                 'cur.day.p1':`قبل الفجر والفجر`,'cur.day.p2':`الصباح`,'cur.day.p3':`الظهيرة`,'cur.day.p4':`العصر`,'cur.day.p5':`الليل`,
                 'cur.day.1':`الاستيقاظ والاغتسال وصلاة التهجّد ومراجعة الحفظ في انتظار الفجر.`,'cur.day.2':`صلاة الفجر جماعةً وقراءة آيات الحرز.`,'cur.day.3':`حصة السبق &mdash; حفظ جديد.`,
