@@ -2467,24 +2467,7 @@
                     <div class="section-kicker" data-i18n="cur.kicker">Kurikulum Tahfiz</div>
                     <h2 data-i18n="cur.h">Jadual Harian <span>Rutin Hafazan Pelajar</span></h2>
                 </div>
-                <div class="schedule-grid">
-                    <div class="sched-card">
-                        <span class="sched-time">8:00 – 9:45</span>
-                        <h4 data-i18n="cur.s1.h">Hafalan Baru</h4>
-                        <p data-i18n="cur.s1.p">Sesi malam menghafal halaman baharu, disemak guru keesokan hari.</p>
-                    </div>
-                    <div class="sched-card">
-                        <span class="sched-time">9:00 – 11:00</span>
-                        <h4 data-i18n="cur.s2.h">Juzu' Baru</h4>
-                        <p data-i18n="cur.s2.p">Mengulang juzu' yang baru dihafal bagi memantapkan hafazan.</p>
-                    </div>
-                    <div class="sched-card">
-                        <span class="sched-time">2:00 – 3:30</span>
-                        <h4 data-i18n="cur.s3.h">Juzu' Lama</h4>
-                        <p data-i18n="cur.s3.p">Mengulang juzu'-juzu' lama mengikut turutan untuk kekal mantap.</p>
-                    </div>
-                </div>
-                <div style="text-align:center;margin-top:26px">
+                <div style="text-align:center;margin-top:8px">
                     <div class="section-kicker" style="color:var(--gold-600)" data-i18n="cur.subj">Mata Pelajaran Sokongan</div>
                 </div>
                 <div class="subjects">
