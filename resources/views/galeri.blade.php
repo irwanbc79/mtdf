@@ -74,7 +74,7 @@
         .gnav-right { display:flex; align-items:center; gap:12px; }
         .brand { display:flex; align-items:center; gap:12px; }
         .brand-emblem {
-            display:grid; width:94px; height:106px; place-items:center; padding:0; margin:-14px 0;
+            display:grid; width:116px; height:110px; place-items:center; padding:0; margin:-8px 0;
             background:transparent;
         }
         .brand-emblem img { width:100%; height:100%; object-fit:contain; }

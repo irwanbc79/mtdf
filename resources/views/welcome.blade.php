@@ -363,10 +363,10 @@
 
         .brand-emblem {
             display: grid;
-            width: 116px;
+            width: 140px;
             height: 132px;
             place-items: center;
-            margin: -16px 0;
+            margin: -12px 0;
             padding: 0;
             border: 0;
             border-radius: 0;
@@ -594,11 +594,11 @@
             z-index: 5;
             top: 30px;
             right: 32px;
-            width: 146px;
-            height: 164px;
+            width: 164px;
+            height: 152px;
             object-fit: contain;
             object-position: center;
-            padding: 12px 12px 10px;
+            padding: 12px;
             border-radius: 16px;
             border: 1px solid rgba(213,162,59,.42);
             background: rgba(4, 32, 26, .84);
@@ -1663,9 +1663,9 @@
             }
 
             .brand-emblem {
-                width: 96px;
-                height: 110px;
-                margin: -12px 0;
+                width: 118px;
+                height: 112px;
+                margin: -6px 0;
             }
 
             .brand-emblem.arabic-lockup {
@@ -1732,8 +1732,8 @@
             }
 
             .hero-logo-watermark {
-                width: 112px;
-                height: 126px;
+                width: 128px;
+                height: 120px;
                 top: 20px;
                 right: 20px;
             }
