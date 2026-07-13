@@ -363,10 +363,10 @@
 
         .brand-emblem {
             display: grid;
-            width: 104px;
-            height: 118px;
+            width: 108px;
+            height: 108px;
             place-items: center;
-            margin: -12px 0;
+            margin: -10px 0;
             padding: 0;
             border: 0;
             border-radius: 0;
@@ -410,9 +410,11 @@
 
         .brand > span:last-child small {
             margin-top: 5px;
-            font-size: 14px;
+            font-size: 17px;
             line-height: 1;
-            letter-spacing: .06em;
+            letter-spacing: .04em;
+            color: rgba(255,255,255,.92);
+            font-weight: 800;
         }
 
         .nav-links {
@@ -590,11 +592,11 @@
             z-index: 5;
             top: 30px;
             right: 32px;
-            width: 136px;
-            height: 158px;
+            width: 150px;
+            height: 150px;
             object-fit: contain;
             object-position: center;
-            padding: 12px 13px;
+            padding: 12px;
             border-radius: 16px;
             border: 1px solid rgba(213,162,59,.42);
             background: rgba(4, 32, 26, .84);
@@ -1659,9 +1661,9 @@
             }
 
             .brand-emblem {
-                width: 84px;
-                height: 96px;
-                margin: -10px 0;
+                width: 90px;
+                height: 90px;
+                margin: -8px 0;
             }
 
             .brand-emblem.arabic-lockup {
@@ -1676,7 +1678,7 @@
 
             .brand > span:last-child small {
                 margin-top: 4px;
-                font-size: 13px;
+                font-size: 15px;
             }
 
             .hero {
@@ -1728,8 +1730,8 @@
             }
 
             .hero-logo-watermark {
-                width: 106px;
-                height: 124px;
+                width: 118px;
+                height: 118px;
                 top: 20px;
                 right: 20px;
             }
@@ -2016,7 +2018,7 @@
         <div class="hero-pattern-right" aria-hidden="true"></div>
         <nav class="container nav" aria-label="Navigasi utama">
             <a class="brand" href="#">
-                <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
+                <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-crest-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
                 <span>Maahad Tahfidz<small>Darul Furqon</small></span>
             </a>
             <input type="checkbox" id="nav-toggle" class="nav-toggle-cb" hidden>
@@ -2062,7 +2064,7 @@
 
             <div class="hero-media" aria-label="Halaqah Al-Qur'an pelajar Maahad Tahfidz Darul Furqon">
                 <img class="hero-photo" src="{{ asset('media/mtdf/hero-tahfizh.jpeg') }}" alt="Pelajar Maahad Tahfidz Darul Furqon mengikuti halaqah Al-Qur'an" fetchpriority="high">
-                <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-logo-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon">
+                <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-crest-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon">
                 <span class="hero-label" data-i18n="hero.label">Halaqah Al-Qur'an &amp; Pembinaan Adab</span>
             </div>
         </div>
@@ -2520,7 +2522,7 @@
             <div class="footer-grid">
                 <div>
                     <a class="brand" href="#">
-                        <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
+                        <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-crest-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
                         <span>Maahad Tahfidz<small>Darul Furqon</small></span>
                     </a>
                     <p data-i18n="foot.tagline">Membina pendidikan Islam yang melahirkan generasi berilmu, beriman, dan beradab.</p>
