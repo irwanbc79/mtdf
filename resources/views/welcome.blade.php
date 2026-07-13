@@ -1455,6 +1455,48 @@
         }
         @media (max-width: 720px) { .schedule-grid { grid-template-columns: 1fr; } }
 
+        /* Jadual harian penuh */
+        .daysched-head { text-align: center; margin-top: 42px; }
+        .daysched-lead { max-width: 720px; margin: 12px auto 14px; color: var(--muted); font-size: 15px; line-height: 1.65; }
+        .daysched-fast {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 7px 16px; border-radius: 999px;
+            background: rgba(23,99,79,.09); border: 1px solid rgba(213,162,59,.42);
+            color: var(--emerald-800); font-size: 12.5px; font-weight: 900; letter-spacing: .02em;
+        }
+        .daysched-fast::before { content: "\2739"; color: var(--gold-600); font-size: 13px; }
+        .daysched-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            margin-top: 26px;
+            align-items: start;
+        }
+        .daysched-block {
+            background: #fff;
+            border: 1px solid rgba(213,162,59,.3);
+            border-radius: 16px;
+            padding: 20px 20px 8px;
+            box-shadow: 0 14px 34px rgba(3,31,26,.07);
+        }
+        .daysched-block > header {
+            display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+            padding-bottom: 12px; margin-bottom: 6px;
+            border-bottom: 1px solid var(--line);
+        }
+        .daysched-block h4 { margin: 0; color: var(--emerald-950); font-size: 16px; }
+        .daysched-range { color: var(--gold-600); font-size: 12px; font-weight: 800; font-family: Georgia, "Times New Roman", serif; letter-spacing: .02em; white-space: nowrap; }
+        .daysched-block ul { list-style: none; margin: 0; padding: 0; }
+        .daysched-block li { display: flex; gap: 12px; padding: 9px 0; border-bottom: 1px dashed rgba(14,73,59,.1); }
+        .daysched-block li:last-child { border-bottom: 0; }
+        .daysched-block .t {
+            flex: 0 0 auto; min-width: 46px;
+            color: var(--emerald-900); font-weight: 900; font-size: 13.5px;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+        .daysched-block .a { color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+        html[dir="rtl"] .daysched-block .t { text-align: right; }
+
         .founder-section {
             overflow: hidden;
             background:
@@ -2359,6 +2401,54 @@
                     <span class="subject-chip" data-i18n="cur.english">Bahasa Inggeris</span>
                     <span class="subject-chip" data-i18n="cur.computer">Perkomputeran</span>
                 </div>
+
+                <div class="daysched-head reveal">
+                    <div class="section-kicker" style="color:var(--gold-600)" data-i18n="cur.day.kicker">Rutin Harian Penuh</div>
+                    <p class="daysched-lead" data-i18n="cur.day.lead">Hari pelajar disusun seimbang &mdash; ibadah, hafazan Al-Qur'an, ilmu, riadah dan rehat, dari sebelum Subuh hingga malam.</p>
+                    <span class="daysched-fast" data-i18n="cur.day.fast">Isnin &amp; Khamis &mdash; puasa sunat</span>
+                </div>
+                <div class="daysched-grid reveal">
+                    <article class="daysched-block">
+                        <header><h4 data-i18n="cur.day.p1">Dinihari &amp; Subuh</h4><span class="daysched-range">05:00&ndash;06:45</span></header>
+                        <ul>
+                            <li><span class="t">05:00</span><span class="a" data-i18n="cur.day.1">Bangun, mandi, solat Tahajud &amp; mengulang hafazan sementara menanti Subuh.</span></li>
+                            <li><span class="t">06:00</span><span class="a" data-i18n="cur.day.2">Solat Subuh berjemaah &amp; zikir bacaan Ayatul Kihrzi.</span></li>
+                            <li><span class="t">06:45</span><span class="a" data-i18n="cur.day.3">Kelas Sabaq &mdash; hafazan baharu.</span></li>
+                        </ul>
+                    </article>
+                    <article class="daysched-block">
+                        <header><h4 data-i18n="cur.day.p2">Sesi Pagi</h4><span class="daysched-range">08:00&ndash;11:30</span></header>
+                        <ul>
+                            <li><span class="t">08:00</span><span class="a" data-i18n="cur.day.4">Solat Dhuha, khidmat &amp; sarapan.</span></li>
+                            <li><span class="t">09:00</span><span class="a" data-i18n="cur.day.5">Kelas Sabqi &mdash; ulangan hafazan.</span></li>
+                            <li><span class="t">11:30</span><span class="a" data-i18n="cur.day.6">Rehat (qailulah).</span></li>
+                        </ul>
+                    </article>
+                    <article class="daysched-block">
+                        <header><h4 data-i18n="cur.day.p3">Tengah Hari</h4><span class="daysched-range">13:30&ndash;14:00</span></header>
+                        <ul>
+                            <li><span class="t">13:30</span><span class="a" data-i18n="cur.day.7">Solat Zohor berjemaah &amp; makan tengah hari.</span></li>
+                            <li><span class="t">14:00</span><span class="a" data-i18n="cur.day.8">Kelas Manzil &amp; kelas Fardhu Ain.</span></li>
+                        </ul>
+                    </article>
+                    <article class="daysched-block">
+                        <header><h4 data-i18n="cur.day.p4">Sesi Petang</h4><span class="daysched-range">16:30&ndash;18:30</span></header>
+                        <ul>
+                            <li><span class="t">16:30</span><span class="a" data-i18n="cur.day.9">Solat Asar berjemaah &amp; zikir Ayatul Kihrzi.</span></li>
+                            <li><span class="t">17:00</span><span class="a" data-i18n="cur.day.10">Riadah &amp; sukan.</span></li>
+                            <li><span class="t">18:30</span><span class="a" data-i18n="cur.day.11">Mandi &amp; makan petang.</span></li>
+                        </ul>
+                    </article>
+                    <article class="daysched-block">
+                        <header><h4 data-i18n="cur.day.p5">Sesi Malam</h4><span class="daysched-range">19:30&ndash;23:00</span></header>
+                        <ul>
+                            <li><span class="t">19:30</span><span class="a" data-i18n="cur.day.12">Solat Maghrib berjemaah &amp; kelas hafazan.</span></li>
+                            <li><span class="t">21:30</span><span class="a" data-i18n="cur.day.13">Solat Isyak berjemaah, bacaan Surah Al-Mulk, ta'lim &amp; musyawarah harian.</span></li>
+                            <li><span class="t">22:00</span><span class="a" data-i18n="cur.day.14">Kelas Muraja'ah.</span></li>
+                            <li><span class="t">23:00</span><span class="a" data-i18n="cur.day.15">Rehat malam.</span></li>
+                        </ul>
+                    </article>
+                </div>
             </div>
 
             <div class="container stats reveal">
@@ -2616,6 +2706,13 @@
                 'cur.s2.h':`Juzu' Baru`,'cur.s2.p':`Mengulang juzu' yang baru dihafal bagi memantapkan hafazan.`,
                 'cur.s3.h':`Juzu' Lama`,'cur.s3.p':`Mengulang juzu'-juzu' lama mengikut turutan untuk kekal mantap.`,
                 'cur.subj':`Mata Pelajaran Sokongan`,'cur.english':`Bahasa Inggeris`,'cur.computer':`Perkomputeran`,
+                'cur.day.kicker':`Rutin Harian Penuh`,'cur.day.lead':`Hari pelajar disusun seimbang &mdash; ibadah, hafazan Al-Qur'an, ilmu, riadah dan rehat, dari sebelum Subuh hingga malam.`,'cur.day.fast':`Isnin &amp; Khamis &mdash; puasa sunat`,
+                'cur.day.p1':`Dinihari &amp; Subuh`,'cur.day.p2':`Sesi Pagi`,'cur.day.p3':`Tengah Hari`,'cur.day.p4':`Sesi Petang`,'cur.day.p5':`Sesi Malam`,
+                'cur.day.1':`Bangun, mandi, solat Tahajud &amp; mengulang hafazan sementara menanti Subuh.`,'cur.day.2':`Solat Subuh berjemaah &amp; zikir bacaan Ayatul Kihrzi.`,'cur.day.3':`Kelas Sabaq &mdash; hafazan baharu.`,
+                'cur.day.4':`Solat Dhuha, khidmat &amp; sarapan.`,'cur.day.5':`Kelas Sabqi &mdash; ulangan hafazan.`,'cur.day.6':`Rehat (qailulah).`,
+                'cur.day.7':`Solat Zohor berjemaah &amp; makan tengah hari.`,'cur.day.8':`Kelas Manzil &amp; kelas Fardhu Ain.`,
+                'cur.day.9':`Solat Asar berjemaah &amp; zikir Ayatul Kihrzi.`,'cur.day.10':`Riadah &amp; sukan.`,'cur.day.11':`Mandi &amp; makan petang.`,
+                'cur.day.12':`Solat Maghrib berjemaah &amp; kelas hafazan.`,'cur.day.13':`Solat Isyak berjemaah, bacaan Surah Al-Mulk, ta'lim &amp; musyawarah harian.`,'cur.day.14':`Kelas Muraja'ah.`,'cur.day.15':`Rehat malam.`,
                 'prog.h':`Program Kami <span>Tawaran Pendidikan</span>`,
                 'prog1.h':`Tahfizh Al-Qur'an`,'prog1.p':`Program hafalan intensif dengan pembinaan bacaan, adab, dan muraja'ah.`,
                 'prog2.h':`Akademik Berprestasi`,'prog2.p':`Kurikulum kebangsaan dan diniyah yang disusun untuk prestasi berterusan.`,
@@ -2683,6 +2780,13 @@
                 'cur.s2.h':`New Juz'`,'cur.s2.p':`Revising the newly memorised juz' to strengthen retention.`,
                 'cur.s3.h':`Previous Juz'`,'cur.s3.p':`Revising earlier juz' in order to keep memorisation firm.`,
                 'cur.subj':`Supporting Subjects`,'cur.english':`English`,'cur.computer':`Computing`,
+                'cur.day.kicker':`Full Daily Routine`,'cur.day.lead':`The student's day is carefully balanced &mdash; worship, Qur'an memorisation, knowledge, recreation and rest, from before dawn until night.`,'cur.day.fast':`Mondays &amp; Thursdays &mdash; sunnah fasting`,
+                'cur.day.p1':`Pre-dawn &amp; Fajr`,'cur.day.p2':`Morning`,'cur.day.p3':`Midday`,'cur.day.p4':`Afternoon`,'cur.day.p5':`Night`,
+                'cur.day.1':`Wake, wash, Tahajjud prayer &amp; revise memorisation while awaiting Fajr.`,'cur.day.2':`Congregational Fajr prayer &amp; recitation of the protective verses (Ayatul Kihrzi).`,'cur.day.3':`Sabaq class &mdash; new memorisation.`,
+                'cur.day.4':`Dhuha prayer, service &amp; breakfast.`,'cur.day.5':`Sabqi class &mdash; memorisation revision.`,'cur.day.6':`Rest (qailulah / midday nap).`,
+                'cur.day.7':`Congregational Zuhr prayer &amp; lunch.`,'cur.day.8':`Manzil class &amp; Fardhu Ain class.`,
+                'cur.day.9':`Congregational Asr prayer &amp; recitation of Ayatul Kihrzi.`,'cur.day.10':`Recreation &amp; sports.`,'cur.day.11':`Wash &amp; evening meal.`,
+                'cur.day.12':`Congregational Maghrib prayer &amp; memorisation class.`,'cur.day.13':`Congregational Isha prayer, Surah Al-Mulk, ta'lim &amp; daily consultation.`,'cur.day.14':`Muraja'ah (revision) class.`,'cur.day.15':`Night rest.`,
                 'prog.h':`Our Programmes <span>What We Offer</span>`,
                 'prog1.h':`Qur'an Memorisation`,'prog1.p':`An intensive memorisation programme building recitation, character, and revision.`,
                 'prog2.h':`Academic Excellence`,'prog2.p':`National and religious curricula designed for sustained achievement.`,
@@ -2750,6 +2854,13 @@
                 'cur.s2.h':`الجزء الجديد`,'cur.s2.p':`مراجعة الجزء المحفوظ حديثاً لترسيخ الحفظ.`,
                 'cur.s3.h':`الجزء القديم`,'cur.s3.p':`مراجعة الأجزاء السابقة بالترتيب للحفاظ على متانة الحفظ.`,
                 'cur.subj':`المواد المساندة`,'cur.english':`اللغة الإنجليزية`,'cur.computer':`الحاسوب`,
+                'cur.day.kicker':`الروتين اليومي الكامل`,'cur.day.lead':`يوم الطالب متوازن بعناية &mdash; عبادة وحفظ للقرآن وعلم ورياضة وراحة، من قبل الفجر حتى الليل.`,'cur.day.fast':`الإثنين والخميس &mdash; صيام السنّة`,
+                'cur.day.p1':`قبل الفجر والفجر`,'cur.day.p2':`الصباح`,'cur.day.p3':`الظهيرة`,'cur.day.p4':`العصر`,'cur.day.p5':`الليل`,
+                'cur.day.1':`الاستيقاظ والاغتسال وصلاة التهجّد ومراجعة الحفظ في انتظار الفجر.`,'cur.day.2':`صلاة الفجر جماعةً وقراءة آيات الحرز.`,'cur.day.3':`حصة السبق &mdash; حفظ جديد.`,
+                'cur.day.4':`صلاة الضحى والخدمة والفطور.`,'cur.day.5':`حصة السبقي &mdash; مراجعة الحفظ.`,'cur.day.6':`راحة (القيلولة).`,
+                'cur.day.7':`صلاة الظهر جماعةً والغداء.`,'cur.day.8':`حصة المنزل وحصة فرض العين.`,
+                'cur.day.9':`صلاة العصر جماعةً وقراءة آيات الحرز.`,'cur.day.10':`الرياضة والألعاب.`,'cur.day.11':`الاغتسال وطعام المساء.`,
+                'cur.day.12':`صلاة المغرب جماعةً وحصة الحفظ.`,'cur.day.13':`صلاة العشاء جماعةً وسورة الملك والتعليم والمشاورة اليومية.`,'cur.day.14':`حصة المراجعة.`,'cur.day.15':`راحة الليل.`,
                 'prog.h':`برامجنا <span>ما نقدّمه</span>`,
                 'prog1.h':`تحفيظ القرآن`,'prog1.p':`برنامج حفظ مكثّف مع إتقان التلاوة والأدب والمراجعة.`,
                 'prog2.h':`التميّز الأكاديمي`,'prog2.p':`مناهج وطنية ودينية مصمّمة لتحصيل مستمر.`,
