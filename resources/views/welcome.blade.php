@@ -1754,6 +1754,260 @@
                 opacity: .055;
             }
         }
+
+        /* ===== Section Sejarah / Mengenali Darul Furqon ===== */
+        .story-section {
+            background:
+                radial-gradient(1200px 420px at 12% -10%, rgba(240,196,90,.10), transparent 60%),
+                linear-gradient(180deg, var(--cream-50) 0%, #fffdf8 100%);
+            padding: 84px 0;
+        }
+        .story-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        .story-tab {
+            padding: 11px 20px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: #fff;
+            color: var(--ink);
+            font-size: 13.5px;
+            font-weight: 800;
+            letter-spacing: .01em;
+            cursor: pointer;
+            transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+        }
+        .story-tab:hover { transform: translateY(-2px); border-color: rgba(213,162,59,.5); }
+        .story-tab.is-active {
+            color: #12352d;
+            background: linear-gradient(180deg, #f6cf69 0%, #d9a23b 100%);
+            border-color: transparent;
+            box-shadow: 0 12px 26px rgba(213,162,59,.28);
+        }
+        .story-panel { display: none; }
+        .story-panel.is-active { display: block; animation: storyFade .45s ease both; }
+        @keyframes storyFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+        @media (prefers-reduced-motion: reduce) { .story-panel.is-active { animation: none; } }
+
+        .panel-lead {
+            max-width: 760px;
+            margin: 0 auto 30px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 15.5px;
+            line-height: 1.7;
+        }
+        .panel-note {
+            margin: 26px auto 0;
+            max-width: 720px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* Sejarah Penubuhan — foto + timeline */
+        .story-history {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 44px;
+            align-items: start;
+        }
+        .history-figure {
+            margin: 0;
+            position: sticky;
+            top: 96px;
+        }
+        .history-figure img {
+            width: 100%;
+            border-radius: 18px;
+            background: #fff;
+            box-shadow: var(--shadow);
+        }
+        .history-figure figcaption {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            margin-top: 14px;
+            text-align: center;
+        }
+        .history-figure figcaption strong { color: var(--emerald-950); font-size: 15px; }
+        .history-figure figcaption span { color: var(--gold-600); font-size: 12.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+        .story-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: rgba(23,99,79,.1);
+            color: var(--emerald-800);
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+        .history-lead {
+            margin: 16px 0 26px;
+            color: var(--ink);
+            font-size: 18px;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+        .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 9px; top: 6px; bottom: 6px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--gold-400), rgba(189,132,38,.25));
+        }
+        .timeline li { position: relative; padding: 0 0 26px 40px; }
+        .timeline li:last-child { padding-bottom: 0; }
+        .timeline li::before {
+            content: "";
+            position: absolute;
+            left: 2px; top: 4px;
+            width: 16px; height: 16px;
+            border-radius: 50%;
+            background: var(--gold-500);
+            box-shadow: 0 0 0 4px var(--cream-50), 0 0 0 5px rgba(213,162,59,.4);
+        }
+        .timeline h4 { margin: 0 0 5px; color: var(--emerald-950); font-size: 16.5px; }
+        .timeline p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.65; }
+
+        /* Barisan Peneraju */
+        .leader-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .leader-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 26px 22px;
+            text-align: center;
+            box-shadow: 0 16px 42px rgba(3,31,26,.08);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .leader-card:hover { transform: translateY(-4px); box-shadow: 0 22px 54px rgba(3,31,26,.14); }
+        .leader-photo {
+            width: 132px; height: 132px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--cream-100), var(--cream-200));
+            border: 3px solid var(--gold-400);
+            box-shadow: 0 10px 26px rgba(189,132,38,.22);
+        }
+        .leader-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+        .leader-card h3 { color: var(--emerald-950); font-size: 17px; line-height: 1.3; }
+        .leader-role {
+            display: inline-block;
+            margin: 6px 0 12px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: rgba(23,99,79,.09);
+            color: var(--emerald-700);
+            font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase;
+        }
+        .leader-card p { margin: 0; color: var(--muted); font-size: 13.8px; line-height: 1.6; }
+
+        /* Galeri Lawatan & Riadah */
+        .photo-group { margin-bottom: 30px; }
+        .photo-group:last-child { margin-bottom: 0; }
+        .photo-group-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            color: var(--emerald-950);
+            font-size: 16px;
+            font-weight: 900;
+        }
+        .photo-group-title::before {
+            content: "";
+            width: 22px; height: 3px; border-radius: 3px;
+            background: var(--gold-500);
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+        .photo-grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .photo-grid figure { margin: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 14px 36px rgba(3,31,26,.12); }
+        .photo-grid img {
+            width: 100%; height: 240px; object-fit: cover; display: block;
+            transition: transform .5s ease;
+        }
+        .photo-grid figure:hover img { transform: scale(1.05); }
+
+        .story-actions { margin-top: 44px; text-align: center; }
+
+        /* Modal PDF */
+        .pdf-modal { position: fixed; inset: 0; z-index: 1200; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .pdf-modal[hidden] { display: none; }
+        .pdf-modal__backdrop { position: absolute; inset: 0; background: rgba(3,31,26,.72); backdrop-filter: blur(3px); }
+        .pdf-modal__box {
+            position: relative;
+            width: min(1000px, 100%);
+            height: min(90vh, 900px);
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0,0,0,.5);
+            animation: storyFade .3s ease both;
+        }
+        .pdf-modal__head {
+            display: flex; align-items: center; justify-content: space-between; gap: 14px;
+            padding: 14px 18px;
+            background: var(--emerald-950);
+            color: #fff;
+        }
+        .pdf-modal__title { font-size: 14.5px; font-weight: 800; }
+        .pdf-modal__tools { display: flex; align-items: center; gap: 8px; }
+        .pdf-modal__link {
+            color: var(--gold-400);
+            font-size: 12.5px; font-weight: 800;
+            padding: 7px 12px; border-radius: 8px;
+            border: 1px solid rgba(240,196,90,.35);
+        }
+        .pdf-modal__link:hover { background: rgba(240,196,90,.12); }
+        .pdf-modal__close {
+            width: 34px; height: 34px; border-radius: 8px;
+            background: rgba(255,255,255,.1); color: #fff; font-size: 22px; line-height: 1;
+            cursor: pointer; border: 0;
+        }
+        .pdf-modal__close:hover { background: rgba(255,255,255,.2); }
+        .pdf-modal__body { position: relative; flex: 1; background: #333; }
+        .pdf-modal__body iframe { width: 100%; height: 100%; border: 0; }
+        .pdf-modal__note {
+            position: absolute; left: 0; right: 0; bottom: 0;
+            margin: 0; padding: 10px 16px; text-align: center;
+            background: rgba(0,0,0,.55); color: #f4ead2; font-size: 12px;
+        }
+        html[dir="rtl"] .photo-group-title::before { background: var(--gold-500); }
+
+        @media (max-width: 900px) {
+            .story-history { grid-template-columns: 1fr; gap: 26px; }
+            .history-figure { position: static; max-width: 300px; margin: 0 auto; }
+            .leader-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+        }
+        @media (max-width: 720px) {
+            .story-section { padding: 64px 0; }
+            .story-tab { padding: 9px 15px; font-size: 12.5px; }
+            .photo-grid, .photo-grid-3 { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .photo-grid img { height: 160px; }
+            .history-lead { font-size: 16px; }
+            .pdf-modal__box { height: 92vh; }
+            .pdf-modal__title { font-size: 12.5px; }
+            .pdf-modal__link { padding: 6px 9px; font-size: 11.5px; }
+        }
     </style>
 </head>
 <body>
@@ -1780,6 +2034,7 @@
                 <a href="#" data-i18n="nav.home">Utama</a>
                 <a href="#tentang" data-i18n="nav.about">Tentang Kami</a>
                 <a href="#pengasas" data-i18n="nav.founder">Pengasas</a>
+                <a href="#sejarah" data-i18n="nav.story">Sejarah</a>
                 <a href="#program" data-i18n="nav.programmes">Program</a>
                 <a href="#kegiatan" data-i18n="nav.activities">Kegiatan</a>
                 <a href="{{ url('/galeri') }}" data-i18n="nav.gallery">Galeri</a>
@@ -1873,6 +2128,145 @@
             </div>
         </section>
 
+        <section id="sejarah" class="story-section">
+            <div class="container">
+                <div class="section-head" style="justify-content:center;text-align:center;flex-direction:column;gap:8px">
+                    <div class="section-kicker" data-i18n="st.kicker">Mengenali Darul Furqon</div>
+                    <h2 data-i18n="st.h">Sejarah &amp; Perjalanan <span>Dari Sebidang Wakaf Menjadi Ma'ahad</span></h2>
+                </div>
+
+                <div class="story-tabs" role="tablist">
+                    <button type="button" class="story-tab is-active" data-tab="kisah" data-i18n="st.tab1">Sejarah Penubuhan</button>
+                    <button type="button" class="story-tab" data-tab="peneraju" data-i18n="st.tab2">Barisan Peneraju</button>
+                    <button type="button" class="story-tab" data-tab="lawatan" data-i18n="st.tab3">Lawatan Pendidikan</button>
+                    <button type="button" class="story-tab" data-tab="riadah" data-i18n="st.tab4">Aktiviti Riadah</button>
+                </div>
+
+                {{-- PANEL: Sejarah Penubuhan --}}
+                <div class="story-panel is-active" data-panel="kisah">
+                    <div class="story-history reveal">
+                        <figure class="history-figure">
+                            <img src="{{ asset('media/mtdf/leaders/salbiah.png') }}" alt="Puan Hajah Salbiah binti Haji Abdul Hamid, pewakaf tanah Maahad Tahfidz Darul Furqon" loading="lazy">
+                            <figcaption>
+                                <strong>Puan Hajah Salbiah binti Haji Abdul Hamid</strong>
+                                <span data-i18n="st.k.role">Pewakaf Tanah</span>
+                            </figcaption>
+                        </figure>
+                        <div class="history-body">
+                            <span class="story-badge" data-i18n="st.k.badge">Sejak Mac 2022</span>
+                            <p class="history-lead" data-i18n="st.k.lead">Perjalanan Ma'ahad Tahfidz Darul Furqon bermula daripada sebuah hasrat yang tulus &mdash; keinginan seorang ibu agar tanah miliknya menjadi tapak menyemai para penghafal Al-Qur'an.</p>
+                            <ol class="timeline">
+                                <li>
+                                    <h4 data-i18n="st.k.m1.h">Hasrat Seorang Pewakaf</h4>
+                                    <p data-i18n="st.k.m1.p">Puan Hajah Salbiah binti Haji Abdul Hamid mengimpikan sebuah Ma'ahad Tahfidz dibina di atas tanah miliknya di Kampung Sungai Pinang, Pulau Indah.</p>
+                                </li>
+                                <li>
+                                    <h4 data-i18n="st.k.m2.h">Amanah Diperjuangkan</h4>
+                                    <p data-i18n="st.k.m2.p">Hasrat itu disampaikan kepada Ustaz Umar Kurniawan, lalu beliau memulakan usaha penubuhan dengan sokongan beberapa orang sahabat.</p>
+                                </li>
+                                <li>
+                                    <h4 data-i18n="st.k.m3.h">Mac 2022 &mdash; MTDF Berdiri</h4>
+                                    <p data-i18n="st.k.m3.p">Berbekalkan kewangan yang terhad dan hasil sumbangan orang ramai, MTDF ditubuhkan dengan seramai 20 orang pelajar.</p>
+                                </li>
+                                <li>
+                                    <h4 data-i18n="st.k.m4.h">Berkembang Bersama Masyarakat</h4>
+                                    <p data-i18n="st.k.m4.p">Alhamdulillah, sehingga kini MTDF terus mendapat sokongan masyarakat Pulau Indah, Klang dalam mengembangkan syiar Islam.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- PANEL: Barisan Peneraju --}}
+                <div class="story-panel" data-panel="peneraju">
+                    <p class="panel-lead reveal" data-i18n="st.p.lead">Sebuah amanah yang digerakkan oleh barisan peneraju yang berpengalaman dalam pendidikan tahfiz dan khidmat masyarakat.</p>
+                    <div class="leader-grid reveal">
+                        <article class="leader-card">
+                            <div class="leader-photo"><img src="{{ asset('media/mtdf/leaders/umar.png') }}" alt="Ustaz Umar Kurniawan, Pengasas MTDF" loading="lazy"></div>
+                            <h3>Ustaz Umar Kurniawan</h3>
+                            <span class="leader-role" data-i18n="st.p.umar.role">Pengasas</span>
+                            <p data-i18n="st.p.umar.p">Lahir 3 April 1987 di Medan, Indonesia. Alumni Pondok Pesantren Temboro dan pengajian agama di Sumatera; berpengalaman sebagai guru tahfiz dan warden sejak 2009.</p>
+                        </article>
+                        <article class="leader-card">
+                            <div class="leader-photo"><img src="{{ asset('media/mtdf/leaders/haris.png') }}" alt="Encik Abdul Haris bin Bahrun, Pengerusi MTDF" loading="lazy"></div>
+                            <h3>Encik Abdul Haris bin Bahrun</h3>
+                            <span class="leader-role" data-i18n="st.p.haris.role">Pengerusi</span>
+                            <p data-i18n="st.p.haris.p">Lahir 24 Mei 1970 di Klang, Selangor. Diploma Kejuruteraan Awam, UiTM Shah Alam; bekas Ketua Kampung Sungai Pinang (2008&ndash;2018).</p>
+                        </article>
+                        <article class="leader-card">
+                            <div class="leader-photo"><img src="{{ asset('media/mtdf/leaders/nurhidayah.png') }}" alt="Ustazah Nurhidayah binti Abd Shomad, Mudirah MTDF" loading="lazy"></div>
+                            <h3>Ustazah Nurhidayah binti Abd Shomad</h3>
+                            <span class="leader-role" data-i18n="st.p.nur.role">Mudirah</span>
+                            <p data-i18n="st.p.nur.p">Lahir 20 Ogos 1993 di Alor Setar, Kedah. Alumni Institut Pondok Pasir Tumbuh, Kelantan; berpengalaman mengajar di ma'ahad tahfiz dan sekolah agama.</p>
+                        </article>
+                    </div>
+                    <p class="panel-note reveal" data-i18n="st.p.note">Carta organisasi penuh MTDF &mdash; Pengerusi, Timbalan, Bendahari, Setiausaha dan AJK &mdash; boleh dilihat dalam Profil Penuh (PDF) di bawah.</p>
+                </div>
+
+                {{-- PANEL: Lawatan Pendidikan --}}
+                <div class="story-panel" data-panel="lawatan">
+                    <p class="panel-lead reveal" data-i18n="st.l.lead">Pembelajaran diperluas melampaui bilik darjah melalui lawatan ilmu yang membina pengalaman dan wawasan pelajar.</p>
+                    <div class="photo-group reveal">
+                        <div class="photo-group-title" data-i18n="st.l.g1">Ladang Alam Warisan, Negeri Sembilan</div>
+                        <div class="photo-grid">
+                            <figure><img src="{{ asset('media/mtdf/profil/lawatan-ladang-berkuda.jpg') }}" alt="Aktiviti berkuda di Ladang Alam Warisan, Negeri Sembilan" loading="lazy"></figure>
+                            <figure><img src="{{ asset('media/mtdf/profil/lawatan-ladang-memanah.jpg') }}" alt="Aktiviti memanah semasa lawatan pendidikan" loading="lazy"></figure>
+                        </div>
+                    </div>
+                    <div class="photo-group reveal">
+                        <div class="photo-group-title" data-i18n="st.l.g2">Pondok Pesantren Temboro, Jawa Timur</div>
+                        <div class="photo-grid">
+                            <figure><img src="{{ asset('media/mtdf/profil/lawatan-temboro-gate.jpg') }}" alt="Pintu gerbang Desa Temboro, Jawa Timur, Indonesia" loading="lazy"></figure>
+                            <figure><img src="{{ asset('media/mtdf/profil/lawatan-temboro-group.jpg') }}" alt="Rombongan MTDF melawat Pondok Pesantren Temboro" loading="lazy"></figure>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- PANEL: Aktiviti Riadah --}}
+                <div class="story-panel" data-panel="riadah">
+                    <p class="panel-lead reveal" data-i18n="st.r.lead">Cergas jiwa dan raga &mdash; pelajar dibina melalui sukan sunnah dan riadah kebersamaan yang mengeratkan ukhuwah.</p>
+                    <div class="photo-group reveal">
+                        <div class="photo-group-title" data-i18n="st.r.g1">Sukan Memanah</div>
+                        <div class="photo-grid">
+                            <figure><img src="{{ asset('media/mtdf/profil/riadah-memanah-anak.jpg') }}" alt="Pelajar bersukan memanah" loading="lazy"></figure>
+                            <figure><img src="{{ asset('media/mtdf/profil/riadah-memanah-remaja.jpg') }}" alt="Pelajar dalam aktiviti sukan memanah" loading="lazy"></figure>
+                        </div>
+                    </div>
+                    <div class="photo-group reveal">
+                        <div class="photo-group-title" data-i18n="st.r.g2">Riadah Bersama Masyarakat</div>
+                        <div class="photo-grid photo-grid-3">
+                            <figure><img src="{{ asset('media/mtdf/profil/riadah-pantai.jpg') }}" alt="Riadah bersama masyarakat di pantai Pulau Indah" loading="lazy"></figure>
+                            <figure><img src="{{ asset('media/mtdf/profil/riadah-4wd.jpg') }}" alt="Konvoi kenderaan pacuan empat roda semasa riadah bersama masyarakat" loading="lazy"></figure>
+                            <figure><img src="{{ asset('media/mtdf/profil/riadah-kumpulan.jpg') }}" alt="Foto kumpulan riadah bersama masyarakat" loading="lazy"></figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-actions reveal">
+                    <button type="button" class="button dark" id="openProfilPdf" data-i18n="st.pdf.btn">Lihat Profil Penuh (PDF) +</button>
+                </div>
+            </div>
+        </section>
+
+        {{-- Modal Profil PDF --}}
+        <div class="pdf-modal" id="pdfModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle">
+            <div class="pdf-modal__backdrop" data-close-pdf></div>
+            <div class="pdf-modal__box">
+                <div class="pdf-modal__head">
+                    <span id="pdfModalTitle" class="pdf-modal__title" data-i18n="st.pdf.title">Profil Ma'ahad Tahfidz Darul Furqon</span>
+                    <div class="pdf-modal__tools">
+                        <a class="pdf-modal__link" href="{{ asset('media/mtdf/profil/profil-mtdf.pdf') }}" target="_blank" rel="noopener" data-i18n="st.pdf.open">Buka di Tab Baharu</a>
+                        <a class="pdf-modal__link" href="{{ asset('media/mtdf/profil/profil-mtdf.pdf') }}" download data-i18n="st.pdf.dl">Muat Turun</a>
+                        <button type="button" class="pdf-modal__close" data-close-pdf aria-label="Tutup">&times;</button>
+                    </div>
+                </div>
+                <div class="pdf-modal__body">
+                    <iframe id="pdfFrame" title="Profil MTDF" src="about:blank" data-src="{{ asset('media/mtdf/profil/profil-mtdf.pdf') }}"></iframe>
+                    <p class="pdf-modal__note" data-i18n="st.pdf.note">Jika dokumen tidak dipaparkan (biasa pada telefon), sila muat turun atau buka di tab baharu.</p>
+                </div>
+            </div>
+        </div>
+
         <section id="visi-misi" class="vm-section">
             <div class="container">
                 <div class="section-head" style="justify-content:center;text-align:center;flex-direction:column;gap:8px">
@@ -1883,17 +2277,17 @@
                     <article class="vm-card">
                         <div class="vm-icon">◎</div>
                         <h3 data-i18n="vm.visi.label">Visi</h3>
-                        <p data-i18n="vm.visi.text">Menjadikan Al-Qur'an dan Hadis sebagai sumber rujukan, dengan tidak meninggalkan kecanggihan semasa, sehingga mampu melahirkan para huffaz yang berdaya saing.</p>
+                        <p data-i18n="vm.visi.text">Menjadikan Al-Qur'an dan Hadis sebagai sumber rujukan, dengan tidak meninggalkan kecanggihan yang sedia ada sehingga mampu untuk memperlihatkan para huffaz yang berdaya saing.</p>
                     </article>
                     <article class="vm-card">
                         <div class="vm-icon">✦</div>
                         <h3 data-i18n="vm.misi.label">Misi</h3>
-                        <p data-i18n="vm.misi.text">Melahirkan generasi Islamik yang berdaya saing mengikuti arus zaman, tanpa meninggalkan jati diri sebagai Muslim yang bertaqwa dan berilmu.</p>
+                        <p data-i18n="vm.misi.text">Melahirkan generasi Islamik, mampu berdaya saing mengikuti arus zaman semasa dengan tidak meninggalkan jati diri sebagai seorang Muslim yang bertaqwa dan berilmu.</p>
                     </article>
                     <article class="vm-card">
                         <div class="vm-icon">▣</div>
                         <h3 data-i18n="vm.objektif.label">Objektif</h3>
-                        <p data-i18n="vm.objektif.text">Menjadikan MTDF sebagai pusat aktiviti keagamaan yang mewujudkan suasana agama yang harmoni dan mesra masyarakat.</p>
+                        <p data-i18n="vm.objektif.text">Menjadikan MTDF sebagai sebuah pusat aktiviti keagamaan bagi mewujudkan suasana agama yang harmoni dan mesra masyarakat.</p>
                     </article>
                 </div>
                 <div class="vm-motto reveal" data-i18n="vm.motto">Beriman &middot; Berilmu &middot; Berakhlak</div>
@@ -2173,7 +2567,7 @@
         // ---------- i18n (MS / EN / AR) ----------
         var I18N = {
             ms: {
-                'nav.home':`Utama`,'nav.about':`Tentang Kami`,'nav.founder':`Pengasas`,'nav.programmes':`Program`,'nav.activities':`Kegiatan`,'nav.gallery':`Galeri`,'nav.contact':`Hubungi Kami`,'nav.apply':`Mohon Sekarang +`,
+                'nav.home':`Utama`,'nav.about':`Tentang Kami`,'nav.founder':`Pengasas`,'nav.story':`Sejarah`,'nav.programmes':`Program`,'nav.activities':`Kegiatan`,'nav.gallery':`Galeri`,'nav.contact':`Hubungi Kami`,'nav.apply':`Mohon Sekarang +`,
                 'hero.eyebrow':`Pendidikan Islam Moden`,
                 'hero.title':`Ilmu, Iman, Amal Menerangi Dunia <span>Membina generasi Qur'ani sejak 2022.</span>`,
                 'hero.lead':`Maahad Tahfidz Darul Furqon membina generasi yang kuat dalam Al-Qur'an, matang dalam ilmu, santun dalam adab, dan siap memberi manfaat bagi umat.`,
@@ -2188,10 +2582,29 @@
                 'founder.p2':`Bermula dengan 20 orang pelajar dan sokongan masyarakat setempat, MTDF terus berkembang membina generasi Qur'ani yang berilmu, beriman, dan berakhlak.`,
                 'founder.quote':`"Didiklah anak-anak dengan Al-Qur'an, kerana padanya cahaya dunia dan akhirat."`,
                 'vm.kicker':`Falsafah Kami`,'vm.h':`Visi &amp; Misi <span>Hala Tuju Darul Furqon</span>`,
-                'vm.visi.label':`Visi`,'vm.visi.text':`Menjadikan Al-Qur'an dan Hadis sebagai sumber rujukan, dengan tidak meninggalkan kecanggihan semasa, sehingga mampu melahirkan para huffaz yang berdaya saing.`,
-                'vm.misi.label':`Misi`,'vm.misi.text':`Melahirkan generasi Islamik yang berdaya saing mengikuti arus zaman, tanpa meninggalkan jati diri sebagai Muslim yang bertaqwa dan berilmu.`,
-                'vm.objektif.label':`Objektif`,'vm.objektif.text':`Menjadikan MTDF sebagai pusat aktiviti keagamaan yang mewujudkan suasana agama yang harmoni dan mesra masyarakat.`,
+                'vm.visi.label':`Visi`,'vm.visi.text':`Menjadikan Al-Qur'an dan Hadis sebagai sumber rujukan, dengan tidak meninggalkan kecanggihan yang sedia ada sehingga mampu untuk memperlihatkan para huffaz yang berdaya saing.`,
+                'vm.misi.label':`Misi`,'vm.misi.text':`Melahirkan generasi Islamik, mampu berdaya saing mengikuti arus zaman semasa dengan tidak meninggalkan jati diri sebagai seorang Muslim yang bertaqwa dan berilmu.`,
+                'vm.objektif.label':`Objektif`,'vm.objektif.text':`Menjadikan MTDF sebagai sebuah pusat aktiviti keagamaan bagi mewujudkan suasana agama yang harmoni dan mesra masyarakat.`,
                 'vm.motto':`Beriman &middot; Berilmu &middot; Berakhlak`,
+                'st.kicker':`Mengenali Darul Furqon`,'st.h':`Sejarah &amp; Perjalanan <span>Dari Sebidang Wakaf Menjadi Ma'ahad</span>`,
+                'st.tab1':`Sejarah Penubuhan`,'st.tab2':`Barisan Peneraju`,'st.tab3':`Lawatan Pendidikan`,'st.tab4':`Aktiviti Riadah`,
+                'st.k.role':`Pewakaf Tanah`,'st.k.badge':`Sejak Mac 2022`,
+                'st.k.lead':`Perjalanan Ma'ahad Tahfidz Darul Furqon bermula daripada sebuah hasrat yang tulus &mdash; keinginan seorang ibu agar tanah miliknya menjadi tapak menyemai para penghafal Al-Qur'an.`,
+                'st.k.m1.h':`Hasrat Seorang Pewakaf`,'st.k.m1.p':`Puan Hajah Salbiah binti Haji Abdul Hamid mengimpikan sebuah Ma'ahad Tahfidz dibina di atas tanah miliknya di Kampung Sungai Pinang, Pulau Indah.`,
+                'st.k.m2.h':`Amanah Diperjuangkan`,'st.k.m2.p':`Hasrat itu disampaikan kepada Ustaz Umar Kurniawan, lalu beliau memulakan usaha penubuhan dengan sokongan beberapa orang sahabat.`,
+                'st.k.m3.h':`Mac 2022 &mdash; MTDF Berdiri`,'st.k.m3.p':`Berbekalkan kewangan yang terhad dan hasil sumbangan orang ramai, MTDF ditubuhkan dengan seramai 20 orang pelajar.`,
+                'st.k.m4.h':`Berkembang Bersama Masyarakat`,'st.k.m4.p':`Alhamdulillah, sehingga kini MTDF terus mendapat sokongan masyarakat Pulau Indah, Klang dalam mengembangkan syiar Islam.`,
+                'st.p.lead':`Sebuah amanah yang digerakkan oleh barisan peneraju yang berpengalaman dalam pendidikan tahfiz dan khidmat masyarakat.`,
+                'st.p.umar.role':`Pengasas`,'st.p.umar.p':`Lahir 3 April 1987 di Medan, Indonesia. Alumni Pondok Pesantren Temboro dan pengajian agama di Sumatera; berpengalaman sebagai guru tahfiz dan warden sejak 2009.`,
+                'st.p.haris.role':`Pengerusi`,'st.p.haris.p':`Lahir 24 Mei 1970 di Klang, Selangor. Diploma Kejuruteraan Awam, UiTM Shah Alam; bekas Ketua Kampung Sungai Pinang (2008&ndash;2018).`,
+                'st.p.nur.role':`Mudirah`,'st.p.nur.p':`Lahir 20 Ogos 1993 di Alor Setar, Kedah. Alumni Institut Pondok Pasir Tumbuh, Kelantan; berpengalaman mengajar di ma'ahad tahfiz dan sekolah agama.`,
+                'st.p.note':`Carta organisasi penuh MTDF &mdash; Pengerusi, Timbalan, Bendahari, Setiausaha dan AJK &mdash; boleh dilihat dalam Profil Penuh (PDF) di bawah.`,
+                'st.l.lead':`Pembelajaran diperluas melampaui bilik darjah melalui lawatan ilmu yang membina pengalaman dan wawasan pelajar.`,
+                'st.l.g1':`Ladang Alam Warisan, Negeri Sembilan`,'st.l.g2':`Pondok Pesantren Temboro, Jawa Timur`,
+                'st.r.lead':`Cergas jiwa dan raga &mdash; pelajar dibina melalui sukan sunnah dan riadah kebersamaan yang mengeratkan ukhuwah.`,
+                'st.r.g1':`Sukan Memanah`,'st.r.g2':`Riadah Bersama Masyarakat`,
+                'st.pdf.btn':`Lihat Profil Penuh (PDF) +`,'st.pdf.title':`Profil Ma'ahad Tahfidz Darul Furqon`,'st.pdf.open':`Buka di Tab Baharu`,'st.pdf.dl':`Muat Turun`,
+                'st.pdf.note':`Jika dokumen tidak dipaparkan (biasa pada telefon), sila muat turun atau buka di tab baharu.`,
                 'lp.kicker':`Laluan Pendidikan`,'lp.h':`Lanjutan Pengajian <span>Dari Tanah Air ke Timur Tengah</span>`,'lp.intro':`Lulusan MTDF berpeluang menyambung pengajian ke peringkat lebih tinggi, dari dalam negara hingga ke Timur Tengah.`,
                 'lp.step1.tag':`Peringkat Asas`,'lp.step2.tag':`Pendalaman`,'lp.step3.tag':`Pengajian Tinggi`,'lp.step3.h':`Timur Tengah`,'lp.step3.p':`Sudan &middot; Mesir &middot; Jordan`,
                 'cur.kicker':`Kurikulum Tahfiz`,'cur.h':`Jadual Harian <span>Rutin Hafazan Pelajar</span>`,
@@ -2221,7 +2634,7 @@
                 'foot.copyright':`© {{ date('Y') }} Maahad Tahfidz Darul Furqon. Hak cipta terpelihara.`
             },
             en: {
-                'nav.home':`Home`,'nav.about':`About Us`,'nav.founder':`Founder`,'nav.programmes':`Programmes`,'nav.activities':`Activities`,'nav.gallery':`Gallery`,'nav.contact':`Contact`,'nav.apply':`Apply Now +`,
+                'nav.home':`Home`,'nav.about':`About Us`,'nav.founder':`Founder`,'nav.story':`History`,'nav.programmes':`Programmes`,'nav.activities':`Activities`,'nav.gallery':`Gallery`,'nav.contact':`Contact`,'nav.apply':`Apply Now +`,
                 'hero.eyebrow':`Modern Islamic Education`,
                 'hero.title':`Knowledge, Faith &amp; Action, Enlightening the World <span>Nurturing Qur'anic generations since 2022.</span>`,
                 'hero.lead':`Maahad Tahfidz Darul Furqon nurtures a generation strong in the Qur'an, mature in knowledge, refined in character, and ready to benefit the ummah.`,
@@ -2236,10 +2649,29 @@
                 'founder.p2':`Beginning with 20 students and the support of the local community, MTDF continues to grow, nurturing a Qur'anic generation that is knowledgeable, faithful, and of good character.`,
                 'founder.quote':`"Educate children with the Qur'an, for in it lies the light of this world and the hereafter."`,
                 'vm.kicker':`Our Philosophy`,'vm.h':`Vision &amp; Mission <span>Our Direction</span>`,
-                'vm.visi.label':`Vision`,'vm.visi.text':`To make the Qur'an and Hadith our primary reference while embracing modern advancement, producing competitive huffaz.`,
-                'vm.misi.label':`Mission`,'vm.misi.text':`To raise a competitive Islamic generation that keeps pace with the times without losing its identity as knowledgeable, God-fearing Muslims.`,
-                'vm.objektif.label':`Objective`,'vm.objektif.text':`To make MTDF a centre of religious activity that fosters a harmonious, community-friendly environment.`,
+                'vm.visi.label':`Vision`,'vm.visi.text':`To make the Qur'an and Hadith our primary reference, without abandoning present-day advancement, so as to showcase competitive huffaz.`,
+                'vm.misi.label':`Mission`,'vm.misi.text':`To raise an Islamic generation able to compete and keep pace with the times, without abandoning its identity as a devout and knowledgeable Muslim.`,
+                'vm.objektif.label':`Objective`,'vm.objektif.text':`To make MTDF a centre of religious activity in order to foster a harmonious, community-friendly religious atmosphere.`,
                 'vm.motto':`Faithful &middot; Knowledgeable &middot; Virtuous`,
+                'st.kicker':`Getting to Know Darul Furqon`,'st.h':`History &amp; Journey <span>From a Plot of Waqf to a Ma'ahad</span>`,
+                'st.tab1':`Founding History`,'st.tab2':`Our Leadership`,'st.tab3':`Educational Visits`,'st.tab4':`Recreational Activities`,
+                'st.k.role':`Land Endower (Waqif)`,'st.k.badge':`Since March 2022`,
+                'st.k.lead':`The journey of Maahad Tahfidz Darul Furqon began with a sincere wish &mdash; a mother's desire for her own land to become a place that nurtures memorisers of the Qur'an.`,
+                'st.k.m1.h':`A Land Endower's Wish`,'st.k.m1.p':`Puan Hajah Salbiah binti Haji Abdul Hamid dreamed of a Tahfidz Ma'ahad built on her land in Kampung Sungai Pinang, Pulau Indah.`,
+                'st.k.m2.h':`The Trust Carried Forward`,'st.k.m2.p':`The wish was conveyed to Ustaz Umar Kurniawan, who then began the effort to establish it with the support of several friends.`,
+                'st.k.m3.h':`March 2022 &mdash; MTDF Is Born`,'st.k.m3.p':`With limited funds and public donations, MTDF was established with a total of 20 students.`,
+                'st.k.m4.h':`Growing With the Community`,'st.k.m4.p':`Alhamdulillah, to this day MTDF continues to receive the support of the Pulau Indah, Klang community in spreading the message of Islam.`,
+                'st.p.lead':`A trust driven by a leadership team experienced in tahfiz education and community service.`,
+                'st.p.umar.role':`Founder`,'st.p.umar.p':`Born 3 April 1987 in Medan, Indonesia. An alumnus of Pondok Pesantren Temboro and religious studies in Sumatra; experienced as a tahfiz teacher and warden since 2009.`,
+                'st.p.haris.role':`Chairman`,'st.p.haris.p':`Born 24 May 1970 in Klang, Selangor. Diploma in Civil Engineering, UiTM Shah Alam; former Village Head of Kampung Sungai Pinang (2008&ndash;2018).`,
+                'st.p.nur.role':`Principal (Mudirah)`,'st.p.nur.p':`Born 20 August 1993 in Alor Setar, Kedah. An alumna of Institut Pondok Pasir Tumbuh, Kelantan; experienced teaching at tahfiz ma'ahad and religious schools.`,
+                'st.p.note':`The full MTDF organisation chart &mdash; Chairman, Deputy, Treasurer, Secretary and committee &mdash; can be viewed in the Full Profile (PDF) below.`,
+                'st.l.lead':`Learning extends beyond the classroom through educational visits that build students' experience and horizons.`,
+                'st.l.g1':`Ladang Alam Warisan, Negeri Sembilan`,'st.l.g2':`Pondok Pesantren Temboro, East Java`,
+                'st.r.lead':`Active in body and soul &mdash; students are nurtured through sunnah sports and shared recreation that strengthens brotherhood.`,
+                'st.r.g1':`Archery`,'st.r.g2':`Recreation With the Community`,
+                'st.pdf.btn':`View Full Profile (PDF) +`,'st.pdf.title':`Maahad Tahfidz Darul Furqon Profile`,'st.pdf.open':`Open in New Tab`,'st.pdf.dl':`Download`,
+                'st.pdf.note':`If the document does not display (common on phones), please download it or open it in a new tab.`,
                 'lp.kicker':`Education Pathway`,'lp.h':`Continuing Studies <span>From Home to the Middle East</span>`,'lp.intro':`MTDF graduates have the opportunity to continue their studies to higher levels, from within the country to the Middle East.`,
                 'lp.step1.tag':`Foundation`,'lp.step2.tag':`Deepening`,'lp.step3.tag':`Higher Studies`,'lp.step3.h':`Middle East`,'lp.step3.p':`Sudan &middot; Egypt &middot; Jordan`,
                 'cur.kicker':`Tahfiz Curriculum`,'cur.h':`Daily Schedule <span>Students' Memorisation Routine</span>`,
@@ -2269,7 +2701,7 @@
                 'foot.copyright':`© {{ date('Y') }} Maahad Tahfidz Darul Furqon. All rights reserved.`
             },
             ar: {
-                'nav.home':`الرئيسية`,'nav.about':`عن المعهد`,'nav.founder':`المؤسس`,'nav.programmes':`البرامج`,'nav.activities':`الأنشطة`,'nav.gallery':`المعرض`,'nav.contact':`اتصل بنا`,'nav.apply':`سجّل الآن +`,
+                'nav.home':`الرئيسية`,'nav.about':`عن المعهد`,'nav.founder':`المؤسس`,'nav.story':`النشأة`,'nav.programmes':`البرامج`,'nav.activities':`الأنشطة`,'nav.gallery':`المعرض`,'nav.contact':`اتصل بنا`,'nav.apply':`سجّل الآن +`,
                 'hero.eyebrow':`تعليم إسلامي عصري`,
                 'hero.title':`العلم والإيمان والعمل تُنير العالم <span>نُربّي أجيالاً قرآنية منذ 2022.</span>`,
                 'hero.lead':`يُنشئ معهد تحفيظ دار الفرقان جيلاً متيناً في القرآن، ناضجاً في العلم، رفيعَ الأدب، مستعداً لنفع الأمّة.`,
@@ -2284,10 +2716,29 @@
                 'founder.p2':`بدأ المعهد بعشرين طالباً وبدعم من المجتمع المحلي، ويواصل نموّه في تربية جيل قرآني عالِم مؤمن حَسَن الأخلاق.`,
                 'founder.quote':`«ربّوا الأبناء بالقرآن، فإنّ فيه نور الدنيا والآخرة.»`,
                 'vm.kicker':`فلسفتنا`,'vm.h':`الرؤية والرسالة <span>توجّهنا</span>`,
-                'vm.visi.label':`الرؤية`,'vm.visi.text':`جعل القرآن والسنّة مرجعاً أساسياً مع مواكبة التقدّم الحديث، لتخريج حفظة متميّزين قادرين على المنافسة.`,
-                'vm.misi.label':`الرسالة`,'vm.misi.text':`إعداد جيل إسلامي قادر على المنافسة يواكب العصر دون أن يفقد هويته كمسلم تقيّ عالِم.`,
-                'vm.objektif.label':`الهدف`,'vm.objektif.text':`جعل المعهد مركزاً للأنشطة الدينية يهيّئ أجواءً دينية متناغمة وقريبة من المجتمع.`,
+                'vm.visi.label':`الرؤية`,'vm.visi.text':`جعل القرآن والسنّة مرجعاً أساسياً دون التخلّي عن التقدّم القائم، حتى يتسنّى إظهار حفظة قادرين على المنافسة.`,
+                'vm.misi.label':`الرسالة`,'vm.misi.text':`إعداد جيل إسلامي قادر على المنافسة يواكب العصر دون التخلّي عن هويته كمسلم تقيّ عالِم.`,
+                'vm.objektif.label':`الهدف`,'vm.objektif.text':`جعل المعهد مركزاً للأنشطة الدينية لتهيئة أجواء دينية متناغمة قريبة من المجتمع.`,
                 'vm.motto':`إيماناً &middot; علماً &middot; خُلُقاً`,
+                'st.kicker':`تعرّف على دار الفرقان`,'st.h':`النشأة والمسيرة <span>من أرض موقوفة إلى معهد</span>`,
+                'st.tab1':`تاريخ التأسيس`,'st.tab2':`فريق القيادة`,'st.tab3':`الرحلات التعليمية`,'st.tab4':`الأنشطة الترفيهية`,
+                'st.k.role':`واقفة الأرض`,'st.k.badge':`منذ مارس 2022`,
+                'st.k.lead':`بدأت مسيرة معهد تحفيظ دار الفرقان من رغبة صادقة &mdash; أمنية أمٍّ أن تصبح أرضها مكاناً يُنشئ حفظة كتاب الله.`,
+                'st.k.m1.h':`أمنية الواقفة`,'st.k.m1.p':`حلمت الحاجة صلبية بنت الحاج عبد الحميد بمعهد تحفيظ يُبنى على أرضها في قرية سونغاي بينانج، بولاو إنداه.`,
+                'st.k.m2.h':`أمانة تُحمَل`,'st.k.m2.p':`نُقلت الأمنية إلى الأستاذ عمر كورنياوان، فبدأ العمل على تأسيسه بدعم من عدد من الأصدقاء.`,
+                'st.k.m3.h':`مارس 2022 &mdash; تأسيس المعهد`,'st.k.m3.p':`بإمكانات مالية محدودة وتبرّعات المحسنين، تأسّس المعهد بعشرين طالباً.`,
+                'st.k.m4.h':`نموّ مع المجتمع`,'st.k.m4.p':`والحمد لله، لا يزال المعهد يحظى بدعم مجتمع بولاو إنداه، كلانج في نشر شعائر الإسلام.`,
+                'st.p.lead':`أمانة يقودها فريق ذو خبرة في تعليم التحفيظ وخدمة المجتمع.`,
+                'st.p.umar.role':`المؤسس`,'st.p.umar.p':`وُلد في 3 أبريل 1987 بمدان، إندونيسيا. خرّيج معهد تمبورو ودراسات دينية في سومطرة؛ وله خبرة معلّماً للتحفيظ ومشرفاً منذ 2009.`,
+                'st.p.haris.role':`الرئيس`,'st.p.haris.p':`وُلد في 24 مايو 1970 بكلانج، سلانجور. دبلوم هندسة مدنية من UiTM شاه علم؛ رئيس سابق لقرية سونغاي بينانج (2008&ndash;2018).`,
+                'st.p.nur.role':`المديرة`,'st.p.nur.p':`وُلدت في 20 أغسطس 1993 بألور ستار، قدح. خرّيجة معهد باسير تومبوه، كلنتان؛ ولها خبرة في التدريس بمعاهد التحفيظ والمدارس الدينية.`,
+                'st.p.note':`يمكن الاطّلاع على الهيكل التنظيمي الكامل للمعهد &mdash; الرئيس والنائب وأمين الصندوق والسكرتير واللجنة &mdash; في الملف التعريفي الكامل (PDF) أدناه.`,
+                'st.l.lead':`يمتدّ التعلّم خارج الفصل عبر رحلات علمية تبني خبرات الطلاب وتوسّع آفاقهم.`,
+                'st.l.g1':`مزرعة عالم واريسان، نيجري سمبيلان`,'st.l.g2':`معهد تمبورو، جاوة الشرقية`,
+                'st.r.lead':`نشاطٌ في الروح والبدن &mdash; يُربّى الطلاب عبر الرياضات النبوية والترفيه المشترك الذي يوثّق الأخوّة.`,
+                'st.r.g1':`رياضة الرماية`,'st.r.g2':`ترفيه مع المجتمع`,
+                'st.pdf.btn':`عرض الملف الكامل (PDF) +`,'st.pdf.title':`الملف التعريفي لمعهد تحفيظ دار الفرقان`,'st.pdf.open':`فتح في تبويب جديد`,'st.pdf.dl':`تحميل`,
+                'st.pdf.note':`إذا لم يُعرض المستند (شائع على الهواتف)، فيرجى تحميله أو فتحه في تبويب جديد.`,
                 'lp.kicker':`المسار التعليمي`,'lp.h':`مواصلة الدراسة <span>من الوطن إلى الشرق الأوسط</span>`,'lp.intro':`يحظى خريجو المعهد بفرصة مواصلة دراستهم إلى مستويات أعلى، من داخل البلاد إلى الشرق الأوسط.`,
                 'lp.step1.tag':`المرحلة الأساسية`,'lp.step2.tag':`التعمّق`,'lp.step3.tag':`الدراسات العليا`,'lp.step3.h':`الشرق الأوسط`,'lp.step3.p':`السودان &middot; مصر &middot; الأردن`,
                 'cur.kicker':`منهج التحفيظ`,'cur.h':`الجدول اليومي <span>روتين حفظ الطلاب</span>`,
@@ -2406,6 +2857,46 @@
                 });
             }, { rootMargin: '-45% 0px -50% 0px' });
             sections.forEach(function (s) { spyObserver.observe(s); });
+        }
+
+        // Tab seksyen Sejarah
+        var storyTabs = Array.prototype.slice.call(document.querySelectorAll('.story-tab'));
+        var storyPanels = Array.prototype.slice.call(document.querySelectorAll('.story-panel'));
+        storyTabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                var name = tab.getAttribute('data-tab');
+                storyTabs.forEach(function (t) { t.classList.toggle('is-active', t === tab); });
+                storyPanels.forEach(function (p) {
+                    p.classList.toggle('is-active', p.getAttribute('data-panel') === name);
+                });
+            });
+        });
+
+        // Modal Profil PDF
+        var pdfModal = document.getElementById('pdfModal');
+        var pdfFrame = document.getElementById('pdfFrame');
+        var openPdfBtn = document.getElementById('openProfilPdf');
+        if (pdfModal && openPdfBtn) {
+            var openPdf = function () {
+                if (pdfFrame && pdfFrame.getAttribute('src') === 'about:blank') {
+                    pdfFrame.setAttribute('src', pdfFrame.getAttribute('data-src'));
+                }
+                pdfModal.hidden = false;
+                pdfModal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            };
+            var closePdf = function () {
+                pdfModal.hidden = true;
+                pdfModal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            };
+            openPdfBtn.addEventListener('click', openPdf);
+            pdfModal.querySelectorAll('[data-close-pdf]').forEach(function (el) {
+                el.addEventListener('click', closePdf);
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && !pdfModal.hidden) closePdf();
+            });
         }
     })();
 </script>
