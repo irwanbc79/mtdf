@@ -2187,7 +2187,6 @@
     </style>
 </head>
 <body>
-<div class="page">
     <header class="site-header" id="siteHeader">
         <nav class="container nav" aria-label="Navigasi utama">
             <a class="brand" href="#">
@@ -2220,6 +2219,7 @@
         </nav>
     </header>
 
+<div class="page">
     <header class="hero">
         <div class="hero-pattern-right" aria-hidden="true"></div>
 
