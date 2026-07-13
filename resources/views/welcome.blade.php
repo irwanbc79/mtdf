@@ -33,7 +33,7 @@
             "@@type": "EducationalOrganization",
             "name": "Maahad Tahfidz Darul Furqon",
             "url": "https://darulfurqon.my",
-            "logo": "{{ asset('images/darul-furqon-crest-3d.png') }}",
+            "logo": "{{ asset('images/darul-furqon-logo-full.png') }}",
             "image": "{{ asset('media/mtdf/hero-tahfizh.jpeg') }}",
             "email": "info@darulfurqon.my",
             "foundingDate": "2022-03",
@@ -363,10 +363,10 @@
 
         .brand-emblem {
             display: grid;
-            width: 108px;
-            height: 108px;
+            width: 116px;
+            height: 132px;
             place-items: center;
-            margin: -10px 0;
+            margin: -16px 0;
             padding: 0;
             border: 0;
             border-radius: 0;
@@ -402,19 +402,21 @@
         }
 
         .brand > span:last-child {
-            color: white;
-            font-size: 18px;
-            line-height: 1.08;
+            color: rgba(255,255,255,.82);
+            font-size: 14px;
+            line-height: 1.05;
+            letter-spacing: .06em;
             white-space: nowrap;
+            font-weight: 700;
         }
 
         .brand > span:last-child small {
-            margin-top: 5px;
-            font-size: 17px;
+            margin-top: 3px;
+            font-size: 23px;
             line-height: 1;
-            letter-spacing: .04em;
-            color: rgba(255,255,255,.92);
-            font-weight: 800;
+            letter-spacing: .01em;
+            color: #fff;
+            font-weight: 900;
         }
 
         .nav-links {
@@ -592,11 +594,11 @@
             z-index: 5;
             top: 30px;
             right: 32px;
-            width: 150px;
-            height: 150px;
+            width: 146px;
+            height: 164px;
             object-fit: contain;
             object-position: center;
-            padding: 12px;
+            padding: 12px 12px 10px;
             border-radius: 16px;
             border: 1px solid rgba(213,162,59,.42);
             background: rgba(4, 32, 26, .84);
@@ -1661,9 +1663,9 @@
             }
 
             .brand-emblem {
-                width: 90px;
-                height: 90px;
-                margin: -8px 0;
+                width: 96px;
+                height: 110px;
+                margin: -12px 0;
             }
 
             .brand-emblem.arabic-lockup {
@@ -1673,12 +1675,12 @@
             }
 
             .brand > span:last-child {
-                font-size: 16px;
+                font-size: 13px;
             }
 
             .brand > span:last-child small {
-                margin-top: 4px;
-                font-size: 15px;
+                margin-top: 3px;
+                font-size: 19px;
             }
 
             .hero {
@@ -1730,8 +1732,8 @@
             }
 
             .hero-logo-watermark {
-                width: 118px;
-                height: 118px;
+                width: 112px;
+                height: 126px;
                 top: 20px;
                 right: 20px;
             }
@@ -2018,7 +2020,7 @@
         <div class="hero-pattern-right" aria-hidden="true"></div>
         <nav class="container nav" aria-label="Navigasi utama">
             <a class="brand" href="#">
-                <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-crest-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
+                <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo-full.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
                 <span>Maahad Tahfidz<small>Darul Furqon</small></span>
             </a>
             <input type="checkbox" id="nav-toggle" class="nav-toggle-cb" hidden>
@@ -2064,7 +2066,7 @@
 
             <div class="hero-media" aria-label="Halaqah Al-Qur'an pelajar Maahad Tahfidz Darul Furqon">
                 <img class="hero-photo" src="{{ asset('media/mtdf/hero-tahfizh.jpeg') }}" alt="Pelajar Maahad Tahfidz Darul Furqon mengikuti halaqah Al-Qur'an" fetchpriority="high">
-                <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-crest-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon">
+                <img class="hero-logo-watermark" src="{{ asset('images/darul-furqon-logo-full.png') }}" alt="Logo Maahad Tahfidz Darul Furqon">
                 <span class="hero-label" data-i18n="hero.label">Halaqah Al-Qur'an &amp; Pembinaan Adab</span>
             </div>
         </div>
@@ -2522,7 +2524,7 @@
             <div class="footer-grid">
                 <div>
                     <a class="brand" href="#">
-                        <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-crest-3d.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
+                        <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo-full.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
                         <span>Maahad Tahfidz<small>Darul Furqon</small></span>
                     </a>
                     <p data-i18n="foot.tagline">Membina pendidikan Islam yang melahirkan generasi berilmu, beriman, dan beradab.</p>
