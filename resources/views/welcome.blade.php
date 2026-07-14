@@ -3,6 +3,7 @@
     $waText = rawurlencode("Assalamualaikum Maahad Tahfidz Darul Furqon, saya ingin bertanya tentang pendaftaran.");
     $wa = "https://wa.me/{$waNumber}?text={$waText}";
     $waPlain = "https://wa.me/{$waNumber}";
+    $daftar = "https://forms.gle/G4v59Hj6rwDCq65S9";
 @endphp
 <!DOCTYPE html>
 <html lang="ms">
@@ -1071,6 +1072,7 @@
             font-size: 15px;
         }
 
+        .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
         .cta-wrap {
             overflow: hidden;
             background:
@@ -1384,17 +1386,36 @@
         .vm-card p { color: var(--muted); font-size: 14.5px; line-height: 1.66; }
         .vm-motto {
             margin-top: 26px;
-            padding: 20px;
+            padding: 22px 22px 24px;
             text-align: center;
-            border-radius: 14px;
-            color: var(--gold-400);
-            background: linear-gradient(135deg, var(--emerald-950), var(--emerald-800));
-            border: 1px solid rgba(240,196,90,.28);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(20px, 2.4vw, 28px);
-            font-weight: 700;
-            letter-spacing: .04em;
+            border-radius: 16px;
+            background:
+                radial-gradient(120% 140% at 50% -20%, rgba(240,196,90,.14), transparent 60%),
+                linear-gradient(135deg, var(--emerald-950), var(--emerald-800));
+            border: 1px solid rgba(240,196,90,.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
         }
+        .vm-motto-eyebrow {
+            color: var(--gold-500);
+            font-size: 11.5px;
+            font-weight: 900;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+        }
+        .vm-motto-eyebrow::before, .vm-motto-eyebrow::after { content: "\2726"; margin: 0 8px; color: var(--gold-400); font-size: 9px; vertical-align: middle; }
+        .vm-motto-text {
+            color: var(--cream-100);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(19px, 2.3vw, 27px);
+            font-weight: 700;
+            letter-spacing: .02em;
+            line-height: 1.4;
+            max-width: 720px;
+        }
+        .vm-motto-text b { color: var(--gold-400); font-weight: 800; }
 
         /* ---- Lanjutan Pengajian (pathway) ---- */
         .pathway { max-width: 940px; margin: 0 auto; }
@@ -2214,7 +2235,7 @@
                 <a href="{{ url('/galeri') }}" data-i18n="nav.gallery">Galeri</a>
                 <a href="#infak" data-i18n="nav.infak">Infak</a>
                 <a href="#lokasi" data-i18n="nav.contact">Hubungi Kami</a>
-                <a class="button gold" href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="nav.apply">Mohon Sekarang +</a>
+                <a class="button gold" href="{{ $daftar }}" target="_blank" rel="noopener" data-i18n="nav.apply">Mohon Sekarang +</a>
             </div>
         </nav>
     </header>
@@ -2299,7 +2320,7 @@
                     </p>
                     <p data-i18n="founder.p2">
                         Bermula dengan 20 orang pelajar dan sokongan masyarakat setempat, MTDF terus
-                        berkembang membina generasi Qur'ani yang berilmu, beriman, dan berakhlak.
+                        berkembang membina generasi huffaz yang berakhlak, berilmu dan beramal.
                     </p>
                     <blockquote class="founder-quote" data-i18n="founder.quote">
                         "Didiklah anak-anak dengan Al-Qur'an, kerana padanya cahaya dunia dan akhirat."
@@ -2470,7 +2491,10 @@
                         <p data-i18n="vm.objektif.text">Menjadikan MTDF sebagai sebuah pusat aktiviti keagamaan bagi mewujudkan suasana agama yang harmoni dan mesra masyarakat.</p>
                     </article>
                 </div>
-                <div class="vm-motto reveal" data-i18n="vm.motto">Beriman &middot; Berilmu &middot; Berakhlak</div>
+                <div class="vm-motto reveal">
+                    <span class="vm-motto-eyebrow" data-i18n="vm.tagline.label">Tagline Darul Furqon</span>
+                    <span class="vm-motto-text" data-i18n="vm.motto">Melahirkan Huffaz yang <b>Berakhlak</b>, <b>Berilmu</b> dan <b>Beramal</b></span>
+                </div>
             </div>
         </section>
 
@@ -2754,7 +2778,10 @@
                         Bersama Maahad Tahfidz Darul Furqon, anak-anak dibina bukan hanya untuk lulus ujian,
                         tetapi untuk membawa cahaya ilmu, iman, dan akhlak ke masyarakat.
                     </p>
-                    <a class="button gold" href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="cta.apply">Mohon Sekarang +</a>
+                    <div class="cta-actions">
+                        <a class="button gold" href="{{ $daftar }}" target="_blank" rel="noopener" data-i18n="cta.apply">Borang Pendaftaran +</a>
+                        <a class="button ghost" href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="cta.ask">Tanya via WhatsApp +</a>
+                    </div>
                 </div>
                 <div class="quote" data-i18n="cta.quote">
                     "Ya Tuhanku, tambahkanlah kepadaku ilmu."
@@ -2795,7 +2822,7 @@
                         <span class="brand-emblem"><img src="{{ asset('images/darul-furqon-logo-full.png') }}" alt="Logo Maahad Tahfidz Darul Furqon"></span>
                         <span>Maahad Tahfidz<small>Darul Furqon</small></span>
                     </a>
-                    <p data-i18n="foot.tagline">Membina pendidikan Islam yang melahirkan generasi berilmu, beriman, dan beradab.</p>
+                    <p data-i18n="foot.tagline">Melahirkan huffaz yang berakhlak, berilmu dan beramal.</p>
                 </div>
                 <div>
                     <h4 data-i18n="foot.quick">Pautan Pantas</h4>
@@ -2809,7 +2836,7 @@
                 <div>
                     <h4 data-i18n="foot.services">Unit Layanan</h4>
                     <ul>
-                        <li><a href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="foot.reg">Pendaftaran Pelajar</a></li>
+                        <li><a href="{{ $daftar }}" target="_blank" rel="noopener" data-i18n="foot.reg">Pendaftaran Pelajar</a></li>
                         <li><a href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="foot.fees">Yuran &amp; Pembayaran</a></li>
                         <li><a href="#galeri-video" data-i18n="foot.gallery">Galeri Kegiatan</a></li>
                         <li><a href="{{ $wa }}" target="_blank" rel="noopener" data-i18n="foot.faq">Soalan Lazim (FAQ)</a></li>
@@ -2855,13 +2882,13 @@
                 'pillar5.h':`Pembangunan Holistik`,'pillar5.p':`Menguatkan potensi intelektual, ruhani, emosi, dan fizikal.`,
                 'founder.caption':`Ustadz Umar Kurniawan bin Bustami<span>Pengasas</span>`,'founder.kicker':`Pengasas &amp; Perintis`,'founder.h':`Pengasas Kami <span>Peneraju Darul Furqon</span>`,'founder.role':`Pengasas Maahad Tahfidz Darul Furqon`,
                 'founder.p1':`Ma'ahad Tahfidz Darul Furqon ditubuhkan pada Mac 2022 di Kampung Sungai Pinang, Pulau Indah, Selangor — dirintis Ustaz Umar Kurniawan bin Bustami atas wakaf tanah Puan Hajah Salbiah binti Haji Abdul Hamid.`,
-                'founder.p2':`Bermula dengan 20 orang pelajar dan sokongan masyarakat setempat, MTDF terus berkembang membina generasi Qur'ani yang berilmu, beriman, dan berakhlak.`,
+                'founder.p2':`Bermula dengan 20 orang pelajar dan sokongan masyarakat setempat, MTDF terus berkembang membina generasi huffaz yang berakhlak, berilmu dan beramal.`,
                 'founder.quote':`"Didiklah anak-anak dengan Al-Qur'an, kerana padanya cahaya dunia dan akhirat."`,
                 'vm.kicker':`Falsafah Kami`,'vm.h':`Visi &amp; Misi <span>Hala Tuju Darul Furqon</span>`,
                 'vm.visi.label':`Visi`,'vm.visi.text':`Menjadikan Al-Qur'an dan Hadis sebagai sumber rujukan, dengan tidak meninggalkan kecanggihan yang sedia ada sehingga mampu untuk memperlihatkan para huffaz yang berdaya saing.`,
                 'vm.misi.label':`Misi`,'vm.misi.text':`Melahirkan generasi Islamik, mampu berdaya saing mengikuti arus zaman semasa dengan tidak meninggalkan jati diri sebagai seorang Muslim yang bertaqwa dan berilmu.`,
                 'vm.objektif.label':`Objektif`,'vm.objektif.text':`Menjadikan MTDF sebagai sebuah pusat aktiviti keagamaan bagi mewujudkan suasana agama yang harmoni dan mesra masyarakat.`,
-                'vm.motto':`Beriman &middot; Berilmu &middot; Berakhlak`,
+                'vm.tagline.label':`Tagline Darul Furqon`,'vm.motto':`Melahirkan Huffaz yang <b>Berakhlak</b>, <b>Berilmu</b> dan <b>Beramal</b>`,
                 'st.kicker':`Mengenali Darul Furqon`,'st.h':`Sejarah &amp; Perjalanan <span>Dari Sebidang Wakaf Menjadi Ma'ahad</span>`,
                 'st.tab1':`Sejarah Penubuhan`,'st.tab2':`Barisan Peneraju`,'st.tab3':`Lawatan Pendidikan`,'st.tab4':`Aktiviti Riadah`,
                 'st.k.role':`Pewakaf Tanah`,'st.k.badge':`Sejak Mac 2022`,
@@ -2911,10 +2938,10 @@
                 'val.h':`Nilai Teras Kami <span>Pegangan Kami</span>`,'val.iman':`<strong>Iman</strong>Keyakinan`,'val.ilmu':`<strong>Ilmu</strong>Pengetahuan`,'val.akhlak':`<strong>Akhlak</strong>Peribadi`,'val.disiplin':`<strong>Disiplin</strong>Keteraturan`,'val.ikhlas':`<strong>Ikhlas</strong>Ketulusan`,'val.amanah':`<strong>Amanah</strong>Tanggungjawab`,
                 'cta.kicker':`Sertai Perjalanan Bermakna`,'cta.h':`Sertai Perjalanan Bermakna <span>Bersama Darul Furqon</span>`,
                 'cta.p':`Bersama Maahad Tahfidz Darul Furqon, anak-anak dibina bukan hanya untuk lulus ujian, tetapi untuk membawa cahaya ilmu, iman, dan akhlak ke masyarakat.`,
-                'cta.apply':`Mohon Sekarang +`,'cta.quote':`"Ya Tuhanku, tambahkanlah kepadaku ilmu."<br><small>Surah Taha: 114</small>`,
+                'cta.apply':`Borang Pendaftaran +`,'cta.ask':`Tanya via WhatsApp +`,'cta.quote':`"Ya Tuhanku, tambahkanlah kepadaku ilmu."<br><small>Surah Taha: 114</small>`,
                 'con.h':`Hubungi Kami <span>Lokasi &amp; Pertanyaan</span>`,'con.p':`Untuk pertanyaan pendaftaran, lawatan kampus, atau maklumat program, hubungi pihak Maahad melalui WhatsApp atau email rasmi.`,
                 'con.email1':`Email rasmi: info@darulfurqon.my`,'con.email2':`Email alternatif: tahfizdarulfurqon@gmail.com`,'con.chat':`Chat WhatsApp +`,
-                'foot.tagline':`Membina pendidikan Islam yang melahirkan generasi berilmu, beriman, dan beradab.`,'foot.quick':`Pautan Pantas`,'foot.services':`Unit Layanan`,
+                'foot.tagline':`Melahirkan huffaz yang berakhlak, berilmu dan beramal.`,'foot.quick':`Pautan Pantas`,'foot.services':`Unit Layanan`,
                 'foot.reg':`Pendaftaran Pelajar`,'foot.fees':`Yuran &amp; Pembayaran`,'foot.gallery':`Galeri Kegiatan`,'foot.faq':`Soalan Lazim (FAQ)`,'foot.branches':`Cawangan: Sepang &amp; Cheras`,
                 'foot.copyright':`© {{ date('Y') }} Maahad Tahfidz Darul Furqon. Hak cipta terpelihara.`
             },
@@ -2932,13 +2959,13 @@
                 'pillar5.h':`Holistic Development`,'pillar5.p':`Strengthening intellectual, spiritual, emotional, and physical potential.`,
                 'founder.caption':`Ustadz Umar Kurniawan bin Bustami<span>Founder</span>`,'founder.kicker':`Founder &amp; Pioneer`,'founder.h':`Our Founder <span>Leader of Darul Furqon</span>`,'founder.role':`Founder of Maahad Tahfidz Darul Furqon`,
                 'founder.p1':`Maahad Tahfidz Darul Furqon was established in March 2022 in Kampung Sungai Pinang, Pulau Indah, Selangor — pioneered by Ustaz Umar Kurniawan bin Bustami on land endowed (waqf) by Puan Hajah Salbiah binti Haji Abdul Hamid.`,
-                'founder.p2':`Beginning with 20 students and the support of the local community, MTDF continues to grow, nurturing a Qur'anic generation that is knowledgeable, faithful, and of good character.`,
+                'founder.p2':`Beginning with 20 students and the support of the local community, MTDF continues to grow, nurturing huffaz of character, knowledge and good deeds.`,
                 'founder.quote':`"Educate children with the Qur'an, for in it lies the light of this world and the hereafter."`,
                 'vm.kicker':`Our Philosophy`,'vm.h':`Vision &amp; Mission <span>Our Direction</span>`,
                 'vm.visi.label':`Vision`,'vm.visi.text':`To make the Qur'an and Hadith our primary reference, without abandoning present-day advancement, so as to showcase competitive huffaz.`,
                 'vm.misi.label':`Mission`,'vm.misi.text':`To raise an Islamic generation able to compete and keep pace with the times, without abandoning its identity as a devout and knowledgeable Muslim.`,
                 'vm.objektif.label':`Objective`,'vm.objektif.text':`To make MTDF a centre of religious activity in order to foster a harmonious, community-friendly religious atmosphere.`,
-                'vm.motto':`Faithful &middot; Knowledgeable &middot; Virtuous`,
+                'vm.tagline.label':`Our Tagline`,'vm.motto':`Nurturing Huffaz of <b>Character</b>, <b>Knowledge</b> and <b>Action</b>`,
                 'st.kicker':`Getting to Know Darul Furqon`,'st.h':`History &amp; Journey <span>From a Plot of Waqf to a Ma'ahad</span>`,
                 'st.tab1':`Founding History`,'st.tab2':`Our Leadership`,'st.tab3':`Educational Visits`,'st.tab4':`Recreational Activities`,
                 'st.k.role':`Land Endower (Waqif)`,'st.k.badge':`Since March 2022`,
@@ -2988,10 +3015,10 @@
                 'val.h':`Our Core Values <span>What We Stand For</span>`,'val.iman':`<strong>Faith</strong>Belief`,'val.ilmu':`<strong>Knowledge</strong>Learning`,'val.akhlak':`<strong>Character</strong>Morals`,'val.disiplin':`<strong>Discipline</strong>Order`,'val.ikhlas':`<strong>Sincerity</strong>Purity`,'val.amanah':`<strong>Trust</strong>Responsibility`,
                 'cta.kicker':`Join A Meaningful Journey`,'cta.h':`Join A Meaningful Journey <span>With Darul Furqon</span>`,
                 'cta.p':`With Maahad Tahfidz Darul Furqon, children are nurtured not merely to pass exams, but to carry the light of knowledge, faith, and character into society.`,
-                'cta.apply':`Apply Now +`,'cta.quote':`"My Lord, increase me in knowledge."<br><small>Surah Taha: 114</small>`,
+                'cta.apply':`Registration Form +`,'cta.ask':`Ask via WhatsApp +`,'cta.quote':`"My Lord, increase me in knowledge."<br><small>Surah Taha: 114</small>`,
                 'con.h':`Contact Us <span>Location &amp; Enquiries</span>`,'con.p':`For registration enquiries, campus visits, or programme information, contact the Maahad via WhatsApp or official email.`,
                 'con.email1':`Official email: info@darulfurqon.my`,'con.email2':`Alternate email: tahfizdarulfurqon@gmail.com`,'con.chat':`Chat on WhatsApp +`,
-                'foot.tagline':`Building Islamic education that raises a generation of knowledge, faith, and character.`,'foot.quick':`Quick Links`,'foot.services':`Services`,
+                'foot.tagline':`Nurturing huffaz of character, knowledge and good deeds.`,'foot.quick':`Quick Links`,'foot.services':`Services`,
                 'foot.reg':`Student Registration`,'foot.fees':`Fees &amp; Payment`,'foot.gallery':`Activity Gallery`,'foot.faq':`FAQ`,'foot.branches':`Branches: Sepang &amp; Cheras`,
                 'foot.copyright':`© {{ date('Y') }} Maahad Tahfidz Darul Furqon. All rights reserved.`
             },
@@ -3009,13 +3036,13 @@
                 'pillar5.h':`تنمية شاملة`,'pillar5.p':`تقوية القدرات العقلية والروحية والعاطفية والجسدية.`,
                 'founder.caption':`الأستاذ عمر كورنياوان بن بستامي<span>المؤسس</span>`,'founder.kicker':`المؤسس والرائد`,'founder.h':`مؤسسنا <span>قائد دار الفرقان</span>`,'founder.role':`مؤسس معهد تحفيظ دار الفرقان`,
                 'founder.p1':`تأسّس معهد تحفيظ دار الفرقان في مارس 2022 بقرية سونغاي بينانج، بولاو إنداه، سلانجور — على يد الأستاذ عمر كورنياوان بن بستامي، على أرض موقوفة من الحاجة صلبية بنت الحاج عبد الحميد.`,
-                'founder.p2':`بدأ المعهد بعشرين طالباً وبدعم من المجتمع المحلي، ويواصل نموّه في تربية جيل قرآني عالِم مؤمن حَسَن الأخلاق.`,
+                'founder.p2':`بدأ المعهد بعشرين طالباً وبدعم من المجتمع المحلي، ويواصل نموّه في تخريج حفظة ذوي خُلُق وعلم وعمل.`,
                 'founder.quote':`«ربّوا الأبناء بالقرآن، فإنّ فيه نور الدنيا والآخرة.»`,
                 'vm.kicker':`فلسفتنا`,'vm.h':`الرؤية والرسالة <span>توجّهنا</span>`,
                 'vm.visi.label':`الرؤية`,'vm.visi.text':`جعل القرآن والسنّة مرجعاً أساسياً دون التخلّي عن التقدّم القائم، حتى يتسنّى إظهار حفظة قادرين على المنافسة.`,
                 'vm.misi.label':`الرسالة`,'vm.misi.text':`إعداد جيل إسلامي قادر على المنافسة يواكب العصر دون التخلّي عن هويته كمسلم تقيّ عالِم.`,
                 'vm.objektif.label':`الهدف`,'vm.objektif.text':`جعل المعهد مركزاً للأنشطة الدينية لتهيئة أجواء دينية متناغمة قريبة من المجتمع.`,
-                'vm.motto':`إيماناً &middot; علماً &middot; خُلُقاً`,
+                'vm.tagline.label':`شعار دار الفرقان`,'vm.motto':`تخريج حفظة ذوي <b>خُلُق</b> و<b>علم</b> و<b>عمل</b>`,
                 'st.kicker':`تعرّف على دار الفرقان`,'st.h':`النشأة والمسيرة <span>من أرض موقوفة إلى معهد</span>`,
                 'st.tab1':`تاريخ التأسيس`,'st.tab2':`فريق القيادة`,'st.tab3':`الرحلات التعليمية`,'st.tab4':`الأنشطة الترفيهية`,
                 'st.k.role':`واقفة الأرض`,'st.k.badge':`منذ مارس 2022`,
@@ -3065,10 +3092,10 @@
                 'val.h':`قيمنا الأساسية <span>مبادئنا</span>`,'val.iman':`<strong>الإيمان</strong>اليقين`,'val.ilmu':`<strong>العلم</strong>المعرفة`,'val.akhlak':`<strong>الأخلاق</strong>السلوك`,'val.disiplin':`<strong>الانضباط</strong>النظام`,'val.ikhlas':`<strong>الإخلاص</strong>الصدق`,'val.amanah':`<strong>الأمانة</strong>المسؤولية`,
                 'cta.kicker':`انضمّ إلى رحلة ذات معنى`,'cta.h':`انضمّ إلى رحلة ذات معنى <span>مع دار الفرقان</span>`,
                 'cta.p':`مع معهد تحفيظ دار الفرقان، يُربّى الأبناء لا لاجتياز الامتحانات فحسب، بل لحمل نور العلم والإيمان والأخلاق إلى المجتمع.`,
-                'cta.apply':`سجّل الآن +`,'cta.quote':`«رَبِّ زِدْنِي عِلْمًا»<br><small>سورة طه: ١١٤</small>`,
+                'cta.apply':`استمارة التسجيل +`,'cta.ask':`استفسر عبر واتساب +`,'cta.quote':`«رَبِّ زِدْنِي عِلْمًا»<br><small>سورة طه: ١١٤</small>`,
                 'con.h':`اتصل بنا <span>الموقع والاستفسار</span>`,'con.p':`للاستفسار عن التسجيل أو زيارة الحرم أو معلومات البرامج، تواصل مع المعهد عبر واتساب أو البريد الرسمي.`,
                 'con.email1':`البريد الرسمي: info@darulfurqon.my`,'con.email2':`بريد بديل: tahfizdarulfurqon@gmail.com`,'con.chat':`تواصل عبر واتساب +`,
-                'foot.tagline':`نبني تعليماً إسلامياً يُخرّج جيلاً عالِماً مؤمناً ذا أدب.`,'foot.quick':`روابط سريعة`,'foot.services':`الخدمات`,
+                'foot.tagline':`تخريج حفظة ذوي خُلُق وعلم وعمل.`,'foot.quick':`روابط سريعة`,'foot.services':`الخدمات`,
                 'foot.reg':`تسجيل الطلاب`,'foot.fees':`الرسوم والدفع`,'foot.gallery':`معرض الأنشطة`,'foot.faq':`الأسئلة الشائعة`,'foot.branches':`الفروع: سيبانج وشيراس`,
                 'foot.copyright':`© {{ date('Y') }} معهد تحفيظ دار الفرقان. جميع الحقوق محفوظة.`
             }
