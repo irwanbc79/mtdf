@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://darulfurqon.my/</loc>
+        <lastmod>2026-07-20</lastmod>
+        <changefreq>daily</changefreq>
         <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://darulfurqon.my/media/mtdf/hero-tahfizh.jpeg</image:loc>
+            <image:title>Maahad Tahfidz Darul Furqon - Kampus &amp; Halaqah Al-Quran</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://darulfurqon.my/images/darul-furqon-logo-full.png</image:loc>
+            <image:title>Logo Maahad Tahfidz Darul Furqon</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://darulfurqon.my/galeri</loc>
+        <lastmod>2026-07-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://darulfurqon.my/media/mtdf/halaqah.jpg</image:loc>
+            <image:title>Halaqah Al-Quran Pelajar Darul Furqon</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://darulfurqon.my/media/mtdf/solat.jpg</image:loc>
+            <image:title>Solat Berjemaah Pelajar Darul Furqon</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://darulfurqon.my/media/mtdf/campus-mtdf.jpg</image:loc>
+            <image:title>Bangunan Kampus Maahad Tahfidz Darul Furqon</image:title>
+        </image:image>
     </url>
 </urlset>

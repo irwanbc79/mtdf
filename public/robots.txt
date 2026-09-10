@@ -1,4 +1,13 @@
+# Robots.txt for Maahad Tahfidz Darul Furqon (darulfurqon.my)
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /vendor/
+Disallow: /storage/*.php
+
+# Googlebot specific optimizations
+User-agent: Googlebot
+Allow: /
+Allow: /media/
+Allow: /images/
 
 Sitemap: https://darulfurqon.my/sitemap.xml

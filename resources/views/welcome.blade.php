@@ -12,23 +12,50 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#062b23">
-    <meta name="description" content="Maahad Tahfidz Darul Furqon adalah madrasah tahfizh moden yang memadukan Al-Qur'an, ilmu, adab, dan pembinaan karakter di Selangor, Malaysia.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="description" content="Maahad Tahfidz Darul Furqon adalah pusat pengajian tahfizh moden berteraskan Al-Qur'an, adab, ilmu, dan kepimpinan di Pulau Indah, Klang, Selangor, Malaysia. Daftar kemasukan santri baharu sekarang.">
+    <meta name="keywords" content="maahad tahfidz selangor, sekolah tahfiz malaysia, madrasah tahfizh moden, belajar quran bersanad, kemasukan tahfiz 2026, tahfiz pulau indah klang, darul furqon">
+    <meta name="author" content="Maahad Tahfidz Darul Furqon">
     <link rel="canonical" href="https://darulfurqon.my">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://darulfurqon.my/sitemap.xml">
     <link rel="preconnect" href="https://maps.google.com">
     <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
-    <meta property="og:title" content="Maahad Tahfidz Darul Furqon">
-    <meta property="og:description" content="Pendidikan tahfizh moden berteraskan ilmu, iman, adab, dan kepimpinan.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:site_name" content="Maahad Tahfidz Darul Furqon">
+    <meta property="og:locale" content="ms_MY">
+    <meta property="og:title" content="Maahad Tahfidz Darul Furqon | Sekolah Tahfizh Moden &amp; Sanad Selangor">
+    <meta property="og:description" content="Pendidikan tahfizh moden berteraskan ilmu, iman, adab, kepimpinan, dan sanad Al-Qur'an di Selangor, Malaysia.">
     <meta property="og:url" content="https://darulfurqon.my">
     <meta property="og:type" content="website">
     <meta property="og:image" content="{{ asset('media/mtdf/hero-tahfizh.jpeg') }}">
+    <meta property="og:image:alt" content="Bangunan dan Aktiviti Pelajar Maahad Tahfidz Darul Furqon">
+
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Maahad Tahfidz Darul Furqon | Sekolah Tahfizh Moden Selangor">
+    <meta name="twitter:description" content="Pendidikan tahfizh moden berteraskan Al-Qur'an, adab, dan kepimpinan di Pulau Indah, Klang, Selangor.">
+    <meta name="twitter:image" content="{{ asset('media/mtdf/hero-tahfizh.jpeg') }}">
+
+    <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon-32.png') }}">
     <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('images/favicon-48.png') }}">
     <link rel="icon" href="{{ asset('favicon.ico') }}">
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     <link rel="preload" as="image" href="{{ asset('media/mtdf/hero-tahfizh.jpeg') }}">
-    <title>Maahad Tahfidz Darul Furqon</title>
+    <title>Maahad Tahfidz Darul Furqon | Sekolah Tahfizh Moden &amp; Sanad Selangor</title>
+
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
+    [
+        {
+            "@@context": "https://schema.org",
+            "@@type": "WebSite",
+            "name": "Maahad Tahfidz Darul Furqon",
+            "url": "https://darulfurqon.my",
+            "alternateName": "MTDF",
+            "inLanguage": "ms-MY"
+        },
         {
             "@@context": "https://schema.org",
             "@@type": "EducationalOrganization",
@@ -36,12 +63,14 @@
             "url": "https://darulfurqon.my",
             "logo": "{{ asset('images/darul-furqon-logo-full.png') }}",
             "image": "{{ asset('media/mtdf/hero-tahfizh.jpeg') }}",
+            "description": "Maahad Tahfidz Darul Furqon adalah madrasah tahfizh moden yang memadukan Al-Qur'an, ilmu, adab, dan pembinaan karakter di Selangor, Malaysia.",
             "email": "info@darulfurqon.my",
             "foundingDate": "2022-03",
             "sameAs": [
                 "mailto:tahfizdarulfurqon@gmail.com"
             ],
             "telephone": "+60174333652",
+            "priceRange": "$$",
             "address": {
                 "@@type": "PostalAddress",
                 "streetAddress": "Lot 5713, Jalan Dato' Harun, Kampung Sungai Pinang",
@@ -49,8 +78,44 @@
                 "addressRegion": "Selangor",
                 "postalCode": "42920",
                 "addressCountry": "MY"
+            },
+            "geo": {
+                "@@type": "GeoCoordinates",
+                "latitude": 2.9463,
+                "longitude": 101.3288
             }
+        },
+        {
+            "@@context": "https://schema.org",
+            "@@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@@type": "Question",
+                    "name": "Apakah syarat kemasukan pelajar ke Maahad Tahfidz Darul Furqon?",
+                    "acceptedAnswer": {
+                        "@@type": "Answer",
+                        "text": "Kemasukan terbuka kepada anak-anak yang berminat menghafal Al-Qur'an, lulus ujian saringan tilawah asas, dan bersedia mengikuti program tarbiyah serta disiplin asrama."
+                    }
+                },
+                {
+                    "@@type": "Question",
+                    "name": "Dimanakah lokasi Maahad Tahfidz Darul Furqon?",
+                    "acceptedAnswer": {
+                        "@@type": "Answer",
+                        "text": "Maahad Tahfidz Darul Furqon terletak di Lot 5713, Jalan Dato' Harun, Kampung Sungai Pinang, Pulau Indah, Pelabuhan Klang, Selangor, Malaysia."
+                    }
+                },
+                {
+                    "@@type": "Question",
+                    "name": "Bagaimanakah cara mendaftar di Maahad Tahfidz Darul Furqon?",
+                    "acceptedAnswer": {
+                        "@@type": "Answer",
+                        "text": "Pendaftaran boleh dibuat secara dalam talian melalui borang permohonan di darulfurqon.my atau terus menghubungi pihak pengurusan via WhatsApp di +60174333652."
+                    }
+                }
+            ]
         }
+    ]
     </script>
     <style>
         :root {
