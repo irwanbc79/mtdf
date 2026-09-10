@@ -23,7 +23,7 @@
             'label' => 'Maulid Masjid Ar-Rahman',
             'icon' => '🕌',
             'badge' => 'Komuniti Qariah · 5 Foto + Video',
-            'desc' => 'Semarak syiar selawat santri bersama jemaah Masjid Ar-Rahman & penduduk Kampung Sungai Pinang, lengkap dengan rakaman video majlis.',
+            'desc' => 'Semarak syiar selawat pelajar bersama jemaah Masjid Ar-Rahman & penduduk Kampung Sungai Pinang, lengkap dengan rakaman video majlis.',
         ],
         'aidilfitri' => [
             'id' => 'aidilfitri',
@@ -44,7 +44,7 @@
             'label' => 'Jemputan Port Klang',
             'icon' => '🏢',
             'badge' => 'Khidmat Ummah · 5 Foto',
-            'desc' => 'Santri membawa syiar Al-Qur\'an, bacaan doa selamat, dan majlis kesyukuran di syarikat perindustrian Pelabuhan Klang.',
+            'desc' => 'Pelajar membawa syiar Al-Qur\'an, bacaan doa selamat, dan majlis kesyukuran di syarikat perindustrian Pelabuhan Klang.',
         ],
     ];
 
@@ -111,7 +111,7 @@
             'cat_badge' => '✨ MAULID NABI',
             'file' => 'kegiatan/maulid-habib-ibrahim/maulid-habib-09.jpg',
             'title' => 'Jamuan Kebersamaan Barakah',
-            'desc' => 'Meraikan tetamu dan santri dalam hidangan ukhuwah',
+            'desc' => 'Meraikan tetamu dan pelajar dalam hidangan ukhuwah',
         ],
         [
             'cat' => 'maulid-habib',
@@ -140,7 +140,7 @@
             'cat' => 'maulid-masjid',
             'cat_badge' => '🕌 MASJID QARIAH',
             'file' => 'kegiatan/maulid-masjid-ar-rahman/maulid-masjid-03.jpg',
-            'title' => 'Kebersamaan Santri & Warga Kampung',
+            'title' => 'Kebersamaan Pelajar & Warga Kampung',
             'desc' => 'Merapatkan saf antara generasi muda tahfiz dan masyarakat setempat',
         ],
         [
@@ -198,35 +198,35 @@
         // 4. Perhimpunan Pagi Isnin (5 foto)
         [
             'cat' => 'perhimpunan',
-            'cat_badge' => '🌅 SAHSIAH SANTRI',
+            'cat_badge' => '🌅 SAHSIAH PELAJAR',
             'file' => 'kegiatan/perhimpunan-isnin/perhimpunan-01.jpg',
             'title' => 'Barisan Pelajar Berbusana Putih',
-            'desc' => 'Disiplin saf dan keseragaman santri memulakan minggu baharu',
+            'desc' => 'Disiplin saf dan keseragaman pelajar memulakan minggu baharu',
         ],
         [
             'cat' => 'perhimpunan',
-            'cat_badge' => '🌅 SAHSIAH SANTRI',
+            'cat_badge' => '🌅 SAHSIAH PELAJAR',
             'file' => 'kegiatan/perhimpunan-isnin/perhimpunan-02.jpg',
             'title' => 'Amanat & Nasihat Mingguan Asatizah',
             'desc' => 'Tazkirah adab penuntut ilmu sebelum memulakan sesi talaqqi',
         ],
         [
             'cat' => 'perhimpunan',
-            'cat_badge' => '🌅 SAHSIAH SANTRI',
+            'cat_badge' => '🌅 SAHSIAH PELAJAR',
             'file' => 'kegiatan/perhimpunan-isnin/perhimpunan-03.jpg',
             'title' => 'Bacaan Doa & Asmaul Husna',
             'desc' => 'Memohon keberkatan dan kelapangan dada dalam menghafal Al-Qur\'an',
         ],
         [
             'cat' => 'perhimpunan',
-            'cat_badge' => '🌅 SAHSIAH SANTRI',
+            'cat_badge' => '🌅 SAHSIAH PELAJAR',
             'file' => 'kegiatan/perhimpunan-isnin/perhimpunan-04.jpg',
             'title' => 'Pemeriksaan Kerapian & Sahsiah',
             'desc' => 'Menjaga kebersihan diri dan adab pakaian sunnah penuntut tahfiz',
         ],
         [
             'cat' => 'perhimpunan',
-            'cat_badge' => '🌅 SAHSIAH SANTRI',
+            'cat_badge' => '🌅 SAHSIAH PELAJAR',
             'file' => 'kegiatan/perhimpunan-isnin/perhimpunan-05.jpg',
             'title' => 'Menuju ke Dewan Pengajian',
             'desc' => 'Semangat para huffaz melangkah ke halaqah talaqqi masing-masing',
@@ -277,7 +277,7 @@
             'poster' => asset('media/mtdf/kegiatan/maulid-masjid-ar-rahman/maulid-masjid-01.jpg'),
             'badge' => 'Video Acara',
             'title' => 'Alunan Selawat Sambutan Maulidur Rasul',
-            'desc' => 'Gema selawat dan qasidah santri MTDF bersama jemaah Masjid Ar-Rahman Kg. Sungai Pinang',
+            'desc' => 'Gema selawat dan qasidah pelajar MTDF bersama jemaah Masjid Ar-Rahman Kg. Sungai Pinang',
         ],
         [
             'cat' => 'halaqah',
@@ -292,7 +292,7 @@
             'video_url' => asset('media/mtdf/video-swimming.mp4'),
             'poster' => asset('media/mtdf/activity-swimming.jpeg'),
             'badge' => 'Rihlah & Sukan Sunnah',
-            'title' => 'Kecergasan Renang Santri MTDF',
+            'title' => 'Kecergasan Renang Pelajar MTDF',
             'desc' => 'Aktiviti riadah dan ketangkasan jasmani pelajar di hujung minggu',
         ],
     ];
@@ -313,7 +313,7 @@
     <!-- Open Graph -->
     <meta property="og:site_name" content="Maahad Tahfidz Darul Furqon">
     <meta property="og:locale" content="ms_MY">
-    <meta property="og:title" content="Galeri Aktiviti &amp; Momen Santri — Maahad Tahfidz Darul Furqon">
+    <meta property="og:title" content="Galeri Aktiviti &amp; Momen Pelajar — Maahad Tahfidz Darul Furqon">
     <meta property="og:description" content="Koleksi foto dan video aktiviti rasmi, majlis Maulidur Rasul, ukhuwah komuniti, dan sahsiah pelajar di Maahad Tahfidz Darul Furqon.">
     <meta property="og:url" content="https://darulfurqon.my/galeri">
     <meta property="og:type" content="website">
@@ -321,7 +321,7 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Galeri Aktiviti &amp; Momen Santri — Maahad Tahfidz Darul Furqon">
+    <meta name="twitter:title" content="Galeri Aktiviti &amp; Momen Pelajar — Maahad Tahfidz Darul Furqon">
     <meta name="twitter:description" content="Foto &amp; video aktiviti Maulidur Rasul, perhimpunan, dan khidmat komuniti pelajar Darul Furqon.">
     <meta name="twitter:image" content="{{ asset('media/mtdf/kegiatan/maulid-habib-ibrahim/maulid-habib-01.jpg') }}">
 
@@ -583,7 +583,7 @@
     <section class="ghead">
         <div class="container">
             <div class="kicker" data-i18n="head.kicker">Galeri Kegiatan &amp; Program</div>
-            <h1 data-i18n="head.h1">Detik Bermakna Santri</h1>
+            <h1 data-i18n="head.h1">Detik Bermakna Pelajar</h1>
             <p data-i18n="head.p">Rakaman kehidupan pelajar Maahad Tahfidz Darul Furqon — majlis Maulidur Rasul bersama tetamu mulia, ukhuwah Aidilfitri desa, perhimpunan disiplin mingguan, dan khidmat doa selamat komuniti.</p>
         </div>
     </section>
@@ -758,10 +758,10 @@
                 ms: {
                     'all': { t: 'Semua Kegiatan', d: 'Himpunan foto aktiviti harian, majlis ilmu, dan khidmat kemasyarakatan Maahad Tahfidz Darul Furqon.' },
                     'maulid-habib': { t: 'Maulid Bersama Habib Ibrahim', d: 'Gema selawat, qasidah, dan tausiyah barakah memupuk mahabbah kepada Baginda Nabi Muhammad ﷺ bersama Al-Habib Ibrahim bin Abu Bakar.' },
-                    'maulid-masjid': { t: 'Maulid Masjid Ar-Rahman', d: 'Semarak syiar selawat santri bersama jemaah Masjid Ar-Rahman & penduduk Kampung Sungai Pinang, lengkap dengan rakaman video majlis.' },
+                    'maulid-masjid': { t: 'Maulid Masjid Ar-Rahman', d: 'Semarak syiar selawat pelajar bersama jemaah Masjid Ar-Rahman & penduduk Kampung Sungai Pinang, lengkap dengan rakaman video majlis.' },
                     'aidilfitri': { t: 'Aidilfitri Kg. Sungai Pinang', d: 'Meraikan hari kemenangan Aidilfitri, memperkukuh tautan kasih dan silaturrahim bersama warga Kampung Sungai Pinang.' },
                     'perhimpunan': { t: 'Perhimpunan Pagi Isnin', d: 'Pembudayaan disiplin, tazkirah adab penuntut ilmu, dan amanat mingguan asatizah membina keperibadian huffaz.' },
-                    'jemputan': { t: 'Jemputan Port Klang', d: 'Santri membawa syiar Al-Qur\'an, bacaan doa selamat, dan majlis kesyukuran di syarikat perindustrian Pelabuhan Klang.' }
+                    'jemputan': { t: 'Jemputan Port Klang', d: 'Pelajar membawa syiar Al-Qur\'an, bacaan doa selamat, dan majlis kesyukuran di syarikat perindustrian Pelabuhan Klang.' }
                 },
                 en: {
                     'all': { t: 'All Activities', d: 'A comprehensive collection of daily activities, religious gatherings, and community service at Maahad Tahfidz Darul Furqon.' },

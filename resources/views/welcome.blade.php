@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#062b23">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="description" content="Maahad Tahfidz Darul Furqon adalah pusat pengajian tahfizh moden berteraskan Al-Qur'an, adab, ilmu, dan kepimpinan di Pulau Indah, Klang, Selangor, Malaysia. Daftar kemasukan santri baharu sekarang.">
+    <meta name="description" content="Maahad Tahfidz Darul Furqon adalah pusat pengajian tahfizh moden berteraskan Al-Qur'an, adab, ilmu, dan kepimpinan di Pulau Indah, Klang, Selangor, Malaysia. Daftar kemasukan pelajar baharu sekarang.">
     <meta name="keywords" content="maahad tahfidz selangor, sekolah tahfiz malaysia, madrasah tahfizh moden, belajar quran bersanad, kemasukan tahfiz 2026, tahfiz pulau indah klang, darul furqon">
     <meta name="author" content="Maahad Tahfidz Darul Furqon">
     <link rel="canonical" href="https://darulfurqon.my">
